@@ -1,7 +1,21 @@
+from typing import Callable, List, Any
+
 class StringParsing:
 
     @staticmethod
-    def romanToInt(s: str) -> int:
+    def longest_common_prefix(strs: List[str]) -> str:
+        prefix = strs[0]
+
+        for str in strs[1:]:
+            while (str.find(prefix)) != 0:
+                prefix = prefix[:-1]
+                if not prefix:
+                    return ""
+        
+        return prefix
+
+    @staticmethod
+    def roman_to_int(s: str) -> int:
         sum = 0
 
         i = 0
@@ -60,14 +74,15 @@ class StringParsing:
 
         return sum
 
-from typing import Callable, List, Any
-
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
     result = func(*args)
     print(f'  Result: {result == val}')
     assert result == val
 
-assert_string_parsing(StringParsing.romanToInt, ["III"], 3)
-assert_string_parsing(StringParsing.romanToInt, ["LVIII"], 58)
-assert_string_parsing(StringParsing.romanToInt, ["MCMXCIV"], 1994)
+assert_string_parsing(StringParsing.longest_common_prefix, [["flower","flow","flight"]], "fl")
+assert_string_parsing(StringParsing.longest_common_prefix, [["dog","racecar","car"]], "")
+
+assert_string_parsing(StringParsing.roman_to_int, ["III"], 3)
+assert_string_parsing(StringParsing.roman_to_int, ["LVIII"], 58)
+assert_string_parsing(StringParsing.roman_to_int, ["MCMXCIV"], 1994)
