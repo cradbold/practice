@@ -6,20 +6,32 @@ class ListNode:
         self.val = val
         self.next = next
 
+    # def vals_equal(self, node: ListNode):
+    #     try:
+    #         while (list1 and list2)
+    #     except Exception:
+    #         return False
+
+    #     return True
+
 
 class ListUtils:
 
     @staticmethod
     def merge_two_lists(list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        cur = head = ListNode()
+        head = cur = ListNode()
         
-        while list1 and list2:               
-            if list1.val < list2.val:
-                cur.next = list1
-                list1, cur = list1.next, list1
-            else:
+        while (list1 and list2):
+            if (list1.val > list2.val):
                 cur.next = list2
-                list2, cur = list2.next, list2
+                temp = list2.next
+                cur = list2
+                list2 = temp
+            else:
+                cur.next = list1
+                temp = list1.next
+                cur = list1
+                list1 = temp
 
         if (list1):
             cur.next = list1
