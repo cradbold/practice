@@ -36,5 +36,6 @@ def assert_list_utils(func: Callable, args: List, val: Any) -> None:
     print(f'  Result: {result == val}')
     assert result == val
 
-# assert_list_utils(ListUtils.merge_two_lists, [["flower","flow","flight"]], "fl")
-# assert_list_utils(ListUtils.merge_two_lists, [["dog","racecar","car"]], "")
+assert_list_utils(ListUtils.merge_two_lists, [[1, 2, 4], [1, 3, 4]], [1, 1, 2, 3, 4, 4])
+assert_list_utils(ListUtils.merge_two_lists, [[], []], [])
+assert_list_utils(ListUtils.merge_two_lists, [[], [0]], [0])
