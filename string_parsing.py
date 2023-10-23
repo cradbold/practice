@@ -73,6 +73,19 @@ class StringParsing:
             i += 1
 
         return sum
+    
+    @staticmethod
+    def get_opening_char(s: str) -> str:
+        match s:
+            case ")":
+                return "("
+            case "}":
+                return "{"
+            case "]":
+                return "["
+            case _:
+                print(f"Unsupported string: {s}")
+
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
