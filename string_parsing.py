@@ -75,7 +75,7 @@ class StringParsing:
         return sum
     
     @staticmethod
-    def has_valid_groupings(self, s: str) -> bool:
+    def has_valid_groupings(s: str) -> bool:
         stack = []
 
         for c in s:
