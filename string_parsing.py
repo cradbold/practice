@@ -99,3 +99,7 @@ assert_string_parsing(StringParsing.longest_common_prefix, [["dog","racecar","ca
 assert_string_parsing(StringParsing.roman_to_int, ["III"], 3)
 assert_string_parsing(StringParsing.roman_to_int, ["LVIII"], 58)
 assert_string_parsing(StringParsing.roman_to_int, ["MCMXCIV"], 1994)
+
+assert_string_parsing(StringParsing.get_opening_char, [")"], "(")
+assert_string_parsing(StringParsing.get_opening_char, ["}"], "{")
+assert_string_parsing(StringParsing.get_opening_char, ["]"], "[")
