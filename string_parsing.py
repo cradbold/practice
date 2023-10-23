@@ -83,7 +83,7 @@ class StringParsing:
                 case "(" | "{" | "[":
                     stack.insert(0, c)
                 case ")" | "}" | "]":
-                    opening_c = Solution.get_opening_char(c)
+                    opening_c = StringParsing.get_opening_char(c)
                     if (len(stack) > 0 and stack[0] == opening_c):
                         stack.pop(0)
                     else:
