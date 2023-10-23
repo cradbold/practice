@@ -32,9 +32,8 @@ class ListUtils:
         return head.next
 
 
-def vals_equal(node1: ListNode = None, node2: ListNode = None) -> bool:
+def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
-        print(list1, list2)
         while (list1 and list2):
             if (list1.val != list2.val):
                 return False
@@ -67,6 +66,6 @@ test_node_v.next = test_node_w
 test_node_w.next = test_node_x
 test_node_x.next = test_node_y
 test_node_y.next = test_node_z
-# assert (vals_equal(ListUtils.merge_two_lists(test_node1, test_node_a), test_node_u) == True)
-# assert_list_utils(ListUtils.merge_two_lists, [[], []], [])
-# assert_list_utils(ListUtils.merge_two_lists, [[], [ListNode(0)]], [0])
+assert (vals_equal(ListUtils.merge_two_lists(test_node1, test_node_a), test_node_u) == True)
+assert (vals_equal(ListUtils.merge_two_lists(ListNode(), ListNode()), ListNode()) == True)
+assert (vals_equal(ListUtils.merge_two_lists(ListNode(), ListNode(0)), ListNode(0)) == True)
