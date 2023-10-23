@@ -75,6 +75,28 @@ class StringParsing:
         return sum
     
     @staticmethod
+    def has_valid_groupings(self, s: str) -> bool:
+        stack = []
+
+        for c in s:
+            match c:
+                case "(" | "{" | "[":
+                    stack.insert(0, c)
+                case ")" | "}" | "]":
+                    opening_c = Solution.get_opening_char(c)
+                    if (len(stack) > 0 and stack[0] == opening_c):
+                        stack.pop(0)
+                    else:
+                        return False
+                case _:
+                    print(f"Unrecognized char: {c}")
+
+        if (len(stack)):
+            return False
+        else:
+            return True
+        
+    @staticmethod
     def get_opening_char(s: str) -> str:
         match s:
             case ")":
