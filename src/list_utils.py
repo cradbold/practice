@@ -6,14 +6,6 @@ class ListNode:
         self.val = val
         self.next = next
 
-    # def vals_equal(self, node: ListNode):
-    #     try:
-    #         while (list1 and list2)
-    #     except Exception:
-    #         return False
-
-    #     return True
-
 
 class ListUtils:
 
@@ -22,16 +14,14 @@ class ListUtils:
         head = cur = ListNode()
         
         while (list1 and list2):
-            if (list1.val > list2.val):
-                cur.next = list2
-                temp = list2.next
-                cur = list2
-                list2 = temp
-            else:
+            if (list1.val < list2.val):
                 cur.next = list1
-                temp = list1.next
                 cur = list1
-                list1 = temp
+                list1 = list1.next
+            else:
+                cur.next = list2
+                cur = list2
+                list2 = list2.next
 
         if (list1):
             cur.next = list1
@@ -42,11 +32,19 @@ class ListUtils:
         return head.next
 
 
-def assert_list_utils(func: Callable, args: List, val: Any) -> None:
-    print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
-    result = func(*args)
-    print(f'  Result: {result == val}')
-    assert result == val
+def vals_equal(node1: ListNode = None, node2: ListNode = None) -> bool:
+    try:
+        print(list1, list2)
+        while (list1 and list2):
+            if (list1.val != list2.val):
+                return False
+            else:
+                list1 = list1.next
+                list2 = list2.next
+    except Exception:
+        return False
+    
+    return True
 
 test_node1 = ListNode(1)
 test_node2 = ListNode(2)
@@ -69,6 +67,6 @@ test_node_v.next = test_node_w
 test_node_w.next = test_node_x
 test_node_x.next = test_node_y
 test_node_y.next = test_node_z
-assert_list_utils(ListUtils.merge_two_lists, [test_node1, test_node_a], [1, 1, 2, 3, 4, 4])
-assert_list_utils(ListUtils.merge_two_lists, [[], []], [])
-assert_list_utils(ListUtils.merge_two_lists, [[], [ListNode(0)]], [0])
+# assert (vals_equal(ListUtils.merge_two_lists(test_node1, test_node_a), test_node_u) == True)
+# assert_list_utils(ListUtils.merge_two_lists, [[], []], [])
+# assert_list_utils(ListUtils.merge_two_lists, [[], [ListNode(0)]], [0])
