@@ -125,3 +125,7 @@ assert_string_parsing(StringParsing.roman_to_int, ["MCMXCIV"], 1994)
 assert_string_parsing(StringParsing.get_opening_char, [")"], "(")
 assert_string_parsing(StringParsing.get_opening_char, ["}"], "{")
 assert_string_parsing(StringParsing.get_opening_char, ["]"], "[")
+
+assert_string_parsing(StringParsing.has_valid_groupings, ["()"], True)
+assert_string_parsing(StringParsing.has_valid_groupings, ["()[]{}"], True)
+assert_string_parsing(StringParsing.has_valid_groupings, ["(]"], False)
