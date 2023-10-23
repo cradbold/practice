@@ -36,6 +36,27 @@ def assert_list_utils(func: Callable, args: List, val: Any) -> None:
     print(f'  Result: {result == val}')
     assert result == val
 
-assert_list_utils(ListUtils.merge_two_lists, [[1, 2, 4], [1, 3, 4]], [1, 1, 2, 3, 4, 4])
+test_node1 = ListNode(1)
+test_node2 = ListNode(2)
+test_node3 = ListNode(4)
+test_node1.next = test_node2
+test_node2.next = test_node3
+test_node_a = ListNode(1)
+test_node_b = ListNode(3)
+test_node_c = ListNode(4)
+test_node_a.next = test_node_b
+test_node_b.next = test_node_c
+test_node_u = ListNode(1)
+test_node_v = ListNode(1)
+test_node_w = ListNode(2)
+test_node_x = ListNode(3)
+test_node_y = ListNode(4)
+test_node_z = ListNode(4)
+test_node_u.next = test_node_v
+test_node_v.next = test_node_w
+test_node_w.next = test_node_x
+test_node_x.next = test_node_y
+test_node_y.next = test_node_z
+assert_list_utils(ListUtils.merge_two_lists, [test_node1, test_node_a], [1, 1, 2, 3, 4, 4])
 assert_list_utils(ListUtils.merge_two_lists, [[], []], [])
-assert_list_utils(ListUtils.merge_two_lists, [[], [0]], [0])
+assert_list_utils(ListUtils.merge_two_lists, [[], [ListNode(0)]], [0])
