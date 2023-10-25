@@ -30,6 +30,17 @@ class ListUtils:
             cur.next = list2
             
         return head.next
+    
+    @staticmethod
+    def remove_duplicates(nums: List[int]) -> int:
+        replace_index = 1
+
+        for i in range(1, len(nums)):
+            if (nums[i] != nums[i - 1]):
+                nums[replace_index] = nums[i]
+                replace_index += 1
+
+        return replace_index
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -66,6 +77,15 @@ test_node_v.next = test_node_w
 test_node_w.next = test_node_x
 test_node_x.next = test_node_y
 test_node_y.next = test_node_z
-assert (vals_equal(ListUtils.merge_two_lists(test_node1, test_node_a), test_node_u) == True)
-assert (vals_equal(ListUtils.merge_two_lists(ListNode(), ListNode()), ListNode()) == True)
-assert (vals_equal(ListUtils.merge_two_lists(ListNode(), ListNode(0)), ListNode(0)) == True)
+assert vals_equal(ListUtils.merge_two_lists(test_node1, test_node_a), test_node_u)
+assert vals_equal(ListUtils.merge_two_lists(ListNode(), ListNode()), ListNode())
+assert vals_equal(ListUtils.merge_two_lists(ListNode(), ListNode(0)), ListNode(0))
+
+nums = [1, 1, 2]
+expected_nums = [1, 2, 2]
+assert ListUtils.remove_duplicates(nums) == 2
+assert expected_nums == nums
+nums = [0, 0, 1, 1, 1, 2, 2, 3, 3, 4]
+expected_nums = [0, 1, 2, 3, 4, 2, 2, 3, 3, 4]
+assert ListUtils.remove_duplicates(nums) == 5
+assert expected_nums == nums
