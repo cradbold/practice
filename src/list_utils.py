@@ -102,10 +102,12 @@ assert ListUtils.remove_duplicates(nums) == 5
 assert expected_nums == nums
 
 nums = [3, 2, 2, 3]
-expected_nums = [2, 2, 3, 3]
-result_nums = ListUtils.remove_element(nums, 3)
-assert (result_nums == expected_nums)
+expected_nums = [2, 2, 2, 3]
+count = ListUtils.remove_element(nums, 3)
+assert (count == 2)
+assert (nums == expected_nums)
 nums = [0, 1, 2, 2, 3, 0, 4, 2]
 expected_nums =  [0, 1, 3, 0, 4, 0, 4, 2]
-result_nums = ListUtils.remove_element(nums, 2)
-assert (result_nums == expected_nums)
+count = ListUtils.remove_element(nums, 2)
+assert (count == 5)
+assert (nums == expected_nums)
