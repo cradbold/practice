@@ -41,6 +41,17 @@ class ListUtils:
                 replace_index += 1
 
         return replace_index
+    
+    @staticmethod
+    def removeElement(self, nums: List[int], val: int) -> int:
+        replace_index = 0
+
+        for i in range(len(nums)):
+            if (nums[i] != val):
+                nums[replace_index] = nums[i]
+                replace_index += 1
+
+        return replace_index
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
