@@ -114,7 +114,7 @@ class StringParsing:
 
             hj = i
             nj = 0
-            while(haystack[hj] == needle[nj]):
+            while (haystack[hj] == needle[nj]):
                 if (nj == len(needle) - 1):
                     return i
                 else:
