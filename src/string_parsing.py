@@ -111,8 +111,15 @@ class StringParsing:
     @staticmethod
     def strStr(self, haystack: str, needle: str) -> int:
         for i in range(len(haystack) - len(needle) + 1):
-            if haystack[i:i + len(needle)] == needle:
-                return i
+
+            hj = i
+            nj = 0
+            while(haystack[hj] == needle[nj]):
+                if (nj == len(needle) - 1):
+                    return i
+                else:
+                    hj += 1
+                    nj += 1
 
         return -1
 
