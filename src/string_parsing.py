@@ -108,6 +108,10 @@ class StringParsing:
             case _:
                 print(f"Unsupported string: {s}")
 
+    @staticmethod
+    def strStr(self, haystack: str, needle: str) -> int:
+        return 0
+
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
