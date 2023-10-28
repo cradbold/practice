@@ -109,7 +109,7 @@ class StringParsing:
                 print(f"Unsupported string: {s}")
 
     @staticmethod
-    def strStr(self, haystack: str, needle: str) -> int:
+    def search_str(haystack: str, needle: str) -> int:
         for i in range(len(haystack) - len(needle) + 1):
 
             hj = i
@@ -130,8 +130,8 @@ def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'  Result: {result == val}')
     assert result == val
 
-assert_string_parsing(StringParsing.longest_common_prefix, [["flower","flow","flight"]], "fl")
-assert_string_parsing(StringParsing.longest_common_prefix, [["dog","racecar","car"]], "")
+assert_string_parsing(StringParsing.longest_common_prefix, [["flower", "flow", "flight"]], "fl")
+assert_string_parsing(StringParsing.longest_common_prefix, [["dog", "racecar", "car"]], "")
 
 assert_string_parsing(StringParsing.roman_to_int, ["III"], 3)
 assert_string_parsing(StringParsing.roman_to_int, ["LVIII"], 58)
@@ -144,3 +144,6 @@ assert_string_parsing(StringParsing.get_opening_char, ["]"], "[")
 assert_string_parsing(StringParsing.has_valid_groupings, ["()"], True)
 assert_string_parsing(StringParsing.has_valid_groupings, ["()[]{}"], True)
 assert_string_parsing(StringParsing.has_valid_groupings, ["(]"], False)
+
+assert_string_parsing(StringParsing.search_str, ["sadbutsad", "sad"], 0)
+assert_string_parsing(StringParsing.search_str, ["leetcode", "leeto"], -1)
