@@ -52,6 +52,22 @@ class ListUtils:
                 replace_index += 1
 
         return replace_index
+    
+    @staticmethod
+    def search_insert(nums: List[int], target: int) -> int:
+        li = 0
+        ri = len(nums) - 1
+
+        while (li <= ri):
+            mid = (li + ri) // 2
+            if (nums[mid] < target):
+                li = mid + 1
+            elif (nums[mid] > target):
+                ri = mid - 1
+            else:
+                return mid
+        
+        return li
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -111,3 +127,10 @@ expected_nums =  [0, 1, 3, 0, 4, 0, 4, 2]
 count = ListUtils.remove_element(nums, 2)
 assert (count == 5)
 assert (nums == expected_nums)
+
+i = ListUtils.remove_element(nums, 3)
+assert (count == 2)
+i = ListUtils.remove_element(nums, 2)
+assert (count == 5)
+i = ListUtils.remove_element(nums, 2)
+assert (count == 5)
