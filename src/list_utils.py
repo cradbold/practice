@@ -68,6 +68,10 @@ class ListUtils:
                 return mid
         
         return li
+    
+    @staticmethod
+    def plusOne(digits: List[int]) -> List[int]:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
