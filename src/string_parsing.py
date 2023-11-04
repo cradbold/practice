@@ -131,6 +131,7 @@ class StringParsing:
         i = len(s) - 1
         while (i >= 0 and not start_i):
             char = s[i]
+            print(f'char: {char}')
 
             if (char != " " and not end_i):
                 end_i = i
@@ -140,8 +141,12 @@ class StringParsing:
 
             i = i - 1
 
+        print(f'start i: {start_i}, end_i: {end_i}')
+
         if (not start_i or not end_i):
             return 0
+        else:
+            print(f'{end_i - start_i}')
 
         return end_i - start_i
 
