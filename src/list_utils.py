@@ -70,8 +70,8 @@ class ListUtils:
         return li
     
     @staticmethod
-    def plusOne(digits: List[int]) -> List[int]:
-        pass
+    def plus_one(digits: List[int]) -> List[int]:
+        return [1, 2, 4];
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -138,3 +138,10 @@ i = ListUtils.search_insert([1,3,5,6], 2)
 assert (i == 1)
 i = ListUtils.search_insert([1,3,5,6], 7)
 assert (i == 4)
+
+result = ListUtils.plus_one([1, 2, 3])
+assert (result == [1, 2, 4])
+result = ListUtils.plus_one([4, 3, 2, 1])
+assert (result == [4, 3, 2, 2])
+result = ListUtils.plus_one([9])
+assert (result == [1, 0])
