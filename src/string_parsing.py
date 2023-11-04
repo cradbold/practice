@@ -130,19 +130,13 @@ class StringParsing:
 
         for i in range(len(s) - 1, -1, -1):
             char = s[i]
-
-            print(f'char: {char}')
         
             if (char != ' ' and not found):
                 end_i = i + 1
                 found = True
-                print('end')
             elif (char == ' ' and found):
                 start_i = i + 1
-                print('start')
                 break
-
-        print(f'end_i: {end_i}, start_i: {start_i}')
 
         return end_i - start_i
 
