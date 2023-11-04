@@ -125,28 +125,24 @@ class StringParsing:
     
     @staticmethod
     def last_word_length(s: str) -> int:
-        start_i = None
-        end_i = None
+        start_i, end_i = 0, len(s)
+        found = False
 
-        i = len(s) - 1
-        while (i >= 0 and not start_i):
+        for i in range(len(s) - 1, -1, -1):
             char = s[i]
+
             print(f'char: {char}')
+        
+            if (char != ' ' and not found):
+                end_i = i + 1
+                found = True
+                print('end')
+            elif (char == ' ' and found):
+                start_i = i + 1
+                print('start')
+                break
 
-            if (char != " " and not end_i):
-                end_i = i
-
-            if (char == " " and not start_i and end_i):
-                start_i = i
-
-            i = i - 1
-
-        print(f'start i: {start_i}, end_i: {end_i}')
-
-        if (not start_i or not end_i):
-            return 0
-        else:
-            print(f'{end_i - start_i}')
+        print(f'end_i: {end_i}, start_i: {start_i}')
 
         return end_i - start_i
 
@@ -179,3 +175,4 @@ assert_string_parsing(StringParsing.last_word_length, ["Hello World"], 5)
 assert_string_parsing(StringParsing.last_word_length, ["   fly me   to   the moon  "], 4)
 assert_string_parsing(StringParsing.last_word_length, ["luffy is still joyboy"], 6)
 assert_string_parsing(StringParsing.last_word_length, ["a"], 1)
+assert_string_parsing(StringParsing.last_word_length, [""], 0)
