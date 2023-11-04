@@ -125,7 +125,30 @@ class StringParsing:
     
     @staticmethod
     def last_word_length(s: str) -> int:
-        pass
+        start_i = None
+        end_i = None
+
+        i = len(s) - 1
+        while (i >= 0 and not start_i):
+            char = s[i]
+            print(f'char: {char}')
+
+            if (char != " " and not end_i):
+                end_i = i
+
+            if (char == " " and not start_i and end_i):
+                start_i = i
+
+            i = i - 1
+
+        print(f'start i: {start_i}, end_i: {end_i}')
+
+        if (not start_i or not end_i):
+            return 0
+        else:
+            print(f'{end_i - start_i}')
+
+        return end_i - start_i
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
