@@ -122,6 +122,10 @@ class StringParsing:
                     nj += 1
 
         return -1
+    
+    @staticmethod
+    def last_word_length(self, s: str) -> int:
+        pass
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
