@@ -71,19 +71,14 @@ class ListUtils:
     
     @staticmethod
     def plus_one(digits: List[int]) -> List[int]:
-        n = ''
-
-        for d in digits:
-            n = f'{n}{d}'
-
-        n_int = int(n) + 1
-        n_str = f'{n_int}'
-        
-        result = []
-        for d in n_str:
-            result.append(int(d))
-
-        return result
+        for i in range(len(digits)-1, -1, -1):
+            if digits[i] == 9:
+                digits[i] = 0
+            else:
+                digits[i] = digits[i] + 1
+                return digits
+                
+        return [1] + digits
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
