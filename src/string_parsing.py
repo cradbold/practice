@@ -124,7 +124,7 @@ class StringParsing:
         return -1
     
     @staticmethod
-    def last_word_length(self, s: str) -> int:
+    def last_word_length(s: str) -> int:
         pass
 
 
@@ -151,3 +151,7 @@ assert_string_parsing(StringParsing.has_valid_groupings, ["(]"], False)
 
 assert_string_parsing(StringParsing.search_str, ["sadbutsad", "sad"], 0)
 assert_string_parsing(StringParsing.search_str, ["leetcode", "leeto"], -1)
+
+assert_string_parsing(StringParsing.last_word_length, ["Hello World"], 5)
+assert_string_parsing(StringParsing.last_word_length, ["   fly me   to   the moon  "], 4)
+assert_string_parsing(StringParsing.last_word_length, ["luffy is still joyboy"], 6)
