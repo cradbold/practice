@@ -141,9 +141,19 @@ class StringParsing:
         return end_i - start_i
     
     # Given two binary strings a and b, return their sum as a binary string.
+    # Example 1:
+    # Input: a = "11", b = "1"
+    # Output: "100"
+    # Example 2:
+    # Input: a = "1010", b = "1011"
+    # Output: "10101"
     @staticmethod
-    def add_binary(self, a: str, b: str) -> str:
-        pass
+    def add_binary_str(a: str, b: str) -> str:
+        if (a == '0'):
+            return b
+        elif(b == '0'):
+            return a
+        return
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
@@ -175,3 +185,5 @@ assert_string_parsing(StringParsing.last_word_length, ["   fly me   to   the moo
 assert_string_parsing(StringParsing.last_word_length, ["luffy is still joyboy"], 6)
 assert_string_parsing(StringParsing.last_word_length, ["a"], 1)
 assert_string_parsing(StringParsing.last_word_length, [""], 0)
+
+assert_string_parsing(StringParsing.add_binary_str, ["0", "0"], "0")
