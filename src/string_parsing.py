@@ -139,6 +139,11 @@ class StringParsing:
                 break
 
         return end_i - start_i
+    
+    # Given two binary strings a and b, return their sum as a binary string.
+    @staticmethod
+    def add_binary(self, a: str, b: str) -> str:
+        pass
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
