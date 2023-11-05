@@ -187,3 +187,7 @@ assert_string_parsing(StringParsing.last_word_length, ["a"], 1)
 assert_string_parsing(StringParsing.last_word_length, [""], 0)
 
 assert_string_parsing(StringParsing.add_binary_str, ["0", "0"], "0")
+assert_string_parsing(StringParsing.add_binary_str, ["1", "0"], "1")
+assert_string_parsing(StringParsing.add_binary_str, ["11", "1"], "100")
+assert_string_parsing(StringParsing.add_binary_str, ["1010", "1011"], "10101")
+assert_string_parsing(StringParsing.add_binary_str, ["10", "11"], "101")
