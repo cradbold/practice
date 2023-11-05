@@ -149,11 +149,22 @@ class StringParsing:
     # Output: "10101"
     @staticmethod
     def add_binary_str(a: str, b: str) -> str:
-        if (a == '0'):
-            return b
-        elif(b == '0'):
-            return a
-        return
+        s = []
+        carry = 0
+        i = len(a) - 1
+        j = len(b) - 1
+
+        while i >= 0 or j >= 0 or carry:
+            if i >= 0:
+                carry += int(a[i])
+                i -= 1
+            if j >= 0:
+                carry += int(b[j])
+                j -= 1
+            s.append(str(carry % 2))
+            carry //= 2
+
+        return ''.join(reversed(s))
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
