@@ -1,10 +1,10 @@
-import math
+from math import floor
 
 class NumUtils:
 
     @staticmethod
     def my_sqrt(x: int) -> int:
-        return math.floor(x ** 0.5)
+        return floor(x ** 0.5)
 
 result = NumUtils.my_sqrt(4)
 assert (result == 2)
