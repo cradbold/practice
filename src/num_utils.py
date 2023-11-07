@@ -8,6 +8,9 @@ class NumUtils:
         if (x <= 1):
             return x
         
+        if (x == 2):
+            return 1
+        
         for val in range(1, x):
             sq = val * val
             if (sq > x):
