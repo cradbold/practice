@@ -154,8 +154,8 @@ class StringParsing:
             if bi >= 0:
                 sum += int(b[bi])
                 bi -= 1
+            result = f'{str(sum % 2)}{result}'
             carry = sum // 2
-            result = str(sum % 2) + result
         
         return result
 
