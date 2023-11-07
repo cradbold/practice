@@ -4,21 +4,33 @@ class NumUtils:
 
     @staticmethod
     def my_sqrt(x: int) -> int:
+        if (x == 0):
+            return 0
 
-        if (x <= 1):
-            return x
-        
-        if (x == 2):
+        if (x <= 3):
             return 1
         
-        for val in range(1, x):
-            sq = val * val
-            if (sq > x):
-                return val - 1
+        if (x == 4):
+            return 2
 
-        return -1
+        l, r = 2, x // 2
+        while (l <= r):
+            m = (l + r) // 2
+            sq = m * m
+            if (sq < x):
+                l = m + 1
+            elif (sq > x):
+                r = m - 1
+            else:
+                return m
+            
+        return r
     
 
+x = 0
+result = NumUtils.my_sqrt(x)
+print(f'sqrt({x}) = {result}')
+assert (result == 0)
 x = 2
 result = NumUtils.my_sqrt(x)
 print(f'sqrt({x}) = {result}')
