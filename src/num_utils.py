@@ -16,6 +16,10 @@ class NumUtils:
         return -1
     
 
+x = 2
+result = NumUtils.my_sqrt(x)
+print(f'sqrt({x}) = {result}')
+assert (result == 1)
 x = 4
 result = NumUtils.my_sqrt(x)
 print(f'sqrt({x}) = {result}')
