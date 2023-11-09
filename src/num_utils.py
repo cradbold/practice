@@ -27,7 +27,7 @@ class NumUtils:
         return r
     
     @staticmethod
-    def climb_stairs_iter(n: int) -> int:
+    def count_stair_climbs_iter(n: int) -> int:
         if n == 0 or n == 1:
             return 1
         
@@ -40,7 +40,7 @@ class NumUtils:
         return curr
     
     @staticmethod
-    def climb_stairs_dp(n: int) -> int:
+    def count_stair_climbs_dp(n: int) -> int:
         if n == 0 or n == 1:
             return 1
 
@@ -79,26 +79,26 @@ print(f'sqrt({x}) = {result}')
 assert (result == 46340)
 
 n = 2
-result = NumUtils.climb_stairs_iter(n)
+result = NumUtils.count_stair_climbs_iter(n)
 print(f'climb_stairs_iter({n}) = {result}')
 assert (result == 2)
 n = 3
-result = NumUtils.climb_stairs_iter(n)
+result = NumUtils.count_stair_climbs_iter(n)
 print(f'climb_stairs_iter({n}) = {result}')
 assert (result == 3)
 n = 45
-result = NumUtils.climb_stairs_iter(n)
+result = NumUtils.count_stair_climbs_iter(n)
 print(f'climb_stairs_iter({n}) = {result}')
 assert (result == 1836311903)
 n = 2
-result = NumUtils.climb_stairs_dp(n)
+result = NumUtils.count_stair_climbs_dp(n)
 print(f'climb_stairs_dp({n}) = {result}')
 assert (result == 2)
 n = 3
-result = NumUtils.climb_stairs_dp(n)
+result = NumUtils.count_stair_climbs_dp(n)
 print(f'climb_stairs_dp({n}) = {result}')
 assert (result == 3)
 n = 45
-result = NumUtils.climb_stairs_dp(n)
+result = NumUtils.count_stair_climbs_dp(n)
 print(f'climb_stairs_dp({n}) = {result}')
 assert (result == 1836311903)
