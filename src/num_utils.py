@@ -86,6 +86,10 @@ n = 3
 result = NumUtils.count_stair_climbs_iter(n)
 print(f'climb_stairs_iter({n}) = {result}')
 assert (result == 3)
+n = 4
+result = NumUtils.count_stair_climbs_iter(n)
+print(f'climb_stairs_iter({n}) = {result}')
+assert (result == 5)
 n = 45
 result = NumUtils.count_stair_climbs_iter(n)
 print(f'climb_stairs_iter({n}) = {result}')
@@ -98,6 +102,10 @@ n = 3
 result = NumUtils.count_stair_climbs_dp(n)
 print(f'climb_stairs_dp({n}) = {result}')
 assert (result == 3)
+n = 4
+result = NumUtils.count_stair_climbs_dp(n)
+print(f'climb_stairs_dp({n}) = {result}')
+assert (result == 5)
 n = 45
 result = NumUtils.count_stair_climbs_dp(n)
 print(f'climb_stairs_dp({n}) = {result}')
