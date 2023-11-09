@@ -29,11 +29,17 @@ class NumUtils:
     # You are climbing a staircase. It takes n steps to reach the top.
     # Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
     @staticmethod
-    def climb_stairs(n: int) -> int:
-        if (n == 0 or n == 1):
+    def climb_stairs_iter(n: int) -> int:
+        if n == 0 or n == 1:
             return 1
-
-        return NumUtils.climb_stairs(n - 1) + NumUtils.climb_stairs(n - 2)
+        
+        prev, curr = 1, 1
+        for i in range(2, n + 1):
+            temp = curr
+            curr = prev + curr
+            prev = temp
+        
+        return curr
     
 
 x = 0
@@ -62,10 +68,10 @@ print(f'sqrt({x}) = {result}')
 assert (result == 46340)
 
 n = 2
-result = NumUtils.climb_stairs(n)
+result = NumUtils.climb_stairs_iter(n)
 print(f'climb_stairs({n}) = {result}')
 assert (result == 2)
 n = 3
-result = NumUtils.climb_stairs(n)
+result = NumUtils.climb_stairs_iter(n)
 print(f'climb_stairs({n}) = {result}')
 assert (result == 3)
