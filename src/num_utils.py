@@ -26,8 +26,6 @@ class NumUtils:
             
         return r
     
-    # You are climbing a staircase. It takes n steps to reach the top.
-    # Each time you can either climb 1 or 2 steps. In how many distinct ways can you climb to the top?
     @staticmethod
     def climb_stairs_iter(n: int) -> int:
         if n == 0 or n == 1:
@@ -40,6 +38,19 @@ class NumUtils:
             prev = temp
         
         return curr
+    
+    @staticmethod
+    def climb_stairs_dp(n: int) -> int:
+        if n == 0 or n == 1:
+            return 1
+
+        dp = [0] * (n + 1)
+        dp[0] = dp[1] = 1
+        
+        for i in range(2, n + 1):
+            dp[i] = dp[i - 1] + dp[i - 2]
+
+        return dp[n]
     
 
 x = 0
@@ -69,9 +80,25 @@ assert (result == 46340)
 
 n = 2
 result = NumUtils.climb_stairs_iter(n)
-print(f'climb_stairs({n}) = {result}')
+print(f'climb_stairs_iter({n}) = {result}')
 assert (result == 2)
 n = 3
 result = NumUtils.climb_stairs_iter(n)
-print(f'climb_stairs({n}) = {result}')
+print(f'climb_stairs_iter({n}) = {result}')
 assert (result == 3)
+n = 45
+result = NumUtils.climb_stairs_iter(n)
+print(f'climb_stairs_iter({n}) = {result}')
+assert (result == 1836311903)
+n = 2
+result = NumUtils.climb_stairs_dp(n)
+print(f'climb_stairs_dp({n}) = {result}')
+assert (result == 2)
+n = 3
+result = NumUtils.climb_stairs_dp(n)
+print(f'climb_stairs_dp({n}) = {result}')
+assert (result == 3)
+n = 45
+result = NumUtils.climb_stairs_dp(n)
+print(f'climb_stairs_dp({n}) = {result}')
+assert (result == 1836311903)
