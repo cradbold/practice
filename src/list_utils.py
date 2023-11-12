@@ -80,8 +80,17 @@ class ListUtils:
                 
         return [1] + digits
     
-    def delete_duplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
-        pass
+    @staticmethod
+    def delete_duplicates(head: Optional[ListNode]) -> Optional[ListNode]:
+        curr = head
+        while curr and curr.next:
+            if curr.val == curr.next.val:
+                curr.next = curr.next.next
+            else:
+                curr = curr.next
+        
+        return head
+
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
