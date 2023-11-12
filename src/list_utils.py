@@ -163,3 +163,20 @@ result = ListUtils.plus_one([4, 3, 2, 1])
 assert (result == [4, 3, 2, 2])
 result = ListUtils.plus_one([9])
 assert (result == [1, 0])
+
+test_node1 = ListNode(1)
+test_node2 = ListNode(1)
+test_node3 = ListNode(2)
+test_node1.next = test_node2
+test_node2.next = test_node3
+test_node_u = ListNode(1)
+test_node_v = ListNode(1)
+test_node_w = ListNode(2)
+test_node_x = ListNode(3)
+test_node_y = ListNode(3)
+test_node_u.next = test_node_v
+test_node_v.next = test_node_w
+test_node_w.next = test_node_x
+test_node_x.next = test_node_y
+assert vals_equal(ListUtils.merge_two_lists(test_node1, test_node_a), test_node_u)
+assert vals_equal(ListUtils.merge_two_lists(ListNode(), ListNode()), ListNode())
