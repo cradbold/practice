@@ -169,6 +169,9 @@ test_node2 = ListNode(1)
 test_node3 = ListNode(2)
 test_node1.next = test_node2
 test_node2.next = test_node3
+test_node_a = ListNode(1)
+test_node_b = ListNode(2)
+test_node_a.next = test_node_b
 test_node_u = ListNode(1)
 test_node_v = ListNode(1)
 test_node_w = ListNode(2)
@@ -178,5 +181,10 @@ test_node_u.next = test_node_v
 test_node_v.next = test_node_w
 test_node_w.next = test_node_x
 test_node_x.next = test_node_y
-assert vals_equal(ListUtils.merge_two_lists(test_node1, test_node_a), test_node_u)
-assert vals_equal(ListUtils.merge_two_lists(ListNode(), ListNode()), ListNode())
+testNodeA = ListNode(1)
+testNodeB = ListNode(2)
+testNodeC = ListNode(3)
+testNodeA.next = testNodeB
+testNodeB.next = testNodeC
+assert vals_equal(ListUtils.delete_duplicates(test_node1), test_node_a)
+assert vals_equal(ListUtils.delete_duplicates(test_node_u), testNodeA)
