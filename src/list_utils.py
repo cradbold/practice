@@ -91,7 +91,7 @@ class ListUtils:
         
         return head
     
-    def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+    def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> List[int]:
         a, b = m - 1, n - 1
         write_index = m + n - 1
 
@@ -105,7 +105,7 @@ class ListUtils:
 
             write_index -= 1
                 
-        return None
+        return nums1
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -213,4 +213,4 @@ print(f'{result}')
 assert (result == [1])
 result = ListUtils.merge([0], 0, [1], 1)
 print(f'{result}')
-assert (result == [0, 1])
+assert (result == [1])
