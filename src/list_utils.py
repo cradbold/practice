@@ -91,8 +91,21 @@ class ListUtils:
         
         return head
     
-    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-        pass
+    def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        a, b = m - 1, n - 1
+        write_index = m + n - 1
+
+        while (b >= 0):
+            if (a >= 0 and nums1[a] > nums2[b]):
+                nums1[write_index] = nums1[a]
+                a -= 1
+            else:
+                nums1[write_index] = nums2[b]
+                b -= 1
+
+            write_index -= 1
+                
+        return None
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
