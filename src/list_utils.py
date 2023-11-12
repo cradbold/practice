@@ -204,3 +204,13 @@ testNodeA.next = testNodeB
 testNodeB.next = testNodeC
 assert vals_equal(ListUtils.delete_duplicates(test_node1), test_node_a)
 assert vals_equal(ListUtils.delete_duplicates(test_node_u), testNodeA)
+
+result = ListUtils.merge([1, 2, 3, 0, 0, 0], 3, [2, 5, 6], 3)
+print(f'{result}')
+assert (result == [1, 2, 2, 3, 5, 6])
+result = ListUtils.merge([1], 1, [], 0)
+print(f'{result}')
+assert (result == [1])
+result = ListUtils.merge([0], 0, [1], 1)
+print(f'{result}')
+assert (result == [0, 1])
