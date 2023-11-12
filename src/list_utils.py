@@ -79,7 +79,9 @@ class ListUtils:
                 return digits
                 
         return [1] + digits
-
+    
+    def delete_duplicates(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        pass
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
