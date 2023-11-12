@@ -90,6 +90,9 @@ class ListUtils:
                 curr = curr.next
         
         return head
+    
+    def merge(self, nums1: List[int], m: int, nums2: List[int], n: int) -> None:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
