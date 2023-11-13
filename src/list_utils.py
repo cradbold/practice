@@ -6,7 +6,6 @@ class ListNode:
         self.val = val
         self.next = next
 
-
 class ListUtils:
 
     @staticmethod
@@ -107,6 +106,16 @@ class ListUtils:
             write_index -= 1
                 
         return nums1
+    
+    # Definition for a binary tree node.
+    # class TreeNode:
+    #     def __init__(self, val=0, left=None, right=None):
+    #         self.val = val
+    #         self.left = left
+    #         self.right = right
+    class Solution:
+        def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
+            pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
