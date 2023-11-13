@@ -118,7 +118,19 @@ class ListUtils:
     
     @staticmethod
     def in_order_traversal(root: Optional[TreeNode]) -> List[int]:
-        pass
+        st = []
+        result = []
+
+        while (root or st):
+            while root:
+                st.append(root)
+                root = root.left
+            
+            root = st.pop()
+            result.append(root.val)
+            root = root.right
+        
+        return result
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
