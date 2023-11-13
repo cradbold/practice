@@ -116,13 +116,8 @@ class ListUtils:
                 
         return nums1
     
-    # Definition for a binary tree node.
-    # class TreeNode:
-    #     def __init__(self, val=0, left=None, right=None):
-    #         self.val = val
-    #         self.left = left
-    #         self.right = right
-    def inorderTraversal(root: Optional[TreeNode]) -> List[int]:
+    @staticmethod
+    def in_order_traversal(root: Optional[TreeNode]) -> List[int]:
         pass
 
 
@@ -230,9 +225,9 @@ assert (result == [1])
 result = ListUtils.merge([0], 0, [1], 1)
 assert (result == [1])
 
-result = ListUtils.inorderTraversal([1, None, 2, 3])
+result = ListUtils.in_order_traversal([1, None, 2, 3])
 assert (result == [1, 3, 2])
-result = ListUtils.inorderTraversal([])
+result = ListUtils.in_order_traversal([])
 assert (result == [])
-result = ListUtils.inorderTraversal([1])
+result = ListUtils.in_order_traversal([1])
 assert (result == [1])
