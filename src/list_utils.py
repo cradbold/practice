@@ -237,9 +237,14 @@ assert (result == [1])
 result = ListUtils.merge([0], 0, [1], 1)
 assert (result == [1])
 
-result = ListUtils.in_order_traversal([1, None, 2, 3])
+tn1 = TreeNode(1)
+tn2 = TreeNode(2)
+tn3 = TreeNode(3)
+tn1.right = tn2
+tn2.left = tn3
+result = ListUtils.in_order_traversal(tn1)
 assert (result == [1, 3, 2])
-result = ListUtils.in_order_traversal([])
+result = ListUtils.in_order_traversal(TreeNode([]))
 assert (result == [])
-result = ListUtils.in_order_traversal([1])
+result = ListUtils.in_order_traversal(TreeNode([1]))
 assert (result == [1])
