@@ -13,7 +13,7 @@ class TreeNode:
         self.val = val
         self.left = left
         self.right = right
-        
+
 
 class ListUtils:
 
@@ -122,9 +122,8 @@ class ListUtils:
     #         self.val = val
     #         self.left = left
     #         self.right = right
-    class Solution:
-        def inorderTraversal(self, root: Optional[TreeNode]) -> List[int]:
-            pass
+    def inorderTraversal(root: Optional[TreeNode]) -> List[int]:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -229,4 +228,11 @@ assert (result == [1, 2, 2, 3, 5, 6])
 result = ListUtils.merge([1], 1, [], 0)
 assert (result == [1])
 result = ListUtils.merge([0], 0, [1], 1)
+assert (result == [1])
+
+result = ListUtils.inorderTraversal([1, None, 2, 3])
+assert (result == [1, 3, 2])
+result = ListUtils.inorderTraversal([])
+assert (result == [])
+result = ListUtils.inorderTraversal([1])
 assert (result == [1])
