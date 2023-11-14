@@ -240,6 +240,6 @@ tn2.left = tn3
 result = ListUtils.in_order_traversal(tn1)
 assert (result == [1, 3, 2])
 result = ListUtils.in_order_traversal(TreeNode([]))
-# assert (result == [[]])
+assert (result == [[]])
 result = ListUtils.in_order_traversal(TreeNode([1]))
-# assert (result == [[1]])
+assert (result == [[1]])
