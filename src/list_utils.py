@@ -101,7 +101,10 @@ class ListUtils:
     
     @staticmethod
     def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
-        pass
+
+        
+
+        return nums1
     
     @staticmethod
     def in_order_traversal(root: Optional[TreeNode]) -> List[int]:
