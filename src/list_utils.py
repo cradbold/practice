@@ -100,7 +100,7 @@ class ListUtils:
         return head
     
     @staticmethod
-    def merge():
+    def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> None:
         pass
     
     @staticmethod
