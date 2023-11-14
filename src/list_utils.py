@@ -99,7 +99,9 @@ class ListUtils:
         
         return head
     
-    
+    @staticmethod
+    def merge():
+        pass
     
     @staticmethod
     def in_order_traversal(root: Optional[TreeNode]) -> List[int]:
