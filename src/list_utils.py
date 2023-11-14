@@ -99,22 +99,7 @@ class ListUtils:
         
         return head
     
-    @staticmethod
-    def merge(nums1: List[int], m: int, nums2: List[int], n: int) -> List[int]:
-        a, b = m - 1, n - 1
-        write_index = m + n - 1
-
-        while (b >= 0):
-            if (a >= 0 and nums1[a] > nums2[b]):
-                nums1[write_index] = nums1[a]
-                a -= 1
-            else:
-                nums1[write_index] = nums2[b]
-                b -= 1
-
-            write_index -= 1
-                
-        return nums1
+    
     
     @staticmethod
     def in_order_traversal(root: Optional[TreeNode]) -> List[int]:
