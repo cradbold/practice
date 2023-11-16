@@ -113,15 +113,15 @@ class ListUtils:
     
     @staticmethod
     def in_order_traversal(root: Optional[TreeNode]) -> List[int]:
-        st = []
+        subtree = []
         result = []
 
-        while (root or st):
+        while (root or subtree):
             while root:
-                st.append(root)
+                subtree.append(root)
                 root = root.left
             
-            root = st.pop()
+            root = subtree.pop()
             result.append(root.val)
             root = root.right
         
