@@ -106,3 +106,25 @@ tnA.left = tnB
 tnA.right = tnC
 result = TreeUtils.is_same_tree(tn1, tnA)
 assert (result == False)
+
+tn1 = TreeNode(1)
+tn2 = TreeNode(2)
+tn3 = TreeNode(2)
+tn4 = TreeNode(3)
+tn5 = TreeNode(4)
+tn6 = TreeNode(4)
+tn7 = TreeNode(3)
+tn1.left = tn2
+tn1.right = tn3
+tn2.left = tn4
+tn2.right = tn5
+tn3.left = tn6
+tn3.right = tn7
+result = TreeUtils.is_symmetric(tn1)
+assert (result == True)
+tn3.right = None
+result  = TreeUtils.is_symmetric(tn1)
+assert (result == False)
+tn2.left = None
+result = TreeUtils.is_symmetric(tn1)
+assert (result == True)
