@@ -50,6 +50,9 @@ class TreeUtils:
                 return solve(left.left, right.right) and solve(left.right, right.left)
             
         return solve(root.left, root.right)
+    
+    def maxDepth(self, root: Optional[TreeNode]) -> int:
+        pass
 
 
 tn1 = TreeNode(1)
