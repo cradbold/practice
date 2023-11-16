@@ -128,3 +128,9 @@ assert (result == False)
 tn2.left = None
 result = TreeUtils.is_symmetric(tn1)
 assert (result == True)
+tn2.left = TreeNode(2)
+tn2.right = None
+tn3.left = TreeNode(2)
+tn3.right = None
+result = TreeUtils.is_symmetric(tn1)
+assert (result == False)
