@@ -55,3 +55,11 @@ tnA.left = tnB
 tnA.right = tnC
 result = TreeUtils.is_same_tree(tn1, tnA)
 assert (result == True)
+tn1 = TreeNode(1)
+tn2 = TreeNode(2)
+tn1.left = tn2
+tnA = TreeNode(1)
+tnB = TreeNode(2)
+tnA.right = tnB
+result = TreeUtils.is_same_tree(tn1, tnA)
+assert (result == False)
