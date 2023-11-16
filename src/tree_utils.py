@@ -38,7 +38,28 @@ class TreeUtils:
     
     @staticmethod
     def is_symmetric(root: Optional[TreeNode]) -> bool:
-        pass
+        tree = []
+        subtree = []
+
+        while (root or subtree):
+            while (root):
+                subtree.append(root)
+                root = root.left
+
+            root = subtree.pop()
+            tree.append(root.val)
+            root = root.right
+
+        i = 0
+        j = len(tree) - 1
+
+        while (i < j):
+            if (tree[i] != tree[j]):
+                return False
+            i += 1
+            j -= 1
+
+        return True
 
 
 tn1 = TreeNode(1)
