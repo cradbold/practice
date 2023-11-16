@@ -53,8 +53,12 @@ class TreeUtils:
     
     @staticmethod
     def max_depth(root: Optional[TreeNode]) -> int:
-        pass
-
+        
+        if (root):
+            return (1 + max(TreeUtils.max_depth(root.left), TreeUtils.max_depth(root.right)))
+        else:
+            return 0
+        
 
 tn1 = TreeNode(1)
 tn2 = TreeNode(2)
