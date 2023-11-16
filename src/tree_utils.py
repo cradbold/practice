@@ -42,3 +42,16 @@ result = TreeUtils.in_order_traversal(None)
 assert (result == [])
 result = TreeUtils.in_order_traversal(TreeNode(1))
 assert (result == [1])
+
+tn1 = TreeNode(1)
+tn2 = TreeNode(2)
+tn3 = TreeNode(3)
+tn1.left = tn2
+tn1.right = tn3
+tnA = TreeNode(1)
+tnB = TreeNode(2)
+tnC = TreeNode(3)
+tnA.left = tnB
+tnA.right = tnC
+result = TreeUtils.is_same_tree(tn1, tnA)
+assert (result == True)
