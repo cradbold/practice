@@ -7,14 +7,6 @@ class ListNode:
         self.next = next
 
 
-class TreeNode:
-
-    def __init__(self, val=0, left=None, right=None):
-        self.val = val
-        self.left = left
-        self.right = right
-
-
 class ListUtils:
 
     @staticmethod
@@ -111,23 +103,7 @@ class ListUtils:
 
         return nums1
     
-    @staticmethod
-    def in_order_traversal(root: Optional[TreeNode]) -> List[int]:
-        subtree = []
-        result = []
-
-        while (root or subtree):
-            while root:
-                subtree.append(root)
-                root = root.left
-            
-            root = subtree.pop()
-            result.append(root.val)
-            root = root.right
-        
-        return result
-
-
+    
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
         while (list1 and list2):
@@ -230,16 +206,4 @@ assert (result == [1, 2, 2, 3, 5, 6])
 result = ListUtils.merge([1], 1, [], 0)
 assert (result == [1])
 result = ListUtils.merge([0], 0, [1], 1)
-assert (result == [1])
-
-tn1 = TreeNode(1)
-tn2 = TreeNode(2)
-tn3 = TreeNode(3)
-tn1.right = tn2
-tn2.left = tn3
-result = ListUtils.in_order_traversal(tn1)
-assert (result == [1, 3, 2])
-result = ListUtils.in_order_traversal(None)
-assert (result == [])
-result = ListUtils.in_order_traversal(TreeNode(1))
 assert (result == [1])
