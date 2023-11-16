@@ -51,7 +51,8 @@ class TreeUtils:
             
         return solve(root.left, root.right)
     
-    def maxDepth(self, root: Optional[TreeNode]) -> int:
+    @staticmethod
+    def max_depth(root: Optional[TreeNode]) -> int:
         pass
 
 
