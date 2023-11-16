@@ -132,3 +132,23 @@ tn3.left = TreeNode(2)
 tn3.right = None
 result = TreeUtils.is_symmetric(tn1)
 assert (result == False)
+
+tn1 = TreeNode(1)
+tn2 = TreeNode(2)
+tn3 = TreeNode(3)
+tn4 = TreeNode(4)
+tn5 = TreeNode(5)
+tn1.left = tn2
+tn1.right = tn3
+tn3.left = tn4
+tn3.right = tn5
+result = TreeUtils.max_depth(tn1)
+assert (result == 3)
+tn1.left = None
+tn3.left = None
+tn3.right = None
+result = TreeUtils.max_depth(tn1)
+assert (result == 2)
+tn1.left = tn2
+result = TreeUtils.max_depth(tn1)
+assert (result == 2)
