@@ -28,7 +28,13 @@ class TreeUtils:
     
     @staticmethod
     def is_same_tree(p: Optional[TreeNode], q: Optional[TreeNode]) -> bool:
-        pass
+        if (not p and not q):
+            return True
+        
+        if (not p or not q or (p.val != q.val)):
+            return False
+
+        return TreeUtils.is_same_tree(p.left, q.left) and TreeUtils.is_same_tree(p.right, q.right)
 
 
 tn1 = TreeNode(1)
