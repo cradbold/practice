@@ -103,7 +103,8 @@ class ListUtils:
 
         return nums1
     
-    def generate(self, numRows: int) -> List[List[int]]:
+    @staticmethod
+    def generate(numRows: int) -> List[List[int]]:
         pass
     
     
