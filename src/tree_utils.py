@@ -61,8 +61,14 @@ class TreeUtils:
         
     @staticmethod
     def sorted_array_to_bst(nums: List[int]) -> Optional[TreeNode]:
-        pass
-    
+        total_nums = len(nums)
+        if (not total_nums):
+            return None
+        
+        mid_point = total_nums // 2
+        return TreeNode(nums[mid_point], TreeUtils.sorted_array_to_bst(nums[:mid_point]), TreeUtils.sorted_array_to_bst(nums[mid_point + 1:]))
+
+
 tn1 = TreeNode(1)
 tn2 = TreeNode(2)
 tn3 = TreeNode(3)
