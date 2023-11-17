@@ -103,6 +103,9 @@ class ListUtils:
 
         return nums1
     
+    def generate(self, numRows: int) -> List[List[int]]:
+        pass
+    
     
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
