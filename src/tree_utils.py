@@ -59,7 +59,8 @@ class TreeUtils:
         else:
             return 0
         
-    def sortedArrayToBST(self, nums: List[int]) -> Optional[TreeNode]:
+    @staticmethod
+    def sorted_array_to_bst(nums: List[int]) -> Optional[TreeNode]:
         pass
         
 
