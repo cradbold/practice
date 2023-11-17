@@ -71,7 +71,7 @@ class ListUtils:
     
     @staticmethod
     def plus_one(digits: List[int]) -> List[int]:
-        for i in range(len(digits)-1, -1, -1):
+        for i in range(len(digits) - 1, -1, -1):
             if digits[i] == 9:
                 digits[i] = 0
             else:
@@ -105,7 +105,28 @@ class ListUtils:
     
     @staticmethod
     def generate_pascal_triangle(numRows: int) -> List[List[int]]:
-        pass
+
+        def peek(list: List[Any]) -> Any:
+            return list[len(list) - 1]
+        
+        def generate_row(row_list: List[int]) -> List[int]:
+            result = [1]
+            for i in range(1, len(row_list), 1):
+                last_int = peek(row_list[:i])
+                result.append(last_int + row_list[i])
+            result.append(1)
+            return result
+        
+        result = []
+
+        for i in range(numRows):
+            if (len(result)):
+                last_row = peek(result)
+                result.append(generate_row(last_row))
+            else:
+                result.append([1])
+
+        return result
     
     
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -213,6 +234,7 @@ result = ListUtils.merge([0], 0, [1], 1)
 assert (result == [1])
 
 result = ListUtils.generate_pascal_triangle(5)
+# print(f'result: {result}')
 assert (result == [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]])
 result = ListUtils.generate_pascal_triangle(1)
 assert (result == [[1]])
