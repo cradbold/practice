@@ -62,8 +62,7 @@ class TreeUtils:
     @staticmethod
     def sorted_array_to_bst(nums: List[int]) -> Optional[TreeNode]:
         pass
-        
-
+    
 tn1 = TreeNode(1)
 tn2 = TreeNode(2)
 tn3 = TreeNode(3)
@@ -156,3 +155,10 @@ assert (result == 2)
 tn1.left = tn2
 result = TreeUtils.max_depth(tn1)
 assert (result == 2)
+
+result = TreeUtils.sorted_array_to_bst([-10, -3, 0, 5, 9])
+# print(result)
+# assert (result == 3)
+result = TreeUtils.sorted_array_to_bst([1, 3])
+# print(result)
+# assert (result == 3)
