@@ -106,13 +106,10 @@ class ListUtils:
     @staticmethod
     def generate_pascal_triangle(numRows: int) -> List[List[int]]:
 
-        def peek(list: List[Any]) -> Any:
-            return list[len(list) - 1]
-        
         def generate_row(row_list: List[int]) -> List[int]:
             result = [1]
             for i in range(1, len(row_list), 1):
-                last_int = peek(row_list[:i])
+                last_int = row_list[:i][-1]
                 result.append(last_int + row_list[i])
             result.append(1)
             return result
@@ -121,7 +118,7 @@ class ListUtils:
 
         for i in range(numRows):
             if (len(result)):
-                last_row = peek(result)
+                last_row = result[-1]
                 result.append(generate_row(last_row))
             else:
                 result.append([1])
