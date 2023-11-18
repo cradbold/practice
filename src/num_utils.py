@@ -52,6 +52,9 @@ class NumUtils:
 
         return dp[n]
     
+     def isHappy(self, n: int) -> bool:
+        pass
+    
 
 x = 0
 result = NumUtils.my_sqrt(x)
