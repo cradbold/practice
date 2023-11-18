@@ -53,7 +53,7 @@ class NumUtils:
         return dp[n]
     
     @staticmethod
-    def is_happy(self, n: int) -> bool: # happy if iterative sums of squares of digits eventually equals 1 (and stays)
+    def is_happy(n: int) -> bool: # happy if iterative sums of squares of digits eventually equals 1 (and stays)
         pass
     
 
