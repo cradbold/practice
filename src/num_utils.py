@@ -66,21 +66,12 @@ class NumUtils:
             return sum
         
         cache = set()
-        sum = sum_of_digit_squares(n)
-        print(f'sum starting value: {sum}')
-        while (True):
-            if (sum in cache):
-                print(f'  found sum in cache: {sum}')
+        while (n != 1):
+            n = sum_of_digit_squares(n)
+            if (n in cache):
                 return False
             else:
-
-                if (sum == 1):
-                    print(f'  found 1!')
-                    return True
-                else:
-                    cache.add(sum)
-                    sum = sum_of_digit_squares(sum)
-                    print(f'  sum now: {sum}')
+                cache.add(n)
 
         return True
 
