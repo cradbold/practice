@@ -54,7 +54,37 @@ class NumUtils:
     
     @staticmethod
     def is_happy(n: int) -> bool: # happy if iterative sums of squares of digits eventually equals 1 (and stays)
-        pass
+        
+        def sum_of_digit_squares(n: int) -> int:
+            sum = 0
+            m = n
+            
+            while m > 0:
+                sum += (m % 10) ** 2
+                m //= 10
+
+            return sum
+        
+        cache = set()
+        sum = sum_of_digit_squares(n)
+        print(f'sum starting value: {sum}')
+        while (True):
+            if (sum in cache):
+                print(f'  found sum in cache: {sum}')
+                return False
+            else:
+
+                if (sum == 1):
+                    print(f'  found 1!')
+                    return True
+                else:
+                    cache.add(sum)
+                    sum = sum_of_digit_squares(sum)
+                    print(f'  sum now: {sum}')
+
+        return True
+
+
     
 
 x = 0
@@ -114,3 +144,16 @@ n = 45
 result = NumUtils.count_stair_climbs_dp(n)
 print(f'climb_stairs_dp({n}) = {result}')
 assert (result == 1836311903)
+
+n = 1
+result = NumUtils.is_happy(n)
+print(f'is_happy({n}) = {result}')
+assert (result == True)
+n = 19
+result = NumUtils.is_happy(n)
+print(f'is_happy({n}) = {result}')
+assert (result == True)
+n = 2
+result = NumUtils.is_happy(n)
+print(f'is_happy({n}) = {result}')
+assert (result == False)
