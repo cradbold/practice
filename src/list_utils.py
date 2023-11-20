@@ -125,6 +125,7 @@ class ListUtils:
 
         return result
     
+    @staticmethod
     def contains_duplicate(nums: List[int]) -> bool:
         seen_nums = set()
 
