@@ -125,7 +125,7 @@ class ListUtils:
 
         return result
     
-    def containsDuplicate(self, nums: List[int]) -> bool:
+    def contains_duplicate(nums: List[int]) -> bool:
         pass
     
     
@@ -234,7 +234,13 @@ result = ListUtils.merge([0], 0, [1], 1)
 assert (result == [1])
 
 result = ListUtils.generate_pascal_triangle(5)
-# print(f'result: {result}')
 assert (result == [[1], [1, 1], [1, 2, 1], [1, 3, 3, 1], [1, 4, 6, 4, 1]])
 result = ListUtils.generate_pascal_triangle(1)
 assert (result == [[1]])
+
+result = ListUtils.contains_duplicate([1, 2, 3, 1])
+assert (result == True)
+result = ListUtils.contains_duplicate([1, 2, 3, 4])
+assert (result == False)
+result = ListUtils.contains_duplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2])
+assert (result == True)
