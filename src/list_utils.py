@@ -137,7 +137,8 @@ class ListUtils:
 
         return False
     
-    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+    @staticmethod
+    def contains_nearby_duplicate(nums: List[int], k: int) -> bool:
         pass
     
     
