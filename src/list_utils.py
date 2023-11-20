@@ -126,7 +126,15 @@ class ListUtils:
         return result
     
     def contains_duplicate(nums: List[int]) -> bool:
-        pass
+        seen_nums = set()
+
+        for n in nums:
+            if (n in seen_nums):
+                return True
+            else:
+                seen_nums.add(n)
+
+        return False
     
     
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
