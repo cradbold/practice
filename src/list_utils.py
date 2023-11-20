@@ -139,8 +139,19 @@ class ListUtils:
     
     @staticmethod
     def contains_nearby_duplicate(nums: List[int], k: int) -> bool:
-        pass
-    
+
+        d = {}
+
+        for i, n in enumerate(nums):
+            print(f'(i={i}, n={n}):')
+            if n in d and abs(i - d[n]) <= k:
+                print(f'  ({n} in {d}) abs(i:{i} - d[n]{d[n]}); k={k}')
+                return True
+            else:
+                print(f'  Adding i:{i} to d[{n}]')
+                d[n] = i
+        
+        return False    
     
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
@@ -257,3 +268,10 @@ result = ListUtils.contains_duplicate([1, 2, 3, 4])
 assert (result == False)
 result = ListUtils.contains_duplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2])
 assert (result == True)
+
+result = ListUtils.contains_nearby_duplicate([1, 2, 3, 1], 4)
+assert (result == True)
+# result = ListUtils.contains_duplicate([1, 2, 3, 4])
+# assert (result == False)
+# result = ListUtils.contains_duplicate([1, 1, 1, 3, 3, 4, 3, 2, 4, 2])
+# assert (result == True)
