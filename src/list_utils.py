@@ -137,6 +137,9 @@ class ListUtils:
 
         return False
     
+    def containsNearbyDuplicate(self, nums: List[int], k: int) -> bool:
+        pass
+    
     
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
