@@ -125,6 +125,9 @@ class ListUtils:
 
         return result
     
+    def containsDuplicate(self, nums: List[int]) -> bool:
+        pass
+    
     
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
