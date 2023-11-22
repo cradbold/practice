@@ -1,4 +1,5 @@
 from typing import Optional, Callable, List, Any
+from collections import deque
 
 class ListNode:
 
@@ -6,32 +7,60 @@ class ListNode:
         self.val = val
         self.next = next
 
-
-class Stack:
+class Queue:
 
     def __init__(self):
-        pass
+        self.__deque = deque()
+
+    def enqueue(self, x: int) -> None:
+        self.__deque.append(x)
+
+    def dequeue(self) -> int:
+        return self.__deque.popleft()
+
+    def peek(self) -> int:
+        return self.__deque[0]
+
+    def size(self) -> int:
+        return len(self.__deque)
+    
+    def is_empty(self) -> bool:
+        return self.size() == 0
+
+class QueueStack:
+
+    # Queue: LIFO; Stack: FIFO
+    # Valid queue operations: append, peek/pop from front, size and is empty
+
+    def __init__(self):
+        self.__queue = Queue()
 
     def push(self, x: int) -> None:
-        pass
+        if (self.__queue.is_empty()):
+            self.__queue.enqueue(x)
+        else:
+            helper_queue = Queue()
+            while (not self.__queue.is_empty()) :
+                helper_queue.enqueue(self.__queue.dequeue())
+            self.__queue = Queue()
+            self.__queue.enqueue(x)
+            while (not helper_queue.is_empty()):
+                self.__queue.enqueue(helper_queue.dequeue())
+            
 
     def pop(self) -> int:
-        pass
+        result = -1
+
+        if (not self.__queue.is_empty()):
+            result = self.__queue.dequeue()              
+
+        return result
 
     def top(self) -> int:
-        pass
+        return self.__queue.peek()
 
     def empty(self) -> bool:
-        pass
-
-
-# Your MyStack object will be instantiated and called as such:
-# obj = MyStack()
-# obj.push(x)
-# param_2 = obj.pop()
-# param_3 = obj.top()
-# param_4 = obj.empty()
-
+        return self.__queue.is_empty()
 
 class ListUtils:
 
