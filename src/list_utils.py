@@ -42,7 +42,6 @@ class QueueStack:
             helper_queue = Queue()
             while (not self.__queue.is_empty()) :
                 helper_queue.enqueue(self.__queue.dequeue())
-            self.__queue = Queue()
             self.__queue.enqueue(x)
             while (not helper_queue.is_empty()):
                 self.__queue.enqueue(helper_queue.dequeue())
