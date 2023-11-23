@@ -207,13 +207,23 @@ class ListUtils:
     def summary_ranges(nums: List[int]) -> List[str]:
         ranges = []
 
-        start, end = 0, 0
-        for num in nums:
-            pass
+        start = 0
+        for i in range(1, len(nums), 1):
+            if (nums[i] > nums[i - 1] + 1):
+                if (i == start + 1):
+                    ranges.append([nums[start]])
+                else:
+                    ranges.append([nums[start], nums[i - 1]])
+                start = i
+
+        if (start == len(nums) - 1):
+            ranges.append([nums[i]])
+        else:
+            ranges.append([nums[start], nums[i]])
 
         return ranges
-    
-    
+
+
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
         while (list1 and list2):
