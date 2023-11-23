@@ -225,6 +225,10 @@ class ListUtils:
             ranges.append(f'{nums[start]}->{nums[-1]}')
 
         return ranges
+    
+    @staticmethod
+    def summary_ranges_opt(nums: List[int]) -> List[str]:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -353,4 +357,9 @@ assert (result == False)
 result = ListUtils.summary_ranges([0, 1, 2, 4, 5, 7])
 assert (result == ["0->2", "4->5", "7"])
 result = ListUtils.summary_ranges([0, 2, 3, 4, 6, 8, 9])
+assert (result == ["0", "2->4", "6", "8->9"])
+
+result = ListUtils.summary_ranges_opt([0, 1, 2, 4, 5, 7])
+assert (result == ["0->2", "4->5", "7"])
+result = ListUtils.summary_ranges_opt([0, 2, 3, 4, 6, 8, 9])
 assert (result == ["0", "2->4", "6", "8->9"])
