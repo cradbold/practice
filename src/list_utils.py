@@ -213,13 +213,13 @@ class ListUtils:
                 if (i == start + 1):
                     ranges.append(f'{[nums[start]]}')
                 else:
-                    ranges.append(f'[{nums[start]}->{nums[i - 1]}]')
+                    ranges.append(f'{nums[start]}->{nums[i - 1]}')
                 start = i
 
         if (start == len(nums) - 1):
             ranges.append(f'{[nums[i]]}')
         else:
-            ranges.append(f'[{nums[start]}->{nums[i]}]')
+            ranges.append(f'{nums[start]}->{nums[i]}')
 
         return ranges
 
