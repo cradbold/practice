@@ -217,7 +217,7 @@ class ListUtils:
                 start = i
 
         if (start == len(nums) - 1):
-            ranges.append(f'{[nums[i]]}')
+            ranges.append(f'{nums[i]}')
         else:
             ranges.append(f'{nums[start]}->{nums[i]}')
 
@@ -348,6 +348,6 @@ result = ListUtils.contains_nearby_duplicate([1, 2, 3, 1, 2, 3], 2)
 assert (result == False)
 
 result = ListUtils.summary_ranges([0, 1, 2, 4, 5, 7])
-assert (result == [[0, 2], [4, 5], [7]])
+assert (result == ["0->2", "4->5", "7"])
 result = ListUtils.summary_ranges([0, 2, 3, 4, 6, 8, 9])
-assert (result == [[0], [2, 4], [6], [8, 9]])
+assert (result == ["0", "2->4", "6", "8->9"])
