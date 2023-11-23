@@ -205,7 +205,13 @@ class ListUtils:
     
     @staticmethod
     def summary_ranges(nums: List[int]) -> List[str]:
-        pass
+        ranges = []
+
+        start, end = 0, 0
+        for num in nums:
+            pass
+
+        return ranges
     
     
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
