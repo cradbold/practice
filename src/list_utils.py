@@ -203,7 +203,8 @@ class ListUtils:
 
         return False
     
-    def summaryRanges(self, nums: List[int]) -> List[str]:
+    @staticmethod
+    def summary_ranges(nums: List[int]) -> List[str]:
         pass
     
     
