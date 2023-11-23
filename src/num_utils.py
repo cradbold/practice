@@ -77,7 +77,7 @@ class NumUtils:
     
     @staticmethod
     def is_power_of_two(n: int) -> bool:
-        pass
+        return False
     
 
 x = 0
@@ -149,4 +149,17 @@ assert (result == True)
 n = 2
 result = NumUtils.is_happy(n)
 print(f'is_happy({n}) = {result}')
+assert (result == False)
+
+n = 1
+result = NumUtils.is_power_of_two(n)
+print(f'is_power_of_two({n}) = {result}')
+assert (result == True)
+n = 16
+result = NumUtils.is_power_of_two(n)
+print(f'is_power_of_two({n}) = {result}')
+assert (result == True)
+n = 3
+result = NumUtils.is_power_of_two(n)
+print(f'is_power_of_two({n}) = {result}')
 assert (result == False)
