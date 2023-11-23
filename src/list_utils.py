@@ -227,8 +227,15 @@ class ListUtils:
         return ranges
     
     @staticmethod
-    def summary_ranges_opt(nums: List[int]) -> List[str]:
-        pass
+    def summary_ranges_opt(nums: List[int]) -> List[str]: # use list comp
+        ranges = []
+        for n in nums:
+            if ranges and ranges[-1][1] == n - 1:
+                ranges[-1][1] = n
+            else:
+                ranges.append([n, n])
+
+        return [f'{x}->{y}' if x != y else f'{x}' for x, y in ranges]
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
