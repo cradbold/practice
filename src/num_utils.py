@@ -74,8 +74,9 @@ class NumUtils:
                 cache.add(n)
 
         return True
-
-
+    
+    def isPowerOfTwo(self, n: int) -> bool:
+        pass
     
 
 x = 0
