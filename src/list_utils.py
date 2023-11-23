@@ -211,15 +211,15 @@ class ListUtils:
         for i in range(1, len(nums), 1):
             if (nums[i] > nums[i - 1] + 1):
                 if (i == start + 1):
-                    ranges.append([nums[start]])
+                    ranges.append(f'{[nums[start]]}')
                 else:
-                    ranges.append([nums[start], nums[i - 1]])
+                    ranges.append(f'[{nums[start]}->{nums[i - 1]}]')
                 start = i
 
         if (start == len(nums) - 1):
-            ranges.append([nums[i]])
+            ranges.append(f'{[nums[i]]}')
         else:
-            ranges.append([nums[start], nums[i]])
+            ranges.append(f'[{nums[start]}->{nums[i]}]')
 
         return ranges
 
