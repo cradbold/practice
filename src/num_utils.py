@@ -75,7 +75,8 @@ class NumUtils:
 
         return True
     
-    def isPowerOfTwo(self, n: int) -> bool:
+    @staticmethod
+    def is_power_of_two(n: int) -> bool:
         pass
     
 
