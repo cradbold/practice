@@ -77,12 +77,13 @@ class NumUtils:
     
     @staticmethod
     def is_power_of_two(n: int) -> bool:
-        product = 0
-        power = 0
+        product = 2 ** 0
+        power = 1
+
         while (product <= n):
-            product = n ** power
             if (product == n):
                 return True
+            product = 2 ** power
             power += 1
 
         return False
