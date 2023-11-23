@@ -211,7 +211,7 @@ class ListUtils:
         for i in range(1, len(nums), 1):
             if (nums[i] > nums[i - 1] + 1):
                 if (i == start + 1):
-                    ranges.append(f'{[nums[start]]}')
+                    ranges.append(f'{nums[start]}')
                 else:
                     ranges.append(f'{nums[start]}->{nums[i - 1]}')
                 start = i
