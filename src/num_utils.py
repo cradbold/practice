@@ -176,3 +176,16 @@ n = 3
 result = NumUtils.is_power_of_two(n)
 print(f'is_power_of_two({n}) = {result}')
 assert (result == False)
+
+n = 1
+result = NumUtils.is_power_of_two_opt(n)
+print(f'is_power_of_two({n}) = {result}')
+assert (result == True)
+n = 16
+result = NumUtils.is_power_of_two_opt(n)
+print(f'is_power_of_two({n}) = {result}')
+assert (result == True)
+n = 3
+result = NumUtils.is_power_of_two_opt(n)
+print(f'is_power_of_two({n}) = {result}')
+assert (result == False)
