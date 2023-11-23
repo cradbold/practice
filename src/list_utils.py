@@ -330,3 +330,8 @@ result = ListUtils.contains_nearby_duplicate([1, 0, 1, 1], 1)
 assert (result == True)
 result = ListUtils.contains_nearby_duplicate([1, 2, 3, 1, 2, 3], 2)
 assert (result == False)
+
+result = ListUtils.summary_ranges([0, 1, 2, 4, 5, 7])
+assert (result == [[0, 2], [4, 5], [7]])
+result = ListUtils.summary_ranges([0, 2, 3, 4, 6, 8, 9])
+assert (result == [[0], [2, 4], [6], [8, 9]])
