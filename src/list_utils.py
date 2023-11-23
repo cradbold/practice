@@ -205,11 +205,14 @@ class ListUtils:
     
     @staticmethod
     def summary_ranges(nums: List[int]) -> List[str]:
+        if (not nums):
+            return []
+
         ranges = []
 
         start = 0
         for i in range(1, len(nums), 1):
-            if (nums[i] > nums[i - 1] + 1):
+            if (nums[i] != nums[i - 1] + 1):
                 if (i == start + 1):
                     ranges.append(f'{nums[start]}')
                 else:
@@ -217,9 +220,9 @@ class ListUtils:
                 start = i
 
         if (start == len(nums) - 1):
-            ranges.append(f'{nums[i]}')
+            ranges.append(f'{nums[-1]}')
         else:
-            ranges.append(f'{nums[start]}->{nums[i]}')
+            ranges.append(f'{nums[start]}->{nums[-1]}')
 
         return ranges
 
