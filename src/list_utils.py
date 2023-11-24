@@ -95,7 +95,6 @@ class StackQueue:
             while (not helper_stack.is_empty()):
                 self.__stack.push(helper_stack.pop())
             
-
     def dequeue(self) -> int:
         result = math.nan
 
