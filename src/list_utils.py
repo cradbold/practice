@@ -1,5 +1,6 @@
 from typing import Optional, Callable, List, Any
 from collections import deque
+import math
 
 class ListNode:
 
@@ -65,7 +66,7 @@ class QueueStack:
             
 
     def pop(self) -> int:
-        result = -1
+        result = math.nan
 
         if (not self.__queue.is_empty()):
             result = self.__queue.dequeue()              
@@ -77,6 +78,37 @@ class QueueStack:
 
     def empty(self) -> bool:
         return self.__queue.is_empty()
+    
+class StackQueue:
+
+    def __init__(self):
+        self.__stack = Stack()
+
+    def enqueue(self, x: int) -> None:
+        if (self.__stack.is_empty()):
+            self.__stack.push(x)
+        else:
+            helper_stack = Stack()
+            while (not self.__stack.is_empty()) :
+                helper_stack.push(self.__stack.pop())
+            self.__stack.push(x)
+            while (not helper_stack.is_empty()):
+                self.__stack.push(helper_stack.pop())
+            
+
+    def dequeue(self) -> int:
+        result = math.nan
+
+        if (not self.__stack.is_empty()):
+            result = self.__stack.pop()
+
+        return result
+
+    def peek(self) -> int:
+        return self.__stack.peek()
+
+    def is_empty(self) -> bool:
+        return self.__stack.is_empty()
 
 class ListUtils:
 
