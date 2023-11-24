@@ -27,10 +27,27 @@ class Queue:
     def is_empty(self) -> bool:
         return self.size() == 0
 
-class QueueStack:
+class Stack:
 
-    # Queue: LIFO; Stack: FIFO
-    # Valid queue operations: append, peek/pop from front, size and is empty
+    def __init__(self):
+        self.__list = []
+
+    def push(self, x: int) -> None:
+        self.__list.append(x)
+
+    def pop(self) -> int:
+        return self.__list.pop()
+
+    def peek(self) -> int:
+        return self.__list[-1]
+
+    def size(self) -> int:
+        return len(self.__list)
+    
+    def is_empty(self) -> bool:
+        return self.size() == 0
+
+class QueueStack:
 
     def __init__(self):
         self.__queue = Queue()
