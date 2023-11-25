@@ -158,6 +158,9 @@ class StringParsing:
             carry = sum // 2
         
         return result
+    
+    def isAnagram(self, s: str, t: str) -> bool:
+        pass
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
