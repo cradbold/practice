@@ -159,7 +159,8 @@ class StringParsing:
         
         return result
     
-    def isAnagram(self, s: str, t: str) -> bool:
+    @staticmethod
+    def is_anagram(s: str, t: str) -> bool:
         pass
 
 
