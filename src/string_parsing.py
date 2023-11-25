@@ -199,3 +199,7 @@ assert_string_parsing(StringParsing.add_binary_str, ["1", "0"], "1")
 assert_string_parsing(StringParsing.add_binary_str, ["11", "1"], "100")
 assert_string_parsing(StringParsing.add_binary_str, ["1010", "1011"], "10101")
 assert_string_parsing(StringParsing.add_binary_str, ["10", "11"], "101")
+
+assert_string_parsing(StringParsing.is_anagram, ["anagram", "nagaram"], True)
+assert_string_parsing(StringParsing.is_anagram, ["rat", "car"], False)
+assert_string_parsing(StringParsing.is_anagram, ["scarab", "cbrass"], False)
