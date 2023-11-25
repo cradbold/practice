@@ -161,13 +161,31 @@ class StringParsing:
     
     @staticmethod
     def is_anagram(s: str, t: str) -> bool:
-        pass
+        s_letters = {}
+
+        for c in s:
+            if (c in s_letters):
+                s_letters[c] += 1
+            else:
+                s_letters[c] = 1
+
+        for c in t:
+            if (c in s_letters):
+                s_letters[c] -= 1
+            else:
+                return False
+            
+        for count in s_letters.values():
+            if (count != 0):
+                return False
+            
+        return True
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
     result = func(*args)
-    print(f'  Result: {result == val}')
+    print(f'  Expected result found: {result == val}')
     assert result == val
 
 assert_string_parsing(StringParsing.longest_common_prefix, [["flower", "flow", "flight"]], "fl")
