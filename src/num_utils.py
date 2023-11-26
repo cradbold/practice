@@ -248,12 +248,12 @@ print(f'is_ugly({n}) = {result}')
 assert (result == False)
 
 # 00000010100101000001111010011100
-n = 14
+n = 43261596
 result = NumUtils.reverse_32bit_n(n)
 print(f'reverse_32bit_n({n}) = {result}')
-assert (result == 32)
-# 00000010100101000001111010011100
-n = 14
+assert (result == 964176192)
+# 11111111111111111111111111111101
+n = 4294967293
 result = NumUtils.reverse_32bit_n(n)
 print(f'reverse_32bit_n({n}) = {result}')
-assert (result == 32)
+assert (result == 3221225471)
