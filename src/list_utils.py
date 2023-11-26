@@ -285,7 +285,8 @@ class ListUtils:
 
         return [f'{x}->{y}' if x != y else f'{x}' for x, y in ranges]
     
-    def maxProfit(self, prices: List[int]) -> int:
+    @staticmethod
+    def max_profit(prices: List[int]) -> int:
         pass
 
 
