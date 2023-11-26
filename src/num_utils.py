@@ -103,9 +103,10 @@ class NumUtils:
     
         return num
     
-    def isUgly(self, n: int) -> bool:
+    @staticmethod
+    def isUgly(n: int) -> bool:
         pass
-    
+
 
 x = 0
 result = NumUtils.my_sqrt(x)
