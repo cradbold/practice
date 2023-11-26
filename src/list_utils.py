@@ -287,7 +287,16 @@ class ListUtils:
     
     @staticmethod
     def max_profit(prices: List[int]) -> int:
-        pass
+        max_profit = 0
+        buy_price = prices[0]
+
+        for price in prices[1:]:
+            if (price > buy_price):
+                max_profit = max(price - buy_price, max_profit)
+            else:
+                buy_price = price
+        
+        return max_profit
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
