@@ -422,3 +422,8 @@ result = ListUtils.summary_ranges_opt([0, 1, 2, 4, 5, 7])
 assert (result == ["0->2", "4->5", "7"])
 result = ListUtils.summary_ranges_opt([0, 2, 3, 4, 6, 8, 9])
 assert (result == ["0", "2->4", "6", "8->9"])
+
+result = ListUtils.max_profit([7, 1, 5, 3, 6, 4])
+assert (result == 5)
+result = ListUtils.max_profit([7, 6, 4, 3, 1])
+assert (result == 0)
