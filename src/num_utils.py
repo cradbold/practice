@@ -94,8 +94,14 @@ class NumUtils:
     
     @staticmethod
     def add_digits_until_single(num: int) -> int:
-        pass
+        while num > 9:
+            sum = 0
+            while num:
+                sum += num % 10
+                num //= 10
+            num = sum
     
+        return num
 
 x = 0
 result = NumUtils.my_sqrt(x)
