@@ -92,7 +92,8 @@ class NumUtils:
     def is_power_of_two_opt(n: int) -> bool:
         return bin(n)[2] == "1" and bin(n).count("1") == 1
     
-    def addDigits(self, num: int) -> int:
+    @staticmethod
+    def add_digits(num: int) -> int:
         pass
     
 
