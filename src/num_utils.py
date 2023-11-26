@@ -246,3 +246,14 @@ n = 14
 result = NumUtils.is_ugly(n)
 print(f'is_ugly({n}) = {result}')
 assert (result == False)
+
+# 00000010100101000001111010011100
+n = 14
+result = NumUtils.reverse_32bit_n(n)
+print(f'reverse_32bit_n({n}) = {result}')
+assert (result == 32)
+# 00000010100101000001111010011100
+n = 14
+result = NumUtils.reverse_32bit_n(n)
+print(f'reverse_32bit_n({n}) = {result}')
+assert (result == 32)
