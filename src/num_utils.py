@@ -114,6 +114,9 @@ class NumUtils:
                 n //= i
 
         return (n == 1)
+    
+    def reverseBits(self, n: int) -> int:
+        pass
 
 
 x = 0
