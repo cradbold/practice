@@ -106,19 +106,14 @@ class NumUtils:
     @staticmethod
     def is_ugly(n: int) -> bool:
         
-        while (n and n % 2 == 0):
-            n //= 2
-
-        while (n and n % 3 == 0):
-            n //= 3
-
-        while (n and n % 5 == 0):
-            n //= 5
-        
-        if (n == 1):
-            return True
-        else:
+        if (n <= 0):
             return False
+
+        for i in [2, 3, 5]:
+            while (n % i == 0):
+                n //= i
+
+        return (n == 1)
 
 
 x = 0
