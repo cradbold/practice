@@ -104,7 +104,7 @@ class NumUtils:
         return num
     
     @staticmethod
-    def isUgly(n: int) -> bool:
+    def is_ugly(n: int) -> bool:
         pass
 
 
@@ -217,3 +217,20 @@ n = 0
 result = NumUtils.add_digits_until_single(n)
 print(f'add_digits_until_single({n}) = {result}')
 assert (result == 0)
+
+n = 0
+result = NumUtils.is_ugly(n)
+print(f'is_ugly({n}) = {result}')
+assert (result == False)
+n = 1
+result = NumUtils.is_ugly(n)
+print(f'is_ugly({n}) = {result}')
+assert (result == True)
+n = 6
+result = NumUtils.is_ugly(n)
+print(f'is_ugly({n}) = {result}')
+assert (result == True)
+n = 14
+result = NumUtils.is_ugly(n)
+print(f'is_ugly({n}) = {result}')
+assert (result == False)
