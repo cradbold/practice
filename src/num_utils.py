@@ -115,7 +115,8 @@ class NumUtils:
 
         return (n == 1)
     
-    def reverseBits(self, n: int) -> int:
+    @staticmethod
+    def reverse_32bit_n(n: int) -> int:
         pass
 
 
