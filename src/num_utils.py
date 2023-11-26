@@ -93,7 +93,7 @@ class NumUtils:
         return bin(n)[2] == "1" and bin(n).count("1") == 1
     
     @staticmethod
-    def add_digits(num: int) -> int:
+    def add_digits_until_single(num: int) -> int:
         pass
     
 
@@ -183,13 +183,26 @@ assert (result == False)
 
 n = 1
 result = NumUtils.is_power_of_two_opt(n)
-print(f'is_power_of_two({n}) = {result}')
+print(f'is_power_of_two_opt({n}) = {result}')
 assert (result == True)
 n = 16
 result = NumUtils.is_power_of_two_opt(n)
-print(f'is_power_of_two({n}) = {result}')
+print(f'is_power_of_two_opt({n}) = {result}')
 assert (result == True)
 n = 3
 result = NumUtils.is_power_of_two_opt(n)
-print(f'is_power_of_two({n}) = {result}')
+print(f'is_power_of_two_opt({n}) = {result}')
 assert (result == False)
+
+n = 38
+result = NumUtils.add_digits_until_single(n)
+print(f'add_digits_until_single({n}) = {result}')
+assert (result == 2)
+n = 1
+result = NumUtils.add_digits_until_single(n)
+print(f'add_digits_until_single({n}) = {result}')
+assert (result == 1)
+n = 0
+result = NumUtils.add_digits_until_single(n)
+print(f'add_digits_until_single({n}) = {result}')
+assert (result == 0)
