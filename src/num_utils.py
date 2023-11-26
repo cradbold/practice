@@ -117,7 +117,14 @@ class NumUtils:
     
     @staticmethod
     def reverse_32bit_n(n: int) -> int:
-        pass
+        sum = 0
+        bin_str = str(bin(n)[2:])
+        n_str_32b = ("0" * (32 - len(bin_str))) + bin_str
+
+        for i in range(len(n_str_32b) - 1, -1, -1):
+            sum += int(n_str_32b[i]) * (2 ** i)
+
+        return sum
 
 
 x = 0
