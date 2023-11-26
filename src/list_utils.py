@@ -284,6 +284,9 @@ class ListUtils:
                 ranges.append([n, n])
 
         return [f'{x}->{y}' if x != y else f'{x}' for x, y in ranges]
+    
+    def maxProfit(self, prices: List[int]) -> int:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
