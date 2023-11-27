@@ -191,7 +191,19 @@ class StringParsing:
     
     @staticmethod
     def is_palindrome(s: str) -> bool:
-        pass
+        al_num_str = StringParsing.remove_non_alnum(s)
+        li, ri = 0, len(al_num_str) - 1
+
+        while (li < ri):
+            left, right = al_num_str[li].lower(), al_num_str[ri].lower()
+
+            if (left != right):
+                return False
+
+            li += 1
+            ri -= 1
+
+        return True
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
