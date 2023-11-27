@@ -299,13 +299,11 @@ class ListUtils:
         return max_profit
 
     @staticmethod
-    def missing_number(nums: List[int]) -> int:
-        exp_nums = set(range(len(nums) + 1))
+    def missing_number_opt(nums: List[int]) -> int:
+        exp_nums_sum = len(nums) * (len(nums) + 1) // 2
+        nums_sum = sum(nums)
 
-        for n in nums:
-            exp_nums.remove(n)
-
-        return exp_nums.pop()
+        return exp_nums_sum - nums_sum
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -446,9 +444,9 @@ assert (result == 5)
 result = ListUtils.max_profit([7, 6, 4, 3, 1])
 assert (result == 0)
 
-result = ListUtils.missing_number([3, 0, 1])
+result = ListUtils.missing_number_opt([3, 0, 1])
 assert (result == 2)
-result = ListUtils.missing_number([0, 1])
+result = ListUtils.missing_number_opt([0, 1])
 assert (result == 2)
-result = ListUtils.missing_number([9, 6, 4, 2, 3, 5, 7, 0, 1])
+result = ListUtils.missing_number_opt([9, 6, 4, 2, 3, 5, 7, 0, 1])
 assert (result == 8)
