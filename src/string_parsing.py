@@ -182,6 +182,14 @@ class StringParsing:
         return True
     
     @staticmethod
+    def remove_non_alnum(s: str) -> str:
+        result = ""
+        for c in s:
+            if (c.isalnum()):
+                result += c
+        return result
+    
+    @staticmethod
     def is_palindrome(s: str) -> bool:
         pass
 
@@ -225,6 +233,11 @@ assert_string_parsing(StringParsing.add_binary_str, ["10", "11"], "101")
 assert_string_parsing(StringParsing.is_anagram, ["anagram", "nagaram"], True)
 assert_string_parsing(StringParsing.is_anagram, ["rat", "car"], False)
 assert_string_parsing(StringParsing.is_anagram, ["scarab", "cbrass"], False)
+
+assert_string_parsing(StringParsing.remove_non_alnum, ["A man, a plan, a canal: Panama"], "AmanaplanacanalPanama")
+assert_string_parsing(StringParsing.remove_non_alnum, ["race a car"], "raceacar")
+assert_string_parsing(StringParsing.remove_non_alnum, [" "], "")
+assert_string_parsing(StringParsing.remove_non_alnum, [";:"], "")
 
 assert_string_parsing(StringParsing.is_palindrome, ["A man, a plan, a canal: Panama"], True)
 assert_string_parsing(StringParsing.is_palindrome, ["race a car"], False)
