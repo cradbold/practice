@@ -182,7 +182,7 @@ class StringParsing:
         return True
     
     @staticmethod
-    def is_oalindrome(s: str) -> bool:
+    def is_palindrome(s: str) -> bool:
         pass
 
 
@@ -225,3 +225,7 @@ assert_string_parsing(StringParsing.add_binary_str, ["10", "11"], "101")
 assert_string_parsing(StringParsing.is_anagram, ["anagram", "nagaram"], True)
 assert_string_parsing(StringParsing.is_anagram, ["rat", "car"], False)
 assert_string_parsing(StringParsing.is_anagram, ["scarab", "cbrass"], False)
+
+assert_string_parsing(StringParsing.is_palindrome, ["A man, a plan, a canal: Panama"], True)
+assert_string_parsing(StringParsing.is_palindrome, ["race a car"], False)
+assert_string_parsing(StringParsing.is_palindrome, [" "], True)
