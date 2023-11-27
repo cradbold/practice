@@ -300,7 +300,12 @@ class ListUtils:
 
     @staticmethod
     def missing_number(nums: List[int]) -> int:
-        pass
+        exp_nums = set(range(len(nums) + 1))
+
+        for n in nums:
+            exp_nums.remove(n)
+
+        return exp_nums.pop()
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
