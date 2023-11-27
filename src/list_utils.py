@@ -304,6 +304,9 @@ class ListUtils:
         nums_sum = sum(nums)
 
         return exp_nums_sum - nums_sum
+    
+    def moveZeroes(self, nums: List[int]) -> None:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
