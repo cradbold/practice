@@ -298,6 +298,9 @@ class ListUtils:
         
         return max_profit
 
+    def missingNumber(self, nums: List[int]) -> int:
+        pass
+
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
