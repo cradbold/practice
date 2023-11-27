@@ -180,6 +180,9 @@ class StringParsing:
                 return False
             
         return True
+    
+    def isPalindrome(self, s: str) -> bool:
+        pass
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
