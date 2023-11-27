@@ -190,18 +190,21 @@ class StringParsing:
         return result
     
     @staticmethod
-    def is_palindrome(s: str) -> bool:
-        al_num_str = StringParsing.remove_non_alnum(s)
-        li, ri = 0, len(al_num_str) - 1
+    def is_palindrome_opt(s: str) -> bool:
+        li, ri = 0, len(s) - 1
 
         while (li < ri):
-            left, right = al_num_str[li].lower(), al_num_str[ri].lower()
+            left, right = s[li].lower(), s[ri].lower()
 
-            if (left != right):
+            if (not left.isalnum()):
+                li += 1
+            elif (not right.isalnum()):
+                ri -= 1
+            elif (left != right):
                 return False
-
-            li += 1
-            ri -= 1
+            else:
+                li += 1
+                ri -= 1
 
         return True
 
@@ -251,6 +254,6 @@ assert_string_parsing(StringParsing.remove_non_alnum, ["race a car"], "raceacar"
 assert_string_parsing(StringParsing.remove_non_alnum, [" "], "")
 assert_string_parsing(StringParsing.remove_non_alnum, [";:"], "")
 
-assert_string_parsing(StringParsing.is_palindrome, ["A man, a plan, a canal: Panama"], True)
-assert_string_parsing(StringParsing.is_palindrome, ["race a car"], False)
-assert_string_parsing(StringParsing.is_palindrome, [" "], True)
+assert_string_parsing(StringParsing.is_palindrome_opt, ["A man, a plan, a canal: Panama"], True)
+assert_string_parsing(StringParsing.is_palindrome_opt, ["race a car"], False)
+assert_string_parsing(StringParsing.is_palindrome_opt, [" "], True)
