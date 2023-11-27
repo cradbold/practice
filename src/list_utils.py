@@ -305,7 +305,8 @@ class ListUtils:
 
         return exp_nums_sum - nums_sum
     
-    def moveZeroes(self, nums: List[int]) -> None:
+    @staticmethod
+    def move_zeroes(nums: List[int]) -> None:
         pass
 
 
