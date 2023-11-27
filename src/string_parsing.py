@@ -181,7 +181,8 @@ class StringParsing:
             
         return True
     
-    def isPalindrome(self, s: str) -> bool:
+    @staticmethod
+    def is_oalindrome(s: str) -> bool:
         pass
 
 
