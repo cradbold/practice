@@ -298,7 +298,8 @@ class ListUtils:
         
         return max_profit
 
-    def missingNumber(self, nums: List[int]) -> int:
+    @staticmethod
+    def missing_number(nums: List[int]) -> int:
         pass
 
 
