@@ -222,18 +222,18 @@ class StringParsing:
         while (li < ri):
             ll, rl = sa[li], sa[ri]
 
+            if (not StringParsing.is_vowel(ll)):
+                li += 1
+                continue
+
+            if (not StringParsing.is_vowel(rl)):
+                ri -= 1
+                continue
+
             if (StringParsing.is_vowel(ll) and StringParsing.is_vowel(rl)):
                 sa[li], sa[ri] = sa[ri], sa[li]
                 li += 1
-                ri -= 1
-            else:
-                while (li < ri and not StringParsing.is_vowel(ll)):
-                    li += 1
-                    ll = sa[li]
-                
-                while (li < ri and not StringParsing.is_vowel(rl)):
-                    ri -= 1
-                    rl = sa[ri]
+                ri -= 1    
 
         return "".join(sa)
 
