@@ -307,7 +307,25 @@ class ListUtils:
     
     @staticmethod
     def move_zeroes(nums: List[int]) -> None:
-        pass
+
+        if (not len(nums)):
+            return
+
+        i = 0
+        while i < len(nums):
+
+            if (nums[i] == 0):
+                swap_i = i + 1
+                
+                while (swap_i < len(nums) and nums[swap_i] == 0):
+                    swap_i += 1
+
+                if (swap_i < len(nums)):
+                    temp = nums[swap_i]
+                    nums[swap_i] = nums[i]
+                    nums[i] = temp
+
+            i += 1
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -455,9 +473,12 @@ assert (result == 2)
 result = ListUtils.missing_number_opt([9, 6, 4, 2, 3, 5, 7, 0, 1])
 assert (result == 8)
 
-result = ListUtils.move_zeroes([0, 1, 0, 3, 12])
-assert (result == [0, 1, 0, 3, 12])
-result = ListUtils.move_zeroes([0])
-assert (result == [0])
-result = ListUtils.move_zeroes([0, 1, 2, 0, 0, 3, 4])
-assert (result == [1, 2, 3, 4, 0, 0, 0])
+nums = [0, 1, 0, 3, 12]
+ListUtils.move_zeroes(nums)
+assert (nums == [1, 3, 12, 0, 0])
+nums = [0]
+ListUtils.move_zeroes(nums)
+assert (nums == [0])
+nums = [0, 1, 2, 0, 0, 3, 4]
+ListUtils.move_zeroes(nums)
+assert (nums == [1, 2, 3, 4, 0, 0, 0])
