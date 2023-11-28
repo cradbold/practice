@@ -533,9 +533,9 @@ nums = [0, 1, 2, 0, 0, 3, 4]
 ListUtils.move_zeroes_opt(nums)
 assert (nums == [1, 2, 3, 4, 0, 0, 0])
 
-result = ListUtils.has_word_pattern(["abba", "dog cat cat dog"])
+result = ListUtils.has_word_pattern("abba", "dog cat cat dog")
 assert (result == True)
-result = ListUtils.has_word_pattern(["abba", "dog cat cat fish"])
+result = ListUtils.has_word_pattern("abba", "dog cat cat fish")
 assert (result == False)
-result = ListUtils.has_word_pattern(["aaaa", "dog cat cat dog"])
+result = ListUtils.has_word_pattern("aaaa", "dog cat cat dog")
 assert (result == False)
