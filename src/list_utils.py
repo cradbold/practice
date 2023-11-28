@@ -321,9 +321,7 @@ class ListUtils:
                     swap_i += 1
 
                 if (swap_i < len(nums)):
-                    temp = nums[swap_i]
-                    nums[swap_i] = nums[i]
-                    nums[i] = temp
+                    nums[i], nums[swap_i] = nums[swap_i], nums[i]
 
             i += 1
 
