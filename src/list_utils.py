@@ -331,10 +331,12 @@ class ListUtils:
         for i in range(1, len(nums)):
             if (nums[i] != 0 and nums[swap_i] == 0):
                 nums[i], nums[swap_i] = nums[swap_i], nums[i]
-                swap_i += 1
 
             if (nums[swap_i] != 0):
                 swap_i += 1
+
+    def wordPattern(self, pattern: str, s: str) -> bool:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
