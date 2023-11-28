@@ -335,7 +335,8 @@ class ListUtils:
             if (nums[swap_i] != 0):
                 swap_i += 1
 
-    def wordPattern(self, pattern: str, s: str) -> bool:
+    @staticmethod
+    def has_word_pattern(pattern: str, s: str) -> bool:
         pass
 
 
