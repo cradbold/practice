@@ -268,3 +268,20 @@ n = 4294967293
 result = NumUtils.reverse_32bit_n(n)
 print(f'reverse_32bit_n({n}) = {result}')
 assert (result == 3221225471)
+
+n = -21
+result = NumUtils.is_power_of_three(n)
+print(f'is_power_of_three({n}) = {result}')
+assert (result == False)
+n = 21
+result = NumUtils.is_power_of_three(n)
+print(f'is_power_of_three({n}) = {result}')
+assert (result == True)
+n = 0
+result = NumUtils.is_power_of_three(n)
+print(f'is_power_of_three({n}) = {result}')
+assert (result == False)
+n = 243
+result = NumUtils.is_power_of_three(n)
+print(f'is_power_of_three({n}) = {result}')
+assert (result == True)
