@@ -215,27 +215,20 @@ class StringParsing:
     
     @staticmethod
     def reverse_vowels(s: str) -> str:
-        sa = [*s]
+        result = ""
+        vowels = []
 
-        li, ri = 0, len(s) - 1
+        for c in s:
+            if (StringParsing.is_vowel(c)):
+                vowels.append(c)
 
-        while (li < ri):
-            ll, rl = sa[li], sa[ri]
+        for c in s:
+            if (StringParsing.is_vowel(c)):
+                result += vowels.pop()
+            else:
+                result += c
 
-            if (not StringParsing.is_vowel(ll)):
-                li += 1
-                continue
-
-            if (not StringParsing.is_vowel(rl)):
-                ri -= 1
-                continue
-
-            if (StringParsing.is_vowel(ll) and StringParsing.is_vowel(rl)):
-                sa[li], sa[ri] = sa[ri], sa[li]
-                li += 1
-                ri -= 1    
-
-        return "".join(sa)
+        return result
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
