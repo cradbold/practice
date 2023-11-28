@@ -1,5 +1,6 @@
 from typing import Optional, Callable, List, Any
 from collections import deque
+from collections.abc import Iterable
 import math
 
 class ListNode:
@@ -337,35 +338,27 @@ class ListUtils:
 
     @staticmethod
     def has_word_pattern(pattern: str, s: str) -> bool:
-        
-        word_keys = {}
-        word_patterns = [] 
-        letter_ascii = ord('a')
-        words = s.split()
-        for word in words:
-            if (word in word_keys.keys()):
-                letter = word_keys[word]
-                word_patterns.append(letter)
-            else:
-                letter = chr(letter_ascii)
-                word_keys[word] = letter
-                word_patterns.append(letter)
-                letter_ascii += 1
 
-        letter_keys = {}
-        letter_patterns = [] 
-        letter_ascii = ord('a')
-        for letter in pattern:
-            if (letter in letter_keys.keys()):
-                l = letter_keys[letter]
-                letter_patterns.append(l)
-            else:
-                l = chr(letter_ascii)
-                letter_keys[letter] = l
-                letter_patterns.append(l)
-                letter_ascii += 1
+        def create_pattern(s: Iterable[str] | str) -> List[str]:
+            pattern = []
+    
+            keys = {}
+            letter_ascii = ord('a')
+            for c in s:
+                if (c in keys):
+                    letter = keys[c]
+                    pattern.append(letter)
+                else:
+                    letter = chr(letter_ascii)
+                    keys[c] = letter
+                    pattern.append(letter)
+                    letter_ascii += 1
+            return pattern
 
-        return (word_patterns == letter_patterns)
+        word_pattern = create_pattern(s.split())
+        letter_pattern = create_pattern(pattern)
+
+        return (word_pattern == letter_pattern)
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -535,6 +528,8 @@ assert (nums == [1, 2, 3, 4, 0, 0, 0])
 
 result = ListUtils.has_word_pattern("abba", "dog cat cat dog")
 assert (result == True)
+result = ListUtils.has_word_pattern("abba", "dog cat cat dog dog")
+assert (result == False)
 result = ListUtils.has_word_pattern("abba", "dog cat cat fish")
 assert (result == False)
 result = ListUtils.has_word_pattern("aaaa", "dog cat cat dog")
