@@ -209,6 +209,11 @@ class StringParsing:
         return True
     
     @staticmethod
+    def is_vowel(s: str) -> bool:
+        vowels = ['a', 'e', 'i', 'o', 'u']
+        return s.lower() in vowels
+    
+    @staticmethod
     def reverse_vowels(s: str) -> str:
         pass
 
