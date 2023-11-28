@@ -208,7 +208,8 @@ class StringParsing:
 
         return True
     
-    def reverseVowels(self, s: str) -> str:
+    @staticmethod
+    def reverse_vowels(s: str) -> str:
         pass
 
 
