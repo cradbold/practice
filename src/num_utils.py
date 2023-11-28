@@ -126,6 +126,9 @@ class NumUtils:
 
         return sum
 
+    def isPowerOfThree(self, n: int) -> bool:
+        pass
+
 
 x = 0
 result = NumUtils.my_sqrt(x)
