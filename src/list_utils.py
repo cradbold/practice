@@ -337,7 +337,35 @@ class ListUtils:
 
     @staticmethod
     def has_word_pattern(pattern: str, s: str) -> bool:
-        pass
+        
+        word_keys = {}
+        word_patterns = [] 
+        letter_ascii = ord('a')
+        words = s.split()
+        for word in words:
+            if (word in word_keys.keys()):
+                letter = word_keys[word]
+                word_patterns.append(letter)
+            else:
+                letter = chr(letter_ascii)
+                word_keys[word] = letter
+                word_patterns.append(letter)
+                letter_ascii += 1
+
+        letter_keys = {}
+        letter_patterns = [] 
+        letter_ascii = ord('a')
+        for letter in pattern:
+            if (letter in letter_keys.keys()):
+                l = letter_keys[letter]
+                letter_patterns.append(l)
+            else:
+                l = chr(letter_ascii)
+                letter_keys[letter] = l
+                letter_patterns.append(l)
+                letter_ascii += 1
+
+        return (word_patterns == letter_patterns)
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
