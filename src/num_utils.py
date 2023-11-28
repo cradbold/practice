@@ -1,4 +1,4 @@
-from math import floor
+from math import log
 
 class NumUtils:
 
@@ -128,7 +128,11 @@ class NumUtils:
 
     @staticmethod
     def is_power_of_three(n: int) -> bool:
-        pass
+        if (n < 1):
+            return False
+        else:
+            power = round(log(n, 3))
+            return (3 ** power) == n
 
 
 x = 0
@@ -269,11 +273,11 @@ result = NumUtils.reverse_32bit_n(n)
 print(f'reverse_32bit_n({n}) = {result}')
 assert (result == 3221225471)
 
-n = -21
+n = -27
 result = NumUtils.is_power_of_three(n)
 print(f'is_power_of_three({n}) = {result}')
 assert (result == False)
-n = 21
+n = 27
 result = NumUtils.is_power_of_three(n)
 print(f'is_power_of_three({n}) = {result}')
 assert (result == True)
