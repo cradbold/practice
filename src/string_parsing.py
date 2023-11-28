@@ -261,3 +261,6 @@ assert_string_parsing(StringParsing.remove_non_alnum, [";:"], "")
 assert_string_parsing(StringParsing.is_palindrome_opt, ["A man, a plan, a canal: Panama"], True)
 assert_string_parsing(StringParsing.is_palindrome_opt, ["race a car"], False)
 assert_string_parsing(StringParsing.is_palindrome_opt, [" "], True)
+
+assert_string_parsing(StringParsing.reverse_vowels, ["hello"], "holle")
+assert_string_parsing(StringParsing.reverse_vowels, ["leetcode"], "leotcede")
