@@ -126,7 +126,8 @@ class NumUtils:
 
         return sum
 
-    def isPowerOfThree(self, n: int) -> bool:
+    @staticmethod
+    def is_power_of_three(n: int) -> bool:
         pass
 
 
