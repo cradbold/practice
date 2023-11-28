@@ -207,6 +207,9 @@ class StringParsing:
                 ri -= 1
 
         return True
+    
+    def reverseVowels(self, s: str) -> str:
+        pass
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
