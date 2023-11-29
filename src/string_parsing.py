@@ -229,6 +229,26 @@ class StringParsing:
                 result += c
 
         return result
+    
+    @staticmethod
+    def reverse_vowels(s: str) -> str:
+        result = ""
+        vowels = []
+
+        for c in s:
+            if (StringParsing.is_vowel(c)):
+                vowels.append(c)
+
+        for c in s:
+            if (StringParsing.is_vowel(c)):
+                result += vowels.pop()
+            else:
+                result += c
+
+        return result
+    
+    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+        pass
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
