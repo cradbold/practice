@@ -362,7 +362,21 @@ class ListUtils:
     
     @staticmethod
     def max_intersect(nums1: List[int], nums2: List[int]) -> List[int]:
-        return []
+        result = []
+
+        def count_nums(d: dict, nums: List[int]) -> dict:
+            for n in nums:
+                if (n in d):
+                    d[n] += 1
+                else:
+                    d[n] = 1
+            return d
+
+
+        n1_counts = count_nums({}, nums1)
+        n2_counts = count_nums({}, nums2)
+
+        return result
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
