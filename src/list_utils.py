@@ -365,16 +365,21 @@ class ListUtils:
         result = []
 
         def count_nums(d: dict, nums: List[int]) -> dict:
-            for n in nums:
-                if (n in d):
-                    d[n] += 1
+            for num in nums:
+                if (num in d):
+                    d[num] += 1
                 else:
-                    d[n] = 1
+                    d[num] = 1
             return d
 
 
         n1_counts = count_nums({}, nums1)
         n2_counts = count_nums({}, nums2)
+
+        for num in n1_counts:
+            if (num in n2_counts):
+                for _ in range(min(n1_counts[num], n2_counts[num])):
+                    result.append(num)
 
         return result
 
@@ -554,6 +559,8 @@ result = ListUtils.has_word_pattern("aaaa", "dog cat cat dog")
 assert (result == False)
 
 result = ListUtils.max_intersect([1, 2, 2, 1], [2, 2])
-assert (result.sort() == [2, 2])
+result.sort()
+assert (result == [2, 2])
 result = ListUtils.max_intersect([4, 9, 5], [9, 4, 9, 8, 4])
-assert (result.sort() == [4, 9])
+result.sort()
+assert (result == [4, 9])
