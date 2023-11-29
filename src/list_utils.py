@@ -362,7 +362,7 @@ class ListUtils:
     
     @staticmethod
     def max_intersect(nums1: List[int], nums2: List[int]) -> List[int]:
-        pass
+        return []
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -538,3 +538,8 @@ result = ListUtils.has_word_pattern("abba", "dog cat cat fish")
 assert (result == False)
 result = ListUtils.has_word_pattern("aaaa", "dog cat cat dog")
 assert (result == False)
+
+result = ListUtils.max_intersect([1, 2, 2, 1], [2, 2])
+assert (result.sort() == [2, 2])
+result = ListUtils.max_intersect([4, 9, 5], [9, 4, 9, 8, 4])
+assert (result.sort() == [4, 9])
