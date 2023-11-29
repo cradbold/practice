@@ -247,7 +247,8 @@ class StringParsing:
 
         return result
     
-    def canConstruct(self, ransomNote: str, magazine: str) -> bool:
+    @staticmethod
+    def canConstruct(ransomNote: str, magazine: str) -> bool:
         pass
 
 
