@@ -360,7 +360,8 @@ class ListUtils:
 
         return (word_pattern == letter_pattern)
     
-    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+    @staticmethod
+    def max_intersect(nums1: List[int], nums2: List[int]) -> List[int]:
         pass
 
 
