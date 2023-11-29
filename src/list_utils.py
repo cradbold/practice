@@ -359,6 +359,9 @@ class ListUtils:
         letter_pattern = create_pattern(pattern)
 
         return (word_pattern == letter_pattern)
+    
+    def intersect(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
