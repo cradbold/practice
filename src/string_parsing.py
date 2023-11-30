@@ -258,6 +258,9 @@ class StringParsing:
                 magazine = magazine.replace(letter, '_', 1)
 
         return True
+    
+    def firstUniqChar(self, s: str) -> int:
+        pass
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
