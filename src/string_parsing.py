@@ -274,6 +274,9 @@ class StringParsing:
                 return index
             
         return -1
+
+    def findTheDifference(self, s: str, t: str) -> str:
+        pass
     
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
