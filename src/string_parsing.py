@@ -261,8 +261,20 @@ class StringParsing:
     
     @staticmethod
     def first_uniq_char(s: str) -> int:
-        pass
+        unique_chars = {}
 
+        for i, letter in enumerate(s):
+            if (letter in unique_chars):
+                unique_chars[letter] = -1
+            else:
+                unique_chars[letter] = i
+
+        for index in unique_chars.values():
+            if (index >= 0):
+                return index
+            
+        return -1
+    
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
