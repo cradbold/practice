@@ -249,22 +249,14 @@ class StringParsing:
     
     @staticmethod
     def can_construct_ransom_note(ransom_note: str, magazine: str) -> bool:
-        mag_map = {}
-        for letter in magazine:
-            if (letter in mag_map):
-                mag_map[letter] += 1
-            else:
-                mag_map[letter] = 1
-
+        
         for letter in ransom_note:
-            if (letter in mag_map):
-                if (mag_map[letter] == 0):
-                    return False
-                else:
-                    mag_map[letter] -= 1
-            else:
+            mag_i = magazine.find(letter)
+            if (mag_i == -1):
                 return False
-            
+            else:
+                magazine = magazine.replace(letter, '_', 1)
+
         return True
 
 
