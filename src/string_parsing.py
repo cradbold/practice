@@ -248,8 +248,24 @@ class StringParsing:
         return result
     
     @staticmethod
-    def can_construct_ransom_note(ransomNote: str, magazine: str) -> bool:
-        pass
+    def can_construct_ransom_note(ransom_note: str, magazine: str) -> bool:
+        mag_map = {}
+        for letter in magazine:
+            if (letter in mag_map):
+                mag_map[letter] += 1
+            else:
+                mag_map[letter] = 1
+
+        for letter in ransom_note:
+            if (letter in mag_map):
+                if (mag_map[letter] == 0):
+                    return False
+                else:
+                    mag_map[letter] -= 1
+            else:
+                return False
+            
+        return True
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
