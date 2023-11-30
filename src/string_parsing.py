@@ -275,7 +275,8 @@ class StringParsing:
             
         return -1
 
-    def findTheDifference(self, s: str, t: str) -> str:
+    @staticmethod
+    def find_the_diff_letter(s: str, t: str) -> str:
         pass
     
 
@@ -334,6 +335,10 @@ assert_string_parsing(StringParsing.reverse_vowels, ["leetcode"], "leotcede")
 assert_string_parsing(StringParsing.can_construct_ransom_note, ["a", "b"], False)
 assert_string_parsing(StringParsing.can_construct_ransom_note, ["aa", "ab"], False)
 assert_string_parsing(StringParsing.can_construct_ransom_note, ["aa", "aab"], True)
+
+assert_string_parsing(StringParsing.first_uniq_char, ["leetcode"], 0)
+assert_string_parsing(StringParsing.first_uniq_char, ["loveleetcode"], 2)
+assert_string_parsing(StringParsing.first_uniq_char, ["aabb"], -1)
 
 assert_string_parsing(StringParsing.first_uniq_char, ["leetcode"], 0)
 assert_string_parsing(StringParsing.first_uniq_char, ["loveleetcode"], 2)
