@@ -303,3 +303,7 @@ assert_string_parsing(StringParsing.is_palindrome_opt, [" "], True)
 
 assert_string_parsing(StringParsing.reverse_vowels, ["hello"], "holle")
 assert_string_parsing(StringParsing.reverse_vowels, ["leetcode"], "leotcede")
+
+assert_string_parsing(StringParsing.can_construct_ransom_note, ["a", "b"], False)
+assert_string_parsing(StringParsing.can_construct_ransom_note, ["aa", "ab"], False)
+assert_string_parsing(StringParsing.can_construct_ransom_note, ["aa", "aab"], True)
