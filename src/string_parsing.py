@@ -259,7 +259,8 @@ class StringParsing:
 
         return True
     
-    def firstUniqChar(self, s: str) -> int:
+    @staticmethod
+    def first_uniq_char(s: str) -> int:
         pass
 
 
