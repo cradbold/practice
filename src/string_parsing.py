@@ -368,3 +368,7 @@ assert_string_parsing(StringParsing.find_the_diff_letter, ["asdf", "asdff"], "f"
 assert_string_parsing(StringParsing.is_subsequence, ["abc", "ahbgdc"], True)
 assert_string_parsing(StringParsing.is_subsequence, ["axc", "ahbgdc"], False)
 assert_string_parsing(StringParsing.is_subsequence, ["aba", "ahcagbacb"], True)
+
+assert_string_parsing(StringParsing.read_binary_watch, [1], ["0:01", "0:02", "0:04", "0:08", "0:16", "0:32", "1:00", "2:00", "4:00", "8:00"])
+assert_string_parsing(StringParsing.read_binary_watch, [9], [])
+assert_string_parsing(StringParsing.read_binary_watch, [2], [])
