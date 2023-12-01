@@ -287,6 +287,9 @@ class StringParsing:
 
         return chr(abs(ascii_sum))
     
+    def isSubsequence(self, s: str, t: str) -> bool:
+        pass
+    
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
