@@ -287,7 +287,8 @@ class StringParsing:
 
         return chr(abs(ascii_sum))
     
-    def isSubsequence(self, s: str, t: str) -> bool:
+    @staticmethod
+    def is_subsequence(s: str, t: str) -> bool:
         pass
     
 
@@ -350,6 +351,10 @@ assert_string_parsing(StringParsing.can_construct_ransom_note, ["aa", "aab"], Tr
 assert_string_parsing(StringParsing.first_uniq_char, ["leetcode"], 0)
 assert_string_parsing(StringParsing.first_uniq_char, ["loveleetcode"], 2)
 assert_string_parsing(StringParsing.first_uniq_char, ["aabb"], -1)
+
+assert_string_parsing(StringParsing.find_the_diff_letter, ["abcd", "abcde"], "e")
+assert_string_parsing(StringParsing.find_the_diff_letter, ["", "y"], "y")
+assert_string_parsing(StringParsing.find_the_diff_letter, ["asdf", "asdff"], "f")
 
 assert_string_parsing(StringParsing.find_the_diff_letter, ["abcd", "abcde"], "e")
 assert_string_parsing(StringParsing.find_the_diff_letter, ["", "y"], "y")
