@@ -277,7 +277,15 @@ class StringParsing:
 
     @staticmethod
     def find_the_diff_letter(s: str, t: str) -> str:
-        pass
+        ascii_sum = 0
+
+        for c in s:
+            ascii_sum += ord(c)
+
+        for c in t:
+            ascii_sum -= ord(c)
+
+        return chr(abs(ascii_sum))
     
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
