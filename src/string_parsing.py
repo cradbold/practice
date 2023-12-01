@@ -356,6 +356,5 @@ assert_string_parsing(StringParsing.find_the_diff_letter, ["abcd", "abcde"], "e"
 assert_string_parsing(StringParsing.find_the_diff_letter, ["", "y"], "y")
 assert_string_parsing(StringParsing.find_the_diff_letter, ["asdf", "asdff"], "f")
 
-assert_string_parsing(StringParsing.find_the_diff_letter, ["abcd", "abcde"], "e")
-assert_string_parsing(StringParsing.find_the_diff_letter, ["", "y"], "y")
-assert_string_parsing(StringParsing.find_the_diff_letter, ["asdf", "asdff"], "f")
+assert_string_parsing(StringParsing.is_subsequence, ["abc", "ahbgdc"], True)
+assert_string_parsing(StringParsing.is_subsequence, ["axc", "ahbgdc"], False)
