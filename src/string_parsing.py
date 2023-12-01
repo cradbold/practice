@@ -289,11 +289,12 @@ class StringParsing:
     
     @staticmethod
     def is_subsequence(s: str, t: str) -> bool:
+        si = 0
         for c in t:
-            if (len(s) > 0 and c == s[0]):
-                s = s[1:]
+            if (si < len(s) and c == s[si]):
+                si += 1
 
-        return s == ""
+        return si == len(s)
     
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
