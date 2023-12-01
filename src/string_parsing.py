@@ -296,7 +296,8 @@ class StringParsing:
 
         return si == len(s)
     
-    def readBinaryWatch(self, turnedOn: int) -> List[str]:
+    @staticmethod
+    def read_binary_watch(bin_nums_turned_on: int) -> List[str]:
         pass
     
 
