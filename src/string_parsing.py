@@ -289,7 +289,11 @@ class StringParsing:
     
     @staticmethod
     def is_subsequence(s: str, t: str) -> bool:
-        pass
+        for c in t:
+            if (len(s) > 0 and c == s[0]):
+                s = s[1:]
+
+        return s == ""
     
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
@@ -358,3 +362,4 @@ assert_string_parsing(StringParsing.find_the_diff_letter, ["asdf", "asdff"], "f"
 
 assert_string_parsing(StringParsing.is_subsequence, ["abc", "ahbgdc"], True)
 assert_string_parsing(StringParsing.is_subsequence, ["axc", "ahbgdc"], False)
+assert_string_parsing(StringParsing.is_subsequence, ["aba", "ahcagbacb"], True)
