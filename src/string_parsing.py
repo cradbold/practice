@@ -298,7 +298,34 @@ class StringParsing:
     
     @staticmethod
     def read_binary_watch(bin_nums_turned_on: int) -> List[str]:
-        pass
+        nums_with_n_bin_ones = []
+
+        def count_ones(num_str: str) -> int:
+            ones_count = 0
+            padded_num_str = pad_with_zeros(num_str, 4)
+            hr_str = padded_num_str[:2]
+            mn_str = padded_num_str[2:]
+            bin_num_str = str(bin(int(hr_str))[2:]) + str(bin(int(mn_str))[2:])
+            for bit in bin_num_str:
+                if (bit == '1'):
+                    ones_count += 1
+            if (len(hr_str) > 1 and hr_str.startswith('0')):
+                hr_str = hr_str[1:]
+            return (ones_count, f'{hr_str}:{mn_str}')
+
+        def pad_with_zeros(num_str: str, length: int) -> str:
+            if (len(num_str) < length):
+                num_str = num_str.zfill(length)
+            return num_str
+
+        for i in range(1200):
+            if (i % 100 < 60):
+                time_str = str(i)
+                ones_count, formatted_time_str = count_ones(time_str)
+                if (ones_count == bin_nums_turned_on):
+                    nums_with_n_bin_ones.append(formatted_time_str)
+
+        return nums_with_n_bin_ones
     
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
@@ -371,4 +398,4 @@ assert_string_parsing(StringParsing.is_subsequence, ["aba", "ahcagbacb"], True)
 
 assert_string_parsing(StringParsing.read_binary_watch, [1], ["0:01", "0:02", "0:04", "0:08", "0:16", "0:32", "1:00", "2:00", "4:00", "8:00"])
 assert_string_parsing(StringParsing.read_binary_watch, [9], [])
-assert_string_parsing(StringParsing.read_binary_watch, [2], [])
+assert_string_parsing(StringParsing.read_binary_watch, [2], ['0:03', '0:05', '0:06', '0:09', '0:10', '0:12', '0:17', '0:18', '0:20', '0:24', '0:33', '0:34', '0:36', '0:40', '0:48', '1:01', '1:02', '1:04', '1:08', '1:16', '1:32', '2:01', '2:02', '2:04', '2:08', '2:16', '2:32', '3:00', '4:01', '4:02', '4:04', '4:08', '4:16', '4:32', '5:00', '6:00', '8:01', '8:02', '8:04', '8:08', '8:16', '8:32', '9:00', '10:00'])
