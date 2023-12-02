@@ -69,7 +69,7 @@ class TreeUtils:
         return TreeNode(nums[mid_point], TreeUtils.sorted_array_to_bst(nums[:mid_point]), TreeUtils.sorted_array_to_bst(nums[mid_point + 1:]))
 
     @staticmethod
-    def sum_left_leaves(root: Optional[TreeNode]) -> int:
+    def sum_left_leaves_iter(root: Optional[TreeNode]) -> int:
         return root
 
 
