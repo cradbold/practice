@@ -185,4 +185,33 @@ result = TreeUtils.sorted_array_to_bst([1, 3])
 # print(result)
 # assert (result == 3)
 
-
+tn1 = TreeNode(1)
+tn2 = TreeNode(2)
+tn3 = TreeNode(3)
+tn4 = TreeNode(4)
+tn5 = TreeNode(5)
+tn1.left = tn2
+tn1.right = tn3
+tn3.left = tn4
+tn3.right = tn5
+result = TreeUtils.sum_left_leaves_iter(tn1)
+print(f'iter result: {result}')
+assert (result == 6)
+result = TreeUtils.sum_left_leaves_rec(tn1)
+print(f'rec result: {result}')
+assert (result == 6)
+tn1.left = tn5
+tn3.right = None
+result = TreeUtils.sum_left_leaves_iter(tn1)
+print(f'iter result: {result}')
+assert (result == 9)
+result = TreeUtils.sum_left_leaves_rec(tn1)
+print(f'rec result: {result}')
+assert (result == 9)
+tn5.right = tn2
+result = TreeUtils.sum_left_leaves_iter(tn1)
+print(f'iter result: {result}')
+assert (result == 4)
+result = TreeUtils.sum_left_leaves_rec(tn1)
+print(f'rec result: {result}')
+assert (result == 4)
