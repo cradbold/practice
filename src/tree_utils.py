@@ -84,6 +84,22 @@ class TreeUtils:
             root = root.right
 
         return left_sum
+    
+    @staticmethod
+    def sum_left_leaves_rec(root: Optional[TreeNode]) -> int:
+        left_sum = 0
+
+        if (root.left):
+            if (not root.left.left and not root.left.right):
+                left_sum += root.left.val
+            else:
+                TreeUtils.sum_left_leaves_rec(root.right)
+
+        if (root.right):
+            left_sum += TreeUtils.sum_left_leaves_rec(root.right)
+
+        return left_sum
+
 
 tn1 = TreeNode(1)
 tn2 = TreeNode(2)
