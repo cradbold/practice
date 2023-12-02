@@ -211,23 +211,17 @@ tn1.right = tn3
 tn3.left = tn4
 tn3.right = tn5
 result = TreeUtils.sum_left_leaves_iter(tn1)
-print(f'iter result: {result}')
 assert (result == 6)
 result = TreeUtils.sum_left_leaves_rec(tn1)
-print(f'rec result: {result}')
 assert (result == 6)
 tn1.left = tn5
 tn3.right = None
 result = TreeUtils.sum_left_leaves_iter(tn1)
-print(f'iter result: {result}')
 assert (result == 9)
 result = TreeUtils.sum_left_leaves_rec(tn1)
-print(f'rec result: {result}')
 assert (result == 9)
 tn5.right = tn2
 result = TreeUtils.sum_left_leaves_iter(tn1)
-print(f'iter result: {result}')
 assert (result == 4)
 result = TreeUtils.sum_left_leaves_rec(tn1)
-print(f'rec result: {result}')
 assert (result == 4)
