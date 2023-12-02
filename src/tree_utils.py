@@ -68,6 +68,9 @@ class TreeUtils:
         mid_point = total_nums // 2
         return TreeNode(nums[mid_point], TreeUtils.sorted_array_to_bst(nums[:mid_point]), TreeUtils.sorted_array_to_bst(nums[mid_point + 1:]))
 
+    def sumOfLeftLeaves(self, root: Optional[TreeNode]) -> int:
+        return root
+
 
 tn1 = TreeNode(1)
 tn2 = TreeNode(2)
