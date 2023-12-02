@@ -70,7 +70,15 @@ class TreeUtils:
 
     @staticmethod
     def sum_left_leaves_iter(root: Optional[TreeNode]) -> int:
-        return root
+        subtrees = []
+
+        while (root or subtrees):
+            while (root):
+                subtrees.append(root)
+                root = root.left
+            
+            root = subtrees.pop()
+            root = root.right
 
 
 tn1 = TreeNode(1)
@@ -172,3 +180,4 @@ result = TreeUtils.sorted_array_to_bst([-10, -3, 0, 5, 9])
 result = TreeUtils.sorted_array_to_bst([1, 3])
 # print(result)
 # assert (result == 3)
+
