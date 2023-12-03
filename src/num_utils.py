@@ -136,7 +136,21 @@ class NumUtils:
         
     @staticmethod
     def to_hex(num: int) -> str:
-        return str(num)
+        if (num == 0):
+            return "0"
+        
+        if (num < 0):
+            num = (1 << 32) + num
+
+        hex_digits = '0123456789abcdef'
+        hex_num = ''
+
+        while (num > 0):
+            hex_digit = hex_digits[(num % 16)]
+            hex_num = f'{hex_digit}{hex_num}'
+            num //= 16
+
+        return hex_num
 
 
 x = 0
@@ -306,3 +320,7 @@ n = 0
 result = NumUtils.to_hex(n)
 print(f'to_hex({n}) = {result}')
 assert (result == '0')
+n = -2147483648
+result = NumUtils.to_hex(n)
+print(f'to_hex({n}) = {result}')
+assert (result == '80000000')
