@@ -330,6 +330,23 @@ class StringParsing:
     @staticmethod
     def longest_palindrome_len(s: str) -> int:
         long_palin_len = 0
+        letter_counts = {}
+
+        for c in s:
+            if (c in letter_counts):
+                letter_counts[c] += 1
+            else:
+                letter_counts[c] = 1
+
+        add_one = False
+        for v in letter_counts.values():
+            long_palin_len += v - (v % 2)
+            if (v == 1 or v % 2 == 0):
+                add_one = True
+
+        if (add_one):
+            long_palin_len += 1
+
         return long_palin_len
     
 
