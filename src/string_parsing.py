@@ -428,3 +428,7 @@ assert_string_parsing(StringParsing.read_binary_watch, [2], ['0:03', '0:05', '0:
 
 assert_string_parsing(StringParsing.longest_palindrome_len, ["abccccdd"], 7)
 assert_string_parsing(StringParsing.longest_palindrome_len, ["a"], 1)
+
+assert_string_parsing(StringParsing.add_int_strings, ["11", "123"], "134")
+assert_string_parsing(StringParsing.add_int_strings, ["456", "77"], "533")
+assert_string_parsing(StringParsing.add_int_strings, ["0", "0"], "0")
