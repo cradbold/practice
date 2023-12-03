@@ -327,6 +327,9 @@ class StringParsing:
 
         return nums_with_n_bin_ones
     
+    def longestPalindrome(self, s: str) -> int:
+        pass
+    
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
