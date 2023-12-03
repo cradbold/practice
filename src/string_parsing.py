@@ -341,7 +341,7 @@ class StringParsing:
         add_one = False
         for v in letter_counts.values():
             long_palin_len += v - (v % 2)
-            if (v == 1 or v % 2 == 0):
+            if (v % 2 > 0):
                 add_one = True
 
         if (add_one):
