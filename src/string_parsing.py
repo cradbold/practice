@@ -349,7 +349,8 @@ class StringParsing:
 
         return long_palin_len
 
-    def addStrings(self, num1: str, num2: str) -> str:
+    @staticmethod
+    def add_int_strings(num1: str, num2: str) -> str:
         pass
     
 
