@@ -348,6 +348,9 @@ class StringParsing:
             long_palin_len += 1
 
         return long_palin_len
+
+    def addStrings(self, num1: str, num2: str) -> str:
+        pass
     
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
