@@ -293,3 +293,16 @@ n = 243
 result = NumUtils.is_power_of_three(n)
 print(f'is_power_of_three({n}) = {result}')
 assert (result == True)
+
+n = 26
+result = NumUtils.to_hex(n)
+print(f'to_hex({n}) = {result}')
+assert (result == '1a')
+n = -1
+result = NumUtils.to_hex(n)
+print(f'to_hex({n}) = {result}')
+assert (result == 'ffffffff')
+n = 0
+result = NumUtils.to_hex(n)
+print(f'to_hex({n}) = {result}')
+assert (result == '0')
