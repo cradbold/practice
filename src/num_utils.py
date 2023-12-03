@@ -324,3 +324,7 @@ n = -2147483648
 result = NumUtils.to_hex(n)
 print(f'to_hex({n}) = {result}')
 assert (result == '80000000')
+n = 100
+result = NumUtils.to_hex(n)
+print(f'to_hex({n}) = {result}')
+assert (result == '64')
