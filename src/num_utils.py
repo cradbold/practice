@@ -134,7 +134,8 @@ class NumUtils:
             power = round(log(n, 3))
             return (3 ** power) == n
         
-    def toHex(self, num: int) -> str:
+    @staticmethod
+    def to_hex(num: int) -> str:
         return str(num)
 
 
