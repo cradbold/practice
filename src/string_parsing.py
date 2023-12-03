@@ -351,17 +351,17 @@ class StringParsing:
 
     @staticmethod
     def add_int_strings(num1: str, num2: str) -> str:
-        num_strings = (num1, num2) if (len(num1) >= len(nums2)) else (num2, num1)
-        num_strings = (num1, num_strings[1].zfill(len(num_strings[0])))
-        
+        num_strings = (num1, num2) if (len(num1) >= len(num2)) else (num2, num1)
+        num_strings = (num_strings[0], num_strings[1].zfill(len(num_strings[0])))
+
         digits = {}
         for i in range(0, 10):
             digits[str(i)] = i
 
         result = ''
         carry = False
-        for i in range(len(num_strings[0]) - 1, -1):
-            digit_sum = num_strings[0][i] + num_strings[1][i]
+        for i in range(len(num_strings[0]) - 1, -1, -1):
+            digit_sum = digits[num_strings[0][i]] + digits[num_strings[1][i]]
             if (carry):
                 digit_sum += 1
                 carry = False
@@ -372,7 +372,7 @@ class StringParsing:
 
         if (carry):
             result = f'1{result}'
-            
+
         return result
     
 
