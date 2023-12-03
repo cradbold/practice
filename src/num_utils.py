@@ -133,6 +133,9 @@ class NumUtils:
         else:
             power = round(log(n, 3))
             return (3 ** power) == n
+        
+    def toHex(self, num: int) -> str:
+        return str(num)
 
 
 x = 0
