@@ -152,7 +152,8 @@ class NumUtils:
 
         return hex_num
     
-    def arrangeCoins(self, n: int) -> int:
+    @staticmethod
+    def arrange_coins_on_steps(n: int) -> int:
         pass
 
 
