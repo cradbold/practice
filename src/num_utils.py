@@ -154,7 +154,9 @@ class NumUtils:
     
     @staticmethod
     def arrange_coins_on_steps(n: int) -> int:
-        pass
+        step_count = 0
+
+        return step_count
 
 
 x = 0
@@ -332,3 +334,16 @@ n = 100
 result = NumUtils.to_hex(n)
 print(f'to_hex({n}) = {result}')
 assert (result == '64')
+
+n = 5
+result = NumUtils.arrange_coins_on_steps(n)
+print(f'arrange_coins_on_steps({n}) = {result}')
+assert (result == 2)
+n = 8
+result = NumUtils.arrange_coins_on_steps(n)
+print(f'arrange_coins_on_steps({n}) = {result}')
+assert (result == 3)
+n = 10
+result = NumUtils.arrange_coins_on_steps(n)
+print(f'arrange_coins_on_steps({n}) = {result}')
+assert (result == 4)
