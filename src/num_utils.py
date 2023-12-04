@@ -151,6 +151,9 @@ class NumUtils:
             num //= 16
 
         return hex_num
+    
+    def arrangeCoins(self, n: int) -> int:
+        pass
 
 
 x = 0
