@@ -154,16 +154,20 @@ class NumUtils:
     
     @staticmethod
     def arrange_coins_on_steps(n: int) -> int:
-        step_count = 0
+        if (n < 3): return 1
 
-        ri = 1
-        while (n >= ri):
-            if (n // ri > 0):
-                step_count += 1
-            n -= ri
-            ri += 1
+        li, ri = 1, n
+        while (li <= ri):
+            mid = (li + ri) // 2
+            coins = mid * (mid + 1) / 2
+            if (coins < n):
+                li = mid + 1
+            elif (coins > n):
+                ri = mid - 1
+            else:
+                return mid
 
-        return step_count
+        return ri
 
 
 x = 0
