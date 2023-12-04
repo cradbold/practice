@@ -156,6 +156,13 @@ class NumUtils:
     def arrange_coins_on_steps(n: int) -> int:
         step_count = 0
 
+        ri = 1
+        while (n >= ri):
+            if (n // ri > 0):
+                step_count += 1
+            n -= ri
+            ri += 1
+
         return step_count
 
 
