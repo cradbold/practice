@@ -383,7 +383,8 @@ class ListUtils:
 
         return result
     
-    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+    @staticmethod
+    def list_missing_numbers(nums: List[int]) -> List[int]:
         pass
 
 
