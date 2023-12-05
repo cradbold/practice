@@ -432,6 +432,9 @@ class ListUtils:
                     avail_cookies.append(size)
 
         return match_count
+    
+    def count_matches_kids_by_min_opt(g: List[int], s: List[int]) -> int:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
