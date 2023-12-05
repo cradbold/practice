@@ -433,6 +433,7 @@ class ListUtils:
 
         return match_count
     
+    @staticmethod
     def count_matches_kids_by_min_opt(g: List[int], s: List[int]) -> int:
         pass
 
@@ -630,4 +631,11 @@ assert (result == 1)
 result = ListUtils.count_matches_kids_by_min([1, 2], [1, 2, 3])
 assert (result == 2)
 result = ListUtils.count_matches_kids_by_min([1, 1, 1, 2, 3, 3, 4, 4], [1, 1, 2, 3, 3, 3, 4])
+assert (result == 7)
+
+result = ListUtils.count_matches_kids_by_min_opt([1, 2, 3], [1, 1])
+assert (result == 1)
+result = ListUtils.count_matches_kids_by_min_opt([1, 2], [1, 2, 3])
+assert (result == 2)
+result = ListUtils.count_matches_kids_by_min_opt([1, 1, 1, 2, 3, 3, 4, 4], [1, 1, 2, 3, 3, 3, 4])
 assert (result == 7)
