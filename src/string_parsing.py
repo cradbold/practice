@@ -383,11 +383,10 @@ class StringParsing:
     def hamming_distance(x: int, y: int) -> int:
         diff_count = 0
 
-        xor_xy = x ^ y
-
-        for bit in bin(xor_xy)[2:]:
-            if (bit == '1'):
-                diff_count += 1
+        xy_xor = x ^ y
+        while (xy_xor > 0):
+            diff_count += xy_xor % 2
+            xy_xor //= 2
 
         return diff_count
 
