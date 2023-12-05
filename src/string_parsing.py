@@ -379,6 +379,9 @@ class StringParsing:
     def is_repeated_substring_pattern(s: str) -> bool:
         return s in (s + s)[1:-1]
     
+    def hammingDistance(self, x: int, y: int) -> int:
+        pass
+    
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
