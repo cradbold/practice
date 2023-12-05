@@ -568,3 +568,8 @@ assert (result == [2, 2])
 result = ListUtils.max_intersect([4, 9, 5], [9, 4, 9, 8, 4])
 result.sort()
 assert (result == [4, 9])
+
+result = ListUtils.list_missing_numbers([4, 3, 2, 7, 8, 2, 3, 1])
+assert (result == [5, 6])
+result = ListUtils.list_missing_numbers([1, 1])
+assert (result == [2])
