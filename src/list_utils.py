@@ -438,22 +438,21 @@ class ListUtils:
         if (len(s) == 0):
             return 0
 
-        kids_sizes = sorted(g)
-        cookies = sorted(s)
+        g.sort()
+        s.sort()
 
-        cookie_count = 0
-        i, j = 0, 0
-        while (i < len(kids_sizes)):
-            while (i < len(kids_sizes) and j < len(cookies)):
-                size = kids_sizes[i]
-                cookie = cookies[j]
-                if (size <= cookie):
-                    cookie_count += 1
-                    i += 1
-                j += 1
-            i += 1
-
-        return cookie_count
+        match_count = 0
+        gi = 0
+        for cookie in s:
+            
+            if (cookie >= g[gi]):
+                match_count += 1
+                gi += 1
+            
+            if (gi == len(g)):
+                return match_count
+            
+        return match_count
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
