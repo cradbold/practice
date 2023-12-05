@@ -435,7 +435,25 @@ class ListUtils:
     
     @staticmethod
     def count_matches_kids_by_min_opt(g: List[int], s: List[int]) -> int:
-        pass
+        if (len(s) == 0):
+            return 0
+
+        kids_sizes = sorted(g)
+        cookies = sorted(s)
+
+        cookie_count = 0
+        i, j = 0, 0
+        while (i < len(kids_sizes)):
+            while (i < len(kids_sizes) and j < len(cookies)):
+                size = kids_sizes[i]
+                cookie = cookies[j]
+                if (size <= cookie):
+                    cookie_count += 1
+                    i += 1
+                j += 1
+            i += 1
+
+        return cookie_count
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
