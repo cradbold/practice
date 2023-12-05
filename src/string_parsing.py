@@ -375,7 +375,8 @@ class StringParsing:
 
         return result
     
-    def repeatedSubstringPattern(self, s: str) -> bool:
+    @staticmethod
+    def repeated_substring_pattern(s: str) -> bool:
         pass
     
 
