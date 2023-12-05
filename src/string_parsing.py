@@ -377,7 +377,16 @@ class StringParsing:
     
     @staticmethod
     def is_repeated_substring_pattern(s: str) -> bool:
-        pass
+        if (len(s) == 1):
+            return False
+
+        for substr_end in range(1, (len(s) // 2) + 1):
+            substr = s[0:substr_end]
+            substr_count = s.count(substr)
+            if (substr_count * (substr_end) == len(s)):
+                return True
+
+        return False
     
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
