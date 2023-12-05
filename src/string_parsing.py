@@ -379,7 +379,8 @@ class StringParsing:
     def is_repeated_substring_pattern(s: str) -> bool:
         return s in (s + s)[1:-1]
     
-    def hammingDistance(self, x: int, y: int) -> int:
+    @staticmethod
+    def hamming_distance(x: int, y: int) -> int:
         pass
     
 
