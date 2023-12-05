@@ -381,17 +381,16 @@ class StringParsing:
     
     @staticmethod
     def hamming_distance(x: int, y: int) -> int:
-        bx = bin(x)[2:]
-        yx = bin(y)[2:].zfill(len(bx))
-        bx = bx.zfill(len(yx))
+        diff_count = 0
 
-        bit_diffs = 0
-        for i, bit in enumerate(bx):
-            if (bit != yx[i]):
-                bit_diffs += 1
+        xor_xy = x ^ y
 
-        return bit_diffs
-    
+        for bit in bin(xor_xy)[2:]:
+            if (bit == '1'):
+                diff_count += 1
+
+        return diff_count
+
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
