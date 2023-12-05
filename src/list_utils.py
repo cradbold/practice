@@ -398,7 +398,8 @@ class ListUtils:
 
         return result
 
-    def findContentChildren(self, g: List[int], s: List[int]) -> int:
+    @staticmethod
+    def count_matches_kids_by_min(g: List[int], s: List[int]) -> int:
         pass
 
 
