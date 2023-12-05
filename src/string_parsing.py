@@ -375,6 +375,9 @@ class StringParsing:
 
         return result
     
+    def repeatedSubstringPattern(self, s: str) -> bool:
+        pass
+    
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
