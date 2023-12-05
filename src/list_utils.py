@@ -400,17 +400,36 @@ class ListUtils:
 
     @staticmethod
     def count_matches_kids_by_min(g: List[int], s: List[int]) -> int:
+        if (len(s) < 1):
+            return 0
+
         g_counts = Counter(g)
         s_counts = Counter(s)
 
         match_count = 0
-        biggest_need = max(g_counts.keys())
-        avail_cookies = s_counts.keys()
-        while (biggest_need > 0 and biggest_need in avail_cookies):
-            if (biggest_need in avail_cookies):
-                pass
+        biggest_need = max(g)
+        avail_cookies = s
+        while (biggest_need > 0 and len(avail_cookies) > 0):
+
+            matching_cookie = min([ cookie for cookie in avail_cookies if cookie >= biggest_need ], default=0)
+            if (matching_cookie > 0):
+                match_count += 1
+                if (g_counts[biggest_need] == 1):
+                    del g_counts[biggest_need]
+                else:
+                    g_counts[biggest_need] -= 1
+                if (s_counts[matching_cookie] == 1):
+                    del s_counts[matching_cookie]
+                else:
+                    s_counts[matching_cookie] -= 1
             else:
-                pass
+                del g_counts[biggest_need]
+
+            biggest_need = max(g_counts, default=0)
+            avail_cookies = []
+            for size, count in s_counts.items():
+                for _ in range(count):
+                    avail_cookies.append(size)
 
         return match_count
 
@@ -608,4 +627,4 @@ assert (result == 1)
 result = ListUtils.count_matches_kids_by_min([1, 2], [1, 2, 3])
 assert (result == 2)
 result = ListUtils.count_matches_kids_by_min([1, 1, 1, 2, 3, 3, 4, 4], [1, 1, 2, 3, 3, 3, 4])
-assert (result == 6)
+assert (result == 7)
