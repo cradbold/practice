@@ -1,5 +1,5 @@
 from typing import Optional, Callable, List, Any
-from collections import deque
+from collections import deque, Counter
 from collections.abc import Iterable
 import math
 
@@ -400,7 +400,19 @@ class ListUtils:
 
     @staticmethod
     def count_matches_kids_by_min(g: List[int], s: List[int]) -> int:
-        pass
+        g_counts = Counter(g)
+        s_counts = Counter(s)
+
+        match_count = 0
+        biggest_need = max(g_counts.keys())
+        avail_cookies = s_counts.keys()
+        while (biggest_need > 0 and biggest_need in avail_cookies):
+            if (biggest_need in avail_cookies):
+                pass
+            else:
+                pass
+
+        return match_count
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
