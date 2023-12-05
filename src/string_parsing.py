@@ -466,3 +466,6 @@ assert_string_parsing(StringParsing.add_int_strings, ["0", "0"], "0")
 assert_string_parsing(StringParsing.is_repeated_substring_pattern, ["abab"], True)
 assert_string_parsing(StringParsing.is_repeated_substring_pattern, ["aba"], False)
 assert_string_parsing(StringParsing.is_repeated_substring_pattern, ["abcabcabcabc"], True)
+
+assert_string_parsing(StringParsing.hamming_distance, [1, 4], 2)
+assert_string_parsing(StringParsing.hamming_distance, [3, 1], 1)
