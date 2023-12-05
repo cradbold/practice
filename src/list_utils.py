@@ -382,6 +382,9 @@ class ListUtils:
                     result.append(num)
 
         return result
+    
+    def findDisappearedNumbers(self, nums: List[int]) -> List[int]:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
