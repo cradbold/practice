@@ -385,7 +385,18 @@ class ListUtils:
     
     @staticmethod
     def list_missing_numbers(nums: List[int]) -> List[int]:
-        pass
+        for num in nums:
+            if (num < 0):
+                num *= -1
+            if (nums[num - 1] > 0):
+                nums[num - 1] *= -1
+
+        result = []
+        for i, num in enumerate(nums):
+            if (num > 0):
+                result.append(i + 1)
+
+        return result
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
