@@ -398,6 +398,9 @@ class ListUtils:
 
         return result
 
+    def findContentChildren(self, g: List[int], s: List[int]) -> int:
+        pass
+
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
