@@ -169,6 +169,17 @@ class NumUtils:
 
         return ri
 
+    @staticmethod
+    def hamming_distance(x: int, y: int) -> int:
+        diff_count = 0
+
+        xy_xor = x ^ y
+        while (xy_xor > 0):
+            diff_count += xy_xor % 2
+            xy_xor //= 2
+
+        return diff_count
+
 
 x = 0
 result = NumUtils.my_sqrt(x)
@@ -358,3 +369,12 @@ n = 10
 result = NumUtils.arrange_coins_on_steps(n)
 print(f'arrange_coins_on_steps({n}) = {result}')
 assert (result == 4)
+
+x, y = 1, 4
+result = NumUtils.hamming_distance(x, y)
+print(f'hamming_distance({n}) = {result}')
+assert (result == 2)
+x, y = 3, 1
+result = NumUtils.hamming_distance(x, y)
+print(f'hamming_distance({n}) = {result}')
+assert (result == 1)
