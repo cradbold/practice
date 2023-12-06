@@ -379,17 +379,6 @@ class StringParsing:
     def is_repeated_substring_pattern(s: str) -> bool:
         return s in (s + s)[1:-1]
     
-    @staticmethod
-    def hamming_distance(x: int, y: int) -> int:
-        diff_count = 0
-
-        xy_xor = x ^ y
-        while (xy_xor > 0):
-            diff_count += xy_xor % 2
-            xy_xor //= 2
-
-        return diff_count
-
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
@@ -473,6 +462,3 @@ assert_string_parsing(StringParsing.add_int_strings, ["0", "0"], "0")
 assert_string_parsing(StringParsing.is_repeated_substring_pattern, ["abab"], True)
 assert_string_parsing(StringParsing.is_repeated_substring_pattern, ["aba"], False)
 assert_string_parsing(StringParsing.is_repeated_substring_pattern, ["abcabcabcabc"], True)
-
-assert_string_parsing(StringParsing.hamming_distance, [1, 4], 2)
-assert_string_parsing(StringParsing.hamming_distance, [3, 1], 1)
