@@ -454,7 +454,8 @@ class ListUtils:
             
         return match_count
     
-    def islandPerimeter(self, grid: List[List[int]]) -> int:
+    @staticmethod
+    def calc_island_perimeter(grid: List[List[int]]) -> int:
         pass
 
 
