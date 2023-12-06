@@ -181,7 +181,8 @@ class NumUtils:
 
         return diff_count
     
-    def constructRectangle(self, area: int) -> List[int]:
+    @staticmethod
+    def find_squarest_rectangle(area: int) -> List[int]:
         pass
     
 
@@ -382,3 +383,10 @@ x, y = 3, 1
 result = NumUtils.hamming_distance(x, y)
 print(f'hamming_distance({n}) = {result}')
 assert (result == 1)
+
+area = 4
+result = NumUtils.(x, y)
+print(f'hamming_distance({n}) = {result}')
+assert (result == 1)
+area = 37
+area = 122122
