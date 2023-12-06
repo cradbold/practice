@@ -181,6 +181,9 @@ class NumUtils:
 
         return diff_count
     
+    def constructRectangle(self, area: int) -> List[int]:
+        pass
+    
 
 x = 0
 result = NumUtils.my_sqrt(x)
