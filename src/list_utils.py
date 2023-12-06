@@ -461,17 +461,16 @@ class ListUtils:
         for r, row in enumerate(grid):
             for c, cell in enumerate(row):
                 if (cell == 1):
-                    increment = 4
+                    perimeter += 4
                     if (r - 1 >= 0 and grid[r - 1][c] == 1):
-                        increment -= 1
+                        perimeter -= 1
                     if (r + 1 < len(grid) and grid[r + 1][c] == 1):
-                        increment -= 1
+                        perimeter -= 1
                     if (c - 1 >= 0  and grid[r][c - 1] == 1):
-                        increment -= 1
+                        perimeter -= 1
                     if (c + 1 < len(row) and grid[r][c + 1] == 1):
-                        increment -= 1
-                    perimeter += increment
-
+                        perimeter -= 1
+                        
         return perimeter
 
 
