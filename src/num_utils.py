@@ -1,3 +1,4 @@
+from collections import List
 from math import log
 
 class NumUtils:
@@ -179,7 +180,7 @@ class NumUtils:
             xy_xor //= 2
 
         return diff_count
-
+    
 
 x = 0
 result = NumUtils.my_sqrt(x)
