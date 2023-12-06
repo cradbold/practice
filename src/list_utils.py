@@ -463,14 +463,10 @@ class ListUtils:
                 if (cell == 1):
                     perimeter += 4
                     if (r - 1 >= 0 and grid[r - 1][c] == 1):
-                        perimeter -= 1
-                    if (r + 1 < len(grid) and grid[r + 1][c] == 1):
-                        perimeter -= 1
+                        perimeter -= 2
                     if (c - 1 >= 0  and grid[r][c - 1] == 1):
-                        perimeter -= 1
-                    if (c + 1 < len(row) and grid[r][c + 1] == 1):
-                        perimeter -= 1
-                        
+                        perimeter -= 2
+
         return perimeter
 
 
