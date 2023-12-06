@@ -456,7 +456,23 @@ class ListUtils:
     
     @staticmethod
     def calc_island_perimeter(grid: List[List[int]]) -> int:
-        pass
+        perimeter = 0
+
+        for r, row in enumerate(grid):
+            for c, cell in enumerate(row):
+                if (cell == 1):
+                    increment = 4
+                    if (r - 1 >= 0 and grid[r - 1][c] == 1):
+                        increment -= 1
+                    if (r + 1 < len(grid) and grid[r + 1][c] == 1):
+                        increment -= 1
+                    if (c - 1 >= 0  and grid[r][c - 1] == 1):
+                        increment -= 1
+                    if (c + 1 < len(row) and grid[r][c + 1] == 1):
+                        increment -= 1
+                    perimeter += increment
+
+        return perimeter
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
