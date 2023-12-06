@@ -1,4 +1,3 @@
-from collections import List
 from math import log
 
 class NumUtils:
@@ -182,7 +181,7 @@ class NumUtils:
         return diff_count
     
     @staticmethod
-    def find_squarest_rectangle(area: int) -> List[int]:
+    def find_squarest_rectangle(area: int) -> list[int]:
         pass
     
 
@@ -377,16 +376,22 @@ assert (result == 4)
 
 x, y = 1, 4
 result = NumUtils.hamming_distance(x, y)
-print(f'hamming_distance({n}) = {result}')
+print(f'hamming_distance({x, y}) = {result}')
 assert (result == 2)
 x, y = 3, 1
 result = NumUtils.hamming_distance(x, y)
-print(f'hamming_distance({n}) = {result}')
+print(f'hamming_distance({x, y}) = {result}')
 assert (result == 1)
 
 area = 4
-result = NumUtils.(x, y)
-print(f'hamming_distance({n}) = {result}')
-assert (result == 1)
+result = NumUtils.find_squarest_rectangle(area)
+print(f'find_squarest_rectangle({area}) = {result}')
+assert (result == [2, 2])
 area = 37
+result = NumUtils.find_squarest_rectangle(area)
+print(f'find_squarest_rectangle({area}) = {result}')
+assert (result == [37, 1])
 area = 122122
+result = NumUtils.find_squarest_rectangle(area)
+print(f'find_squarest_rectangle({area}) = {result}')
+assert (result == [427, 286])
