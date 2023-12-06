@@ -453,6 +453,9 @@ class ListUtils:
                 return match_count
             
         return match_count
+    
+    def islandPerimeter(self, grid: List[List[int]]) -> int:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -467,6 +470,7 @@ def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
         return False
     
     return True
+
 
 test_node1 = ListNode(1)
 test_node2 = ListNode(2)
