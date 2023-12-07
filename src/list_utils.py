@@ -490,7 +490,17 @@ class ListUtils:
     
     @staticmethod
     def next_greater_element(nums1: List[int], nums2: List[int]) -> List[int]:
-        pass
+        result = [-1] * len(nums1)
+
+        for i, num1 in enumerate(nums1):
+            for j, num2 in enumerate(nums2):
+                if (num2 == num1):
+                    for k in range(j + 1, len(nums2)):
+                        if (nums2[k] > num2):
+                            result[i] = nums2[k]
+                            break
+
+        return result
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
