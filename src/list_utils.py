@@ -487,6 +487,9 @@ class ListUtils:
                     sum += duration
 
         return sum
+    
+    def nextGreaterElement(self, nums1: List[int], nums2: List[int]) -> List[int]:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
