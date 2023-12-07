@@ -499,7 +499,8 @@ class ListUtils:
 
         return [ num2_ngn_map.get(num1, -1) for num1 in nums1 ]
     
-    def findWords(self, words: List[str]) -> List[str]:
+    @staticmethod
+    def find_words_typable_one_kb_row(words: List[str]) -> List[str]:
         pass
 
 
