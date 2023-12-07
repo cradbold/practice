@@ -490,20 +490,14 @@ class ListUtils:
     
     @staticmethod
     def next_greater_element(nums1: List[int], nums2: List[int]) -> List[int]:
-        result = [-1] * len(nums1)
+        stack, num2_ngn_map = [], {}
 
-        num2_next_val_map = {}
-        for n2i, num2 in enumerate(nums2[:-1]):
-            for n2j in range(n2i + 1, len(nums2), 1):
-                if (nums2[n2j] > num2):
-                    num2_next_val_map[num2] = nums2[n2j]
-                    break
+        for num2 in nums2:
+            while (stack and num2 > stack[-1]):
+                num2_ngn_map[stack.pop()] = num2
+            stack.append(num2)
 
-        for n1i, n1 in enumerate(nums1):
-            if (n1 in num2_next_val_map):
-                result[n1i] = num2_next_val_map[n1]
-
-        return result
+        return [ num2_ngn_map.get(num1, -1) for num1 in nums1 ]
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
