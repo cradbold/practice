@@ -1,4 +1,4 @@
-from math import log
+from math import log, sqrt
 
 class NumUtils:
 
@@ -182,7 +182,19 @@ class NumUtils:
     
     @staticmethod
     def find_squarest_rectangle(area: int) -> list[int]:
-        pass
+        if (area < 4):
+            return [area, 1]
+
+        lowest_diff = (area - 1, [area, 1])
+
+        ended_i = int(sqrt(area) + 1)
+        for width in range(2, ended_i):
+            length = area / width
+            calc_area = width * int(length)
+            if (length.is_integer() and calc_area == area and abs(width - int(length)) < lowest_diff[0]):
+                lowest_diff = (length, [length, width])
+
+        return lowest_diff[1]
     
 
 x = 0
