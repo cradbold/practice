@@ -501,7 +501,27 @@ class ListUtils:
     
     @staticmethod
     def find_words_typable_one_kb_row(words: List[str]) -> List[str]:
-        pass
+        letter_map = {}
+        for i, row in enumerate(["qwertyuiop", "asdfghjkl", "zxcvbnm"]):
+            for letter in row:
+                letter_map[letter] = i
+
+        result = []
+
+        for word in words:
+            target_row = letter_map[word[0].lower()]
+            add_it = True
+            for letter in word:
+                letter = letter.lower()
+                if (letter_map[letter] != target_row):
+                    add_it = False
+                    break
+            if (add_it):
+                result.append(word)
+            else:
+                add_it = True
+
+        return result
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
