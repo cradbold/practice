@@ -468,6 +468,9 @@ class ListUtils:
                         perimeter -= 2
 
         return perimeter
+    
+    def findPoisonedDuration(self, timeSeries: List[int], duration: int) -> int:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
