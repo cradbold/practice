@@ -471,7 +471,20 @@ class ListUtils:
     
     @staticmethod
     def calc_poisoned_duration(timeSeries: List[int], duration: int) -> int:
+        if (len(timeSeries) < 2):
+            return duration
+
         sum = 0
+
+        for i, time in enumerate(timeSeries):
+            if (i == len(timeSeries) - 1):
+                sum += duration
+            else:
+                next_time = timeSeries[i + 1]
+                if (next_time - time < duration):
+                    sum += next_time - time
+                else:
+                    sum += duration
 
         return sum
 
