@@ -471,7 +471,9 @@ class ListUtils:
     
     @staticmethod
     def calc_poisoned_duration(timeSeries: List[int], duration: int) -> int:
-        pass
+        sum = 0
+
+        return sum
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -683,3 +685,8 @@ result = ListUtils.calc_island_perimeter([[1]])
 assert (result == 4)
 result = ListUtils.calc_island_perimeter([[1, 0]])
 assert (result == 4)
+
+result = ListUtils.calc_poisoned_duration([1, 4], 2)
+assert (result == 4)
+result = ListUtils.calc_poisoned_duration([1, 2], 2)
+assert (result == 3)
