@@ -469,7 +469,8 @@ class ListUtils:
 
         return perimeter
     
-    def findPoisonedDuration(self, timeSeries: List[int], duration: int) -> int:
+    @staticmethod
+    def calc_poisoned_duration(timeSeries: List[int], duration: int) -> int:
         pass
 
 
