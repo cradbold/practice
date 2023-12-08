@@ -224,3 +224,14 @@ result = TreeUtils.sum_left_leaves_iter(tn1)
 assert (result == 4)
 result = TreeUtils.sum_left_leaves_rec(tn1)
 assert (result == 4)
+
+tn1 = TreeNode(1)
+tn2 = TreeNode(2)
+tn3 = TreeNode(2)
+tn1.right = tn2
+tn2.left = tn3
+result = TreeUtils.find_mode(tn1)
+assert (result == 2)
+tn4 = TreeNode(0)
+result = TreeUtils.find_mode(tn4)
+assert (result == 0)
