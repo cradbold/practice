@@ -525,7 +525,24 @@ class ListUtils:
     
     @staticmethod
     def scores_to_medal_placements(scores: List[int]) -> List[str]:
-        pass
+        medals = [None, 'Gold Medal', 'Silver Medal', 'Bronze Medal']
+        suffixes = [None, 'st', 'nd', 'rd', 'th', 'th', 'th', 'th', 'th', 'th']
+
+        def rank_to_place(rank: int) -> str:
+            if (rank < 4):
+                return medals[rank]
+            else:
+                return f'{rank}{suffixes[rank % 10]}'
+
+        sorted_scores = sorted(scores, reverse=True)
+        score_rank_map = {}
+        for place, score in enumerate(sorted_scores):
+            score_rank_map[score] = place + 1
+
+        for i, score in enumerate(scores):
+            scores[i] = rank_to_place(score_rank_map[score])
+
+        return scores
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
