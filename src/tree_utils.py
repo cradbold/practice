@@ -1,4 +1,5 @@
 from typing import Optional, Callable, List, Any
+from collections import Counter
 
 class TreeNode:
 
@@ -97,7 +98,30 @@ class TreeUtils:
 
     @staticmethod
     def find_mode(root: Optional[TreeNode]) -> List[int]:
-        pass
+        num_counts = Counter()
+        root_modes, subtrees = [], []
+        highest_count = 1
+
+        while (root or subtrees):
+            while (root):
+                subtrees.append(root)
+                root = root.left
+            
+            root = subtrees.pop()
+            num = root.val
+
+            num_counts[num] += 1
+            highest_count_candidate = num_counts[num]
+
+            if (highest_count_candidate == highest_count):
+                root_modes.append(num)
+            elif (highest_count_candidate > highest_count):
+                highest_count = highest_count_candidate
+                root_modes = [num]
+            
+            root = root.right
+
+        return root_modes
 
 
 tn1 = TreeNode(1)
@@ -231,7 +255,7 @@ tn3 = TreeNode(2)
 tn1.right = tn2
 tn2.left = tn3
 result = TreeUtils.find_mode(tn1)
-assert (result == 2)
+assert (result == [2])
 tn4 = TreeNode(0)
 result = TreeUtils.find_mode(tn4)
-assert (result == 0)
+assert (result == [0])
