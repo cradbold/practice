@@ -196,6 +196,9 @@ class NumUtils:
 
         return lowest_diff[1]
     
+    def checkPerfectNumber(self, num: int) -> bool:
+        pass
+    
 
 x = 0
 result = NumUtils.my_sqrt(x)
