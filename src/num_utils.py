@@ -203,15 +203,10 @@ class NumUtils:
 
         divisor_sum = 1
 
-        last_possible_divisor = num // 2
-        divisor_candidate = 2
-        while (divisor_candidate < last_possible_divisor):
-            divisor_candidate_complement = num / divisor_candidate
-            if (divisor_candidate_complement.is_integer()):
-                divisor_sum += divisor_candidate
-                divisor_sum += int(divisor_candidate_complement)
-                last_possible_divisor = divisor_candidate_complement
-            divisor_candidate += 1
+        for i in range(2, int(num ** 0.5) + 1):
+            if (num % i == 0):
+                divisor_sum += i
+                divisor_sum += num // i
 
         return divisor_sum == num
     
