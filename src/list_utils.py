@@ -522,6 +522,9 @@ class ListUtils:
                 add_it = True
 
         return result
+    
+     def findRelativeRanks(self, scores: List[int]) -> List[str]:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
