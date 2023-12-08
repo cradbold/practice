@@ -523,7 +523,8 @@ class ListUtils:
 
         return result
     
-     def findRelativeRanks(self, scores: List[int]) -> List[str]:
+    @staticmethod
+    def scores_to_medal_placements(scores: List[int]) -> List[str]:
         pass
 
 
