@@ -411,3 +411,20 @@ area = 122122
 result = NumUtils.find_squarest_rectangle(area)
 print(f'find_squarest_rectangle({area}) = {result}')
 assert (result == [427, 286])
+
+num = 5
+result = NumUtils.is_perfect_number(num)
+print(f'is_perfect_number({num}) = {result}')
+assert (result == False)
+num = 6
+result = NumUtils.is_perfect_number(num)
+print(f'is_perfect_number({num}) = {result}')
+assert (result == True)
+num = 7
+result = NumUtils.is_perfect_number(num)
+print(f'is_perfect_number({num}) = {result}')
+assert (result == False)
+num = 28
+result = NumUtils.is_perfect_number(num)
+print(f'is_perfect_number({num}) = {result}')
+assert (result == True)
