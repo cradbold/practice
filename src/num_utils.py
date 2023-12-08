@@ -196,7 +196,8 @@ class NumUtils:
 
         return lowest_diff[1]
     
-    def checkPerfectNumber(self, num: int) -> bool:
+    @staticmethod
+    def is_perfect_number(num: int) -> bool:
         pass
     
 
