@@ -95,7 +95,8 @@ class TreeUtils:
         else:
             return TreeUtils.sum_left_leaves_rec(root.left) + TreeUtils.sum_left_leaves_rec(root.right)
 
-    def findMode(self, root: Optional[TreeNode]) -> List[int]:
+    @staticmethod
+    def find_mode(root: Optional[TreeNode]) -> List[int]:
         pass
 
 
