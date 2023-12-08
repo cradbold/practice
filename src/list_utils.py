@@ -754,3 +754,8 @@ result = ListUtils.find_words_typable_one_kb_row(["omk"])
 assert (result == [])
 result = ListUtils.find_words_typable_one_kb_row(["adsdf","sfd"])
 assert (result == ["adsdf","sfd"])
+
+result = ListUtils.scores_to_medal_placements([5, 4, 3, 2, 1])
+assert (result == ["Gold Medal", "Silver Medal", "Bronze Medal", "4th", "5th"])
+result = ListUtils.scores_to_medal_placements([10, 3, 8, 9, 4])
+assert (result == ["Gold Medal", "5th", "Bronze Medal", "Silver Medal", "4th"])
