@@ -198,7 +198,22 @@ class NumUtils:
     
     @staticmethod
     def is_perfect_number(num: int) -> bool:
-        pass
+        if (num < 6):
+            return False
+
+        divisor_sum = 1
+
+        last_possible_divisor = num // 2
+        divisor_candidate = 2
+        while (divisor_candidate < last_possible_divisor):
+            divisor_candidate_complement = num / divisor_candidate
+            if (divisor_candidate_complement.is_integer()):
+                divisor_sum += divisor_candidate
+                divisor_sum += int(divisor_candidate_complement)
+                last_possible_divisor = divisor_candidate_complement
+            divisor_candidate += 1
+
+        return divisor_sum == num
     
 
 x = 0
