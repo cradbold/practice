@@ -214,6 +214,10 @@ class NumUtils:
     def fib_rec(n: int) -> int:
         pass
     
+    @staticmethod
+    def fib_iter(n: int) -> int:
+        pass
+
 
 x = 0
 result = NumUtils.my_sqrt(x)
