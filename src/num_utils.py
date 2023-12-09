@@ -221,7 +221,18 @@ class NumUtils:
     
     @staticmethod
     def fib_iter(n: int) -> int:
-        pass
+        if (n == 0):
+            return 0
+        elif (n == 1):
+            return 1
+        else:
+            fib_sum = 1
+            increment = 0
+            for _ in range(2, n + 1):
+                temp = fib_sum
+                fib_sum += increment
+                increment = temp
+            return fib_sum
 
 
 x = 0
