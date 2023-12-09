@@ -381,7 +381,16 @@ class StringParsing:
     
     @staticmethod
     def correct_capitalization(word: str) -> bool:
-        pass
+        if (len(word) == 1):
+            return True
+        
+        expect_uppers = True if (word[0].isupper() and word[1].isupper()) else False
+        for i in range(1, len(word)):
+            letter = word[i]
+            if (not expect_uppers == letter.isupper()):
+                return False
+        
+        return True
     
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
