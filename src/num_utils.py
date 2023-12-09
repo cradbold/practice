@@ -446,3 +446,11 @@ num = 28
 result = NumUtils.is_perfect_number(num)
 print(f'is_perfect_number({num}) = {result}')
 assert (result == True)
+
+num = 3
+result = NumUtils.fib_rec(num)
+print(f'fib_rec({num}) = {result}')
+assert (result == 1)
+result = NumUtils.fib_iter(num)
+print(f'fib_iter({num}) = {result}')
+assert (result == 1)
