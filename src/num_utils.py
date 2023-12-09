@@ -212,7 +212,12 @@ class NumUtils:
     
     @staticmethod
     def fib_rec(n: int) -> int:
-        pass
+        if (n == 0):
+            return 0
+        elif (n == 1):
+            return 1
+        else:
+            return NumUtils.fib_rec(n - 2) + NumUtils.fib_rec(n - 1)
     
     @staticmethod
     def fib_iter(n: int) -> int:
