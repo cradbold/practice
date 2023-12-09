@@ -210,7 +210,8 @@ class NumUtils:
 
         return divisor_sum == num
     
-    def fib(self, n: int) -> int:
+    @staticmethod
+    def fib_rec(n: int) -> int:
         pass
     
 
