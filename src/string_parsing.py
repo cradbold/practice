@@ -379,7 +379,8 @@ class StringParsing:
     def is_repeated_substring_pattern(s: str) -> bool:
         return s in (s + s)[1:-1]
     
-    def detectCapitalUse(self, word: str) -> bool:
+    @staticmethod
+    def correct_capitalization(word: str) -> bool:
         pass
     
 
