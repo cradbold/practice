@@ -210,6 +210,9 @@ class NumUtils:
 
         return divisor_sum == num
     
+    def fib(self, n: int) -> int:
+        pass
+    
 
 x = 0
 result = NumUtils.my_sqrt(x)
