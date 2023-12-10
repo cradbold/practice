@@ -122,6 +122,9 @@ class TreeUtils:
             root = root.right
 
         return root_modes
+    
+    def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
+        pass
 
 
 tn1 = TreeNode(1)
