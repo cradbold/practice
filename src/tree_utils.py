@@ -253,13 +253,25 @@ assert (result == 4)
 result = TreeUtils.sum_left_leaves_rec(tn1)
 assert (result == 4)
 
-tn1 = TreeNode(1)
+tn1 = TreeNode(4)
 tn2 = TreeNode(2)
-tn3 = TreeNode(2)
-tn1.right = tn2
-tn2.left = tn3
-result = TreeUtils.find_mode(tn1)
-assert (result == [2])
-tn4 = TreeNode(0)
-result = TreeUtils.find_mode(tn4)
-assert (result == [0])
+tn3 = TreeNode(6)
+tn4 = TreeNode(1)
+tn5 = TreeNode(3)
+tn1.left = tn2
+tn1.right = tn3
+tn2.left = tn4
+tn2.right = tn5
+result = TreeUtils.min_node_diff(tn1)
+assert (result == 1)
+tn1 = TreeNode(1)
+tn2 = TreeNode(0)
+tn3 = TreeNode(48)
+tn4 = TreeNode(12)
+tn5 = TreeNode(49)
+tn1.left = tn2
+tn1.right = tn3
+tn3.left = tn4
+tn3.right = tn5
+result = TreeUtils.min_node_diff(tn1)
+assert (result == 1)
