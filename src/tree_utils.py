@@ -123,7 +123,8 @@ class TreeUtils:
 
         return root_modes
     
-    def getMinimumDifference(self, root: Optional[TreeNode]) -> int:
+    @staticmethod
+    def min_node_diff(root: Optional[TreeNode]) -> int:
         pass
 
 
