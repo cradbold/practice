@@ -8,6 +8,11 @@ class TreeNode:
         self.left = left
         self.right = right
 
+class  NAryNode:
+
+    def __init__(self, val=0, children=[]):
+        self.val = val
+        self.children = children
 
 class TreeUtils:
 
