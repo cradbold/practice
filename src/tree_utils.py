@@ -181,6 +181,10 @@ class TreeUtils:
 
         depth(root)
         return longest_diameter
+    
+    @staticmethod
+    def n_ary_depth(root: Optional[NAryNode]) -> int:
+        pass
 
 
 tn1 = TreeNode(1)
