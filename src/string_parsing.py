@@ -392,7 +392,8 @@ class StringParsing:
         
         return True
     
-    def reverseStr(self, s: str, k: int) -> str:
+    @staticmethod
+    def reverse_str_every_k(s: str, k: int) -> str:
         pass
     
 
