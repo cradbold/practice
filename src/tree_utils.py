@@ -143,7 +143,24 @@ class TreeUtils:
     
     @staticmethod
     def diameter(root: Optional[TreeNode]) -> int:
-        pass
+        diameter = 0
+        depths = {}
+        stack = [ {root, False} ]
+
+        while (stack):
+            node, have_visited = stack.pop()
+            if (node):
+                if (have_visited):
+                    left_depth = depths.pop(node.left) if (node.left) else 0
+                    right_depth = depths.pop(node.right) if (node.right) else 0
+                    diameter = max(diameter, left_depth + right_depth)
+                    depths[node] = 1 + max(left_depth, right_depth)
+                else:
+                    stack.append((node, True))
+                    stack.append((node.left, False))
+                    stack.append((node.right, False))
+
+        return diameter
 
 
 tn1 = TreeNode(1)
