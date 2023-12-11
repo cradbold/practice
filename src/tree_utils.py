@@ -214,12 +214,9 @@ class TreeUtils:
         
         max_depth = 0
 
-        if (len(root.children) == 0):
-            return 1
-        else:
-            for child in root.children:
-                max_depth = max(max_depth, TreeUtils.n_ary_depth_rec(child))
-            
+        for child in root.children:
+            max_depth = max(max_depth, TreeUtils.n_ary_depth_rec(child))
+        
         return 1 + max_depth
 
 
