@@ -310,3 +310,20 @@ tn3.left = tn4
 tn3.right = tn5
 result = TreeUtils.min_node_diff(tn1)
 assert (result == 1)
+
+tn1 = TreeNode(1)
+tn2 = TreeNode(2)
+tn3 = TreeNode(3)
+tn4 = TreeNode(4)
+tn5 = TreeNode(5)
+tn1.left = tn2
+tn1.right = tn3
+tn2.left = tn4
+tn2.right = tn5
+result = TreeUtils.diameter(tn1)
+assert (result == 3)
+tn1.right = None
+tn2.left = None
+tn2.right = None
+result = TreeUtils.diameter(tn1)
+assert (result == 1)
