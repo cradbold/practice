@@ -184,7 +184,28 @@ class TreeUtils:
     
     @staticmethod
     def n_ary_depth(root: Optional[NAryNode]) -> int:
-        pass
+        if (not root):
+            return 0
+
+        child_depth = 0
+        depths = {}
+
+        stack = [(root, False)]
+        while (stack):
+            (node, process_now) = stack.pop()
+            if (node):
+                if (process_now):
+                    max_child_depth = 0
+                    for child in node.children:
+                        max_child_depth = max(max_child_depth, depths[child])
+                    child_depth = max(child_depth, max_child_depth)
+                    depths[node] = 1 + max_child_depth
+                else:
+                    stack.append((node, True))
+                    for child in node.children:
+                        stack.append((child, False))
+
+        return 1 + child_depth
 
 
 tn1 = TreeNode(1)
