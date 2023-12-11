@@ -490,3 +490,6 @@ assert_string_parsing(StringParsing.is_repeated_substring_pattern, ["abcabcabcab
 
 assert_string_parsing(StringParsing.correct_capitalization, ["USA"], True)
 assert_string_parsing(StringParsing.correct_capitalization, ["FlaG"], False)
+
+assert_string_parsing(StringParsing.reverse_str_every_k, ["abcdefg", 2], "bacdfeg")
+assert_string_parsing(StringParsing.reverse_str_every_k, ["abcd", 2], "bacd")
