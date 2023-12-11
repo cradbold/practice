@@ -206,6 +206,10 @@ class TreeUtils:
                         stack.append((child, False))
 
         return 1 + child_depth
+    
+    @staticmethod
+    def n_ary_depth_rec(root: Optional[NAryNode]) -> int:
+        pass
 
 
 tn1 = TreeNode(1)
