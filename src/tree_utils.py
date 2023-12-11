@@ -140,6 +140,9 @@ class TreeUtils:
             root = root.right
 
         return min_diff
+    
+    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+        pass
 
 
 tn1 = TreeNode(1)
