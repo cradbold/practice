@@ -126,8 +126,8 @@ class TreeUtils:
     @staticmethod
     def min_node_diff(root: Optional[TreeNode]) -> int:
         min_diff = abs(root.val - root.left.val) if (root.left) else abs(root.val - root.right.val)
-
-        values, stack = [], []
+        prev_val = float('-inf')
+        stack = []
 
         while (root or stack):
             while (root):
@@ -135,12 +135,9 @@ class TreeUtils:
                 root = root.left
             
             root = stack.pop()
-            values.append(root.val)
+            min_diff = min(min_diff, root.val - prev_val)
+            prev_val = root.val
             root = root.right
-
-        for i, val in enumerate(values):
-            for j in range(i + 1, len(values) - 1):
-                min_diff = min(min_diff, abs(val - values[j]))
 
         return min_diff
 
