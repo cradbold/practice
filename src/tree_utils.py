@@ -141,7 +141,8 @@ class TreeUtils:
 
         return min_diff
     
-    def diameterOfBinaryTree(self, root: Optional[TreeNode]) -> int:
+    @staticmethod
+    def diameter(root: Optional[TreeNode]) -> int:
         pass
 
 
