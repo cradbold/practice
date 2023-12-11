@@ -394,11 +394,10 @@ class StringParsing:
     
     @staticmethod
     def reverse_str_every_k(s: str, k: int) -> str:
-        result, i = [ c for c in s ], 0
+        result, i = [ *s ], 0
 
         while (i < len(s)):
-            j = i + k
-            result[i:j] = result[i:j][::-1]
+            result[i:(i + k)] = result[i:(i + k)][::-1]
             i += 2 * k
 
         return "".join(result)
