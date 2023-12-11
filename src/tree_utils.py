@@ -162,6 +162,10 @@ class TreeUtils:
 
         return diameter
 
+    @staticmethod
+    def diameter_rec(root: Optional[TreeNode]) -> int:
+        pass
+
 
 tn1 = TreeNode(1)
 tn2 = TreeNode(2)
@@ -325,5 +329,5 @@ assert (result == 3)
 tn1.right = None
 tn2.left = None
 tn2.right = None
-result = TreeUtils.diameterIter(tn1)
+result = TreeUtils.diameter_iter(tn1)
 assert (result == 1)
