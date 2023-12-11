@@ -145,10 +145,10 @@ class TreeUtils:
     def diameter(root: Optional[TreeNode]) -> int:
         diameter = 0
         depths = {}
-        stack = [ {root, False} ]
+        stack = [ (root, False) ]
 
         while (stack):
-            node, have_visited = stack.pop()
+            (node, have_visited) = stack.pop()
             if (node):
                 if (have_visited):
                     left_depth = depths.pop(node.left) if (node.left) else 0
