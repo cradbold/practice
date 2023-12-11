@@ -148,9 +148,9 @@ class TreeUtils:
         stack = [ (root, False) ]
 
         while (stack):
-            (node, have_visited) = stack.pop()
+            (node, process_now) = stack.pop()
             if (node):
-                if (have_visited):
+                if (process_now):
                     left_depth = depths.pop(node.left) if (node.left) else 0
                     right_depth = depths.pop(node.right) if (node.right) else 0
                     diameter = max(diameter, left_depth + right_depth)
