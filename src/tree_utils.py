@@ -326,8 +326,12 @@ tn2.left = tn4
 tn2.right = tn5
 result = TreeUtils.diameter_iter(tn1)
 assert (result == 3)
+result = TreeUtils.diameter_rec(tn1)
+assert (result == 3)
 tn1.right = None
 tn2.left = None
 tn2.right = None
 result = TreeUtils.diameter_iter(tn1)
+assert (result == 1)
+result = TreeUtils.diameter_rec(tn1)
 assert (result == 1)
