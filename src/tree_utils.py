@@ -164,7 +164,18 @@ class TreeUtils:
 
     @staticmethod
     def diameter_rec(root: Optional[TreeNode]) -> int:
-        pass
+        
+        longest_diameter = 0
+
+        def depth(node: Optional[TreeNode]) -> int:
+            nonlocal longest_diameter
+            left_depth = depth(node.left) if (node.left) else 0
+            right_depth = depth(node.right) if (node.right) else 0
+            longest_diameter = max(longest_diameter, left_depth + right_depth)
+            return 1 + max(left_depth, right_depth)
+
+        depth(root)
+        return longest_diameter
 
 
 tn1 = TreeNode(1)
