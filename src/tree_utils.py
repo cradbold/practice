@@ -384,6 +384,8 @@ assert (result == 1)
 nan_root = NAryNode(1, [NAryNode(3, [NAryNode(5, []), NAryNode(6, [])]), NAryNode(2, []), NAryNode(4, [])])
 result = TreeUtils.n_ary_depth_iter(nan_root)
 assert (result == 3)
+result = TreeUtils.n_ary_depth_rec(nan_root)
+assert (result == 3)
 nan_root = NAryNode(1, [
     NAryNode(2, []), 
     NAryNode(3, [NAryNode(6, []), NAryNode(7, [NAryNode(11, [NAryNode(14, [])])])]),
@@ -391,4 +393,6 @@ nan_root = NAryNode(1, [
     NAryNode(5, [NAryNode(9, [NAryNode(13, [])]), NAryNode(10, [])])
 ])
 result = TreeUtils.n_ary_depth_iter(nan_root)
+assert (result == 5)
+result = TreeUtils.n_ary_depth_rec(nan_root)
 assert (result == 5)
