@@ -392,6 +392,9 @@ class StringParsing:
         
         return True
     
+    def reverseStr(self, s: str, k: int) -> str:
+        pass
+    
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
