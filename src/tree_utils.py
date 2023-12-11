@@ -142,7 +142,7 @@ class TreeUtils:
         return min_diff
     
     @staticmethod
-    def diameter(root: Optional[TreeNode]) -> int:
+    def diameter_iter(root: Optional[TreeNode]) -> int:
         diameter = 0
         depths = {}
         stack = [ (root, False) ]
@@ -320,10 +320,10 @@ tn1.left = tn2
 tn1.right = tn3
 tn2.left = tn4
 tn2.right = tn5
-result = TreeUtils.diameter(tn1)
+result = TreeUtils.diameter_iter(tn1)
 assert (result == 3)
 tn1.right = None
 tn2.left = None
 tn2.right = None
-result = TreeUtils.diameter(tn1)
+result = TreeUtils.diameterIter(tn1)
 assert (result == 1)
