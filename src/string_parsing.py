@@ -394,7 +394,15 @@ class StringParsing:
     
     @staticmethod
     def reverse_str_every_k(s: str, k: int) -> str:
-        pass
+        result = [ c for c in s ]
+
+        i, j = 0, k
+        while (i < len(s)):
+            result[i:j] = s[i:j][::-1]
+            i += 2 * k
+            j += 2 * k
+
+        return "".join(result)
     
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
