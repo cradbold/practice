@@ -258,19 +258,10 @@ class TreeUtils:
                 return False
             return trees_strict_equal(root1.left, root2.left) and trees_strict_equal(root1.right, root2.right)
         
-        stack = [(root, False)]
-        while (stack):
-            (node, process_now) = stack.pop()
-            if (node):
-                if (process_now):
-                    if (trees_strict_equal(node, subRoot)):
-                        return True
-                else:
-                    stack.append((node, True))
-                    stack.append((node.left, False))
-                    stack.append((node.right, False))
-
-        return False
+        if (not root):
+            return root == subRoot
+        
+        return trees_strict_equal(root, subRoot) or TreeUtils.is_subtree(root.left, subRoot) or TreeUtils.is_subtree(root.right, subRoot)
 
 
 tn1 = TreeNode(1)
