@@ -247,7 +247,8 @@ class TreeUtils:
 
         return tilt_calcs(root)[0]
     
-    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+    @staticmethod
+    def is_subtree(root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
         pass
 
 
