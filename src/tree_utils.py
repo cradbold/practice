@@ -211,7 +211,8 @@ class TreeUtils:
         
         return 1 + max_depth
     
-    def findTilt(self, root: Optional[TreeNode]) -> int:
+    @staticmethod
+    def tilt(root: Optional[TreeNode]) -> int:
         pass
 
 
