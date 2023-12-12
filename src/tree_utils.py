@@ -215,16 +215,16 @@ class TreeUtils:
     def tilt_sum_iter(root: Optional[TreeNode]) -> int:
         tilt_sum = 0
         
-        child_sums = {}
+        node_sums = {}
         stack = [(root, False)]
         while (stack):
             (node, process_now) = stack.pop()
             if (node):
                 if (process_now):
-                    left_sum = child_sums[node.left] if (node.left) else 0
-                    right_sum = child_sums[node.right] if (node.right) else 0
+                    left_sum = node_sums[node.left] if (node.left) else 0
+                    right_sum = node_sums[node.right] if (node.right) else 0
                     tilt_sum += abs(right_sum - left_sum)
-                    child_sums[node] = node.val + left_sum + right_sum
+                    node_sums[node] = node.val + left_sum + right_sum
                 else:
                     stack.append((node, True))
                     stack.append((node.right, False))
@@ -236,7 +236,7 @@ class TreeUtils:
     def tilt_sum_rec(root: Optional[TreeNode]) -> int:
         tilt_sum = 0
 
-        
+        node_sums = {}
 
         return tilt_sum
 
