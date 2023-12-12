@@ -212,8 +212,24 @@ class TreeUtils:
         return 1 + max_depth
     
     @staticmethod
-    def tilt(root: Optional[TreeNode]) -> int:
-        pass
+    def tilt_sum(root: Optional[TreeNode]) -> int:
+        tilt_sum = 0
+        child_sums = {}
+        stack = [(root, False)]
+        while (stack):
+            (node, process_now) = stack.pop()
+            if (node):
+                if (process_now):
+                    left_sum = child_sums[node.left] if (node.left) else 0
+                    right_sum = child_sums[node.right] if (node.right) else 0
+                    tilt_sum += abs(left_sum - right_sum)
+                    child_sums[node] = node.val + left_sum + right_sum
+                else:
+                    stack.append((node, True))
+                    stack.append((node.right, False))
+                    stack.append((node.left, False))
+
+        return tilt_sum
 
 
 tn1 = TreeNode(1)
@@ -402,11 +418,11 @@ result = TreeUtils.n_ary_depth_rec(nan_root)
 assert (result == 5)
 
 root = TreeNode(1, TreeNode(2), TreeNode(2))
-result = TreeUtils.tilt(root)
+result = TreeUtils.tilt_sum(root)
 assert (result == 1)
 root = TreeNode(4, TreeNode(2, TreeNode(3), TreeNode(5)), TreeNode(9, None, TreeNode(7)))
-result = TreeUtils.tilt(root)
+result = TreeUtils.tilt_sum(root)
 assert (result == 15)
 root = TreeNode(21, TreeNode(7, TreeNode(1, TreeNode(3), TreeNode(3)), TreeNode(1)), TreeNode(14, TreeNode(2), TreeNode(2)))
-result = TreeUtils.tilt(root)
+result = TreeUtils.tilt_sum(root)
 assert (result == 9)
