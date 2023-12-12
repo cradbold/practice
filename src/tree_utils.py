@@ -249,7 +249,40 @@ class TreeUtils:
     
     @staticmethod
     def is_subtree(root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
-        pass
+        def trees_strict_equal(root1: Optional[TreeNode], root2: Optional[TreeNode]) -> bool:
+            try:
+                stack1, stack2 = [], []
+                while (root1 or stack1):
+                    while (root1):
+                        stack1.append(root1)
+                        stack2.append(root2)
+                        root1 = root1.left
+                        root2 = root2.left
+                    root1 = stack1.pop()
+                    root2 = stack2.pop()
+                    if (root1.val != root2.val):
+                        return False
+                    if ((root1.left == None and root2.left != None) or (root1.left != None and root2.left == None)):
+                        return False
+                    if ((root1.right == None and root2.right != None) or (root1.right != None and root2.right == None)):
+                        return False
+                    root1 = root1.right
+                    root2 = root2.right
+            except:
+                return False
+            return True
+        
+        stack = []
+        while (root or stack):
+            while (root):
+                stack.append(root)
+                root = root.left
+            root = stack.pop()
+            if (trees_strict_equal(root, subRoot)):
+                return True
+            root = root.right
+
+        return False
 
 
 tn1 = TreeNode(1)
