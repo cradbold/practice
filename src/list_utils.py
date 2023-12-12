@@ -546,7 +546,19 @@ class ListUtils:
     
     @staticmethod
     def reshape_matrix(matrix: List[List[int]], r: int, c: int) -> List[List[int]]:
-        pass
+        if (r * c != len(matrix) * len(matrix[0])):
+            return matrix
+        
+        result = [[0 for _ in range(c)] for _ in range(r)]
+        cell_count = 0
+        ri, ci = 0, 0
+        for row in matrix:
+            for cell in row:
+                result[ri][ci] = cell
+                cell_count += 1
+                ri, ci = cell_count // c, cell_count % c
+
+        return result
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
