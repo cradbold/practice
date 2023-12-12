@@ -544,7 +544,8 @@ class ListUtils:
 
         return scores
     
-    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+    @staticmethod
+    def reshape_matrix(matrix: List[List[int]], r: int, c: int) -> List[List[int]]:
         pass
 
 
