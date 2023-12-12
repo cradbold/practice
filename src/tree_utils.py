@@ -246,6 +246,9 @@ class TreeUtils:
             return (left_tilt_sum + right_tilt_sum + abs(left_val_sum - right_val_sum), left_val_sum + root.val + right_val_sum)
 
         return tilt_calcs(root)[0]
+    
+    def isSubtree(self, root: Optional[TreeNode], subRoot: Optional[TreeNode]) -> bool:
+        pass
 
 
 tn1 = TreeNode(1)
