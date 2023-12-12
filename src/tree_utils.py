@@ -210,6 +210,9 @@ class TreeUtils:
             max_depth = max(max_depth, TreeUtils.n_ary_depth_rec(child))
         
         return 1 + max_depth
+    
+    def findTilt(self, root: Optional[TreeNode]) -> int:
+        pass
 
 
 tn1 = TreeNode(1)
