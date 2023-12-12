@@ -549,7 +549,7 @@ class ListUtils:
         if (r * c != len(matrix) * len(matrix[0])):
             return matrix
         
-        result = [[0 for _ in range(c)] for _ in range(r)]
+        result = [[0] * c for _ in range(r)]
         cell_count = 0
         ri, ci = 0, 0
         for row in matrix:
