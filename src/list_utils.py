@@ -543,6 +543,9 @@ class ListUtils:
             scores[i] = rank_to_place(score_rank_map[score])
 
         return scores
+    
+    def matrixReshape(self, mat: List[List[int]], r: int, c: int) -> List[List[int]]:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
