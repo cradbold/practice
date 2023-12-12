@@ -231,6 +231,14 @@ class TreeUtils:
                     stack.append((node.left, False))
 
         return tilt_sum
+    
+    @staticmethod
+    def tilt_sum_rec(root: Optional[TreeNode]) -> int:
+        tilt_sum = 0
+
+        
+
+        return tilt_sum
 
 
 tn1 = TreeNode(1)
