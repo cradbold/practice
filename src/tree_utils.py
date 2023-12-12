@@ -1,5 +1,5 @@
 from typing import Optional, Callable, List, Any
-from collections import Counter
+from collections import Counter, deque
 
 class TreeNode:
 
@@ -188,24 +188,16 @@ class TreeUtils:
             return 0
 
         child_depth = 0
-        depths = {}
+        queue = deque([root])
+        while (queue):
+            for _ in range(len(queue)):
+                node = queue.popleft()
+                for child in node.children:
+                    queue.append(child)
+            
+            child_depth += 1
 
-        stack = [(root, False)]
-        while (stack):
-            (node, process_now) = stack.pop()
-            if (node):
-                if (process_now):
-                    max_child_depth = 0
-                    for child in node.children:
-                        max_child_depth = max(max_child_depth, depths[child])
-                    child_depth = max(child_depth, max_child_depth)
-                    depths[node] = 1 + max_child_depth
-                else:
-                    stack.append((node, True))
-                    for child in node.children:
-                        stack.append((child, False))
-
-        return 1 + child_depth
+        return child_depth
     
     @staticmethod
     def n_ary_depth_rec(root: Optional[NAryNode]) -> int:
