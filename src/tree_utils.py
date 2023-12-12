@@ -258,15 +258,15 @@ class TreeUtils:
                 return False
             return trees_strict_equal(root1.left, root2.left) and trees_strict_equal(root1.right, root2.right)
         
-        stack = []
-        while (root or stack):
-            while (root):
-                stack.append(root)
-                root = root.left
-            root = stack.pop()
-            if (trees_strict_equal(root, subRoot)):
-                return True
-            root = root.right
+        queue = deque([root])
+        while (queue):
+            for _ in range(len(queue)):
+                node = queue.popleft()
+                if (node):
+                    if (trees_strict_equal(node, subRoot)):
+                        return True
+                    queue.append(node.left)
+                    queue.append(node.right)
 
         return False
 
