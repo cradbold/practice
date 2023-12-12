@@ -234,11 +234,18 @@ class TreeUtils:
     
     @staticmethod
     def tilt_sum_rec(root: Optional[TreeNode]) -> int:
-        tilt_sum = 0
+        if (not root):
+            return 0
 
-        node_sums = {}
+        def tilt_calcs(root: Optional[TreeNode]) -> (int, int):
+            if (not root):
+                return (0, 0)
 
-        return tilt_sum
+            (left_tilt_sum, left_val_sum) = tilt_calcs(root.left)
+            (right_tilt_sum, right_val_sum) = tilt_calcs(root.right)
+            return (left_tilt_sum + right_tilt_sum + abs(left_val_sum - right_val_sum), left_val_sum + root.val + right_val_sum)
+
+        return tilt_calcs(root)[0]
 
 
 tn1 = TreeNode(1)
