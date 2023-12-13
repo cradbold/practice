@@ -29,12 +29,9 @@ def player_first_login(activity: pd.DataFrame) -> pd.DataFrame:
 # | bonus       | int  |
 # +-------------+------+
 def low_bonus_employees(employees: pd.DataFrame, bonuses: pd.DataFrame, exc_limit: int) -> pd.DataFrame:
-    employees_bonuses = pd.merge(employees, bonuses, how='left', on='empId')
-    employees_bonuses = employees_bonuses.fillna(0)
-    employees_bonuses['bonus'] = employees_bonuses['bonus'].astype(int)
-    result = employees_bonuses[employees_bonuses['bonus'] < exc_limit]
-    result.loc[:'bonus'] = result.loc[:'bonus'].replace(0, None)
-    return result[['name', 'bonus']]
+    employee_bonuses = pd.merge(employees, bonuses, how='left', on='empId')[['name', 'bonus']].fillna(0)
+    employee_bonuses['bonus'] = employee_bonuses['bonus'].astype(int)
+    return employee_bonuses[employee_bonuses.bonus < exc_limit].replace(0, None)
 
 
 input_table = { 'player_id': [1, 1, 2, 3, 3], 'device_id':[2, 2, 3, 1, 4], 'event_date': ['2016-03-01', '2016-05-02', '2017-06-25', '2016-03-02', '2018-07-03'], 'games_played': [5, 6, 1, 0, 5] }
