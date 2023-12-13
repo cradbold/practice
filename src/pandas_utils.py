@@ -37,3 +37,12 @@ expected_table = { 'player_id': { 0: 1, 1: 2, 2: 3 }, 'first_login': { 0: '2016-
 result_table = player_first_login(pd.DataFrame(input_table)).to_dict()
 print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
 assert (result_table == expected_table)
+print()
+
+employees = { 'empId': [3, 1, 2, 4], 'name':['Brad', 'John', 'Dan', 'Thomas'], 'supervisor': [None, 3, 3, 3], 'salary': [4000, 1000, 2000, 4000] }
+bonuses = { 'empId': [2, 4], 'bonus': [500, 200] }
+expected = { 'name': { 0: 'Brad', 1: 'John', 2: 'Dan' }, 'bonus': { 0: None, 1: None, 2: '500' } }
+result = low_bonus_employees(pd.DataFrame(employees), pd.DataFrame(bonuses)).to_dict()
+print(f'employees: {employees}\nbonuses: {bonuses}\nexpected: {expected}\nresult: {result}')
+assert (result == expected)
+print()
