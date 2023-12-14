@@ -264,7 +264,19 @@ class TreeUtils:
         return trees_strict_equal(root, subRoot) or TreeUtils.is_subtree(root.left, subRoot) or TreeUtils.is_subtree(root.right, subRoot)
     
     @staticmethod
-    def preorder_traversal(root: NAryNode) -> List[int]:
+    def preorder_traversal_iter(root: NAryNode) -> List[int]:
+        result = []
+        stack = [root]
+
+        while (stack):
+            node = stack.pop()
+            result.append(node.val)
+            stack.extend(reversed(node.children))
+
+        return result
+
+    @staticmethod
+    def preorder_traversal_rec(root: NAryNode) -> List[int]:
         result = []
         stack = [root]
         
@@ -486,8 +498,8 @@ result = TreeUtils.is_subtree(root, subtree)
 assert (result == False)
 
 nan_root = NAryNode(1, [NAryNode(3, [NAryNode(5, []), NAryNode(6, [])]), NAryNode(2, []), NAryNode(4, [])])
-result = TreeUtils.preorder_traversal(nan_root)
+result = TreeUtils.preorder_traversal_iter(nan_root)
 assert (result == [1, 3, 5, 6, 2, 4])
 nan_root = NAryNode(1, [NAryNode(2), NAryNode(3, [NAryNode(6), NAryNode(7, [NAryNode(11, [NAryNode(14)])])]), NAryNode(4, [NAryNode(8, [NAryNode(12)])]), NAryNode(5, [NAryNode(9, [NAryNode(13)]), NAryNode(10)])])
-result = TreeUtils.preorder_traversal(nan_root)
+result = TreeUtils.preorder_traversal_iter(nan_root)
 assert (result == [1, 2, 3, 6, 7, 11, 14, 4, 8, 12, 5, 9, 13, 10])
