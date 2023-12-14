@@ -265,7 +265,15 @@ class TreeUtils:
     
     @staticmethod
     def preorder_traversal(root: NAryNode) -> List[int]:
-        pass
+        result = []
+        stack = [root]
+        
+        while (stack):
+            node = stack.pop()
+            result.append(node.val)
+            stack.extend(reversed(node.children))
+
+        return result
 
 
 tn1 = TreeNode(1)
