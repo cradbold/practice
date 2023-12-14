@@ -291,8 +291,16 @@ class TreeUtils:
     
     @staticmethod
     def postorder_traversal_iter(root: NAryNode) -> List[int]:
-        result = []
-        return result
+        reversed_result = []
+        stack = [root]
+
+        while (stack):
+            node = stack.pop()
+            if (node):
+                reversed_result.append(node.val)
+                stack.extend(node.children)
+
+        return reversed_result[::-1]
 
     @staticmethod
     def postorder_traversal_rec(root: NAryNode) -> List[int]:
