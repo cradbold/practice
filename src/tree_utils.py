@@ -263,7 +263,8 @@ class TreeUtils:
         
         return trees_strict_equal(root, subRoot) or TreeUtils.is_subtree(root.left, subRoot) or TreeUtils.is_subtree(root.right, subRoot)
     
-    def preorder(self, root: 'Node') -> List[int]:
+    @staticmethod
+    def preorder_traversal(root: NAryNode) -> List[int]:
         pass
 
 
