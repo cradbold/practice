@@ -52,7 +52,7 @@ def big_countries(world: pd.DataFrame) -> pd.DataFrame:
 # | class       | varchar |
 # +-------------+---------+
 def popular_classes(courses: pd.DataFrame, min_count: int) -> pd.DataFrame:
-    pass
+    return courses.groupby('class').count()[lambda x: x['student'] >= min_count].reset_index()[['class']]
 
 
 input_table = { 'player_id': [1, 1, 2, 3, 3], 'device_id':[2, 2, 3, 1, 4], 'event_date': ['2016-03-01', '2016-05-02', '2017-06-25', '2016-03-02', '2018-07-03'], 'games_played': [5, 6, 1, 0, 5] }
@@ -78,7 +78,7 @@ assert (result_table == expected_table)
 print()
 
 input_table = { 'student': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'], 'class':['Math', 'English', 'Math', 'Biology', 'Math', 'Computer', 'Math', 'Math','Math'] }
-expected_table = { 'name': { 0: 'Math' } }
+expected_table = { 'class': { 0: 'Math' } }
 result_table = popular_classes(pd.DataFrame(input_table), min_count=5).to_dict()
 print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
 assert (result_table == expected_table)
