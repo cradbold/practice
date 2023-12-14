@@ -62,7 +62,7 @@ assert (result == expected)
 print()
 
 input_table = { 'name': ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola'], 'continent':['Asia', 'Europe', 'Africa', 'Europe', 'Africa'], 'area': [652_230, 28_748, 2_381_741, 468, 1_246_700], 'population': [25_500_100, 2_831_741, 37_100_000, 78_115, 20_609_294] }
-expected_table = { 'name': { 0: 'Afghanistan', 1: 'Algeria' }, 'population': { 0: 25_500_100, 1: 37_100_000 }, 'area': { 0: 652_230, 1: 2_381_741 } }
+expected_table = { 'name': { 0: 'Afghanistan', 2: 'Algeria' }, 'population': { 0: 25500100, 2: 37100000 }, 'area': { 0: 652230, 2: 2381741 } }
 result_table = big_countries(pd.DataFrame(input_table)).to_dict()
 print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
 assert (result_table == expected_table)
