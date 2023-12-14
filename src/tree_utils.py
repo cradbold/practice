@@ -288,6 +288,9 @@ class TreeUtils:
         preorder_traverse(root)
 
         return result
+    
+    def postorder(self, root: NAryNode) -> List[int]:
+        pass
 
 
 tn1 = TreeNode(1)
