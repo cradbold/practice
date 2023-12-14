@@ -581,8 +581,16 @@ class ListUtils:
     
     @staticmethod
     def area_of_max_int_post_op_incs(m: int, n: int, ops: List[List[int]]) -> int:
-        pass
+        if (not ops):
+            return m * n
+        
+        max_int = len(ops)
 
+        mins = (ops[0][0], ops[0][1])
+        for op in ops:
+            mins = (min(mins[0], op[0]), min(mins[1], op[1]))
+
+        return mins[0] * mins[1]
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
