@@ -262,6 +262,9 @@ class TreeUtils:
             return root == subRoot
         
         return trees_strict_equal(root, subRoot) or TreeUtils.is_subtree(root.left, subRoot) or TreeUtils.is_subtree(root.right, subRoot)
+    
+    def preorder(self, root: 'Node') -> List[int]:
+        pass
 
 
 tn1 = TreeNode(1)
