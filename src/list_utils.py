@@ -584,8 +584,6 @@ class ListUtils:
         if (not ops):
             return m * n
         
-        max_int = len(ops)
-
         mins = (ops[0][0], ops[0][1])
         for op in ops:
             mins = (min(mins[0], op[0]), min(mins[1], op[1]))
