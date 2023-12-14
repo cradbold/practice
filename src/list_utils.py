@@ -559,6 +559,9 @@ class ListUtils:
                 ri, ci = cell_count // c, cell_count % c
 
         return result
+    
+    def findLHS(self, nums: List[int]) -> int:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
