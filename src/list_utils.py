@@ -578,6 +578,9 @@ class ListUtils:
                 lhm = max(lhm, num_counts[i_num] + num_counts[j_num])
 
         return lhm
+    
+    def maxCount(self, m: int, n: int, ops: List[List[int]]) -> int:
+        pass
 
 
 
