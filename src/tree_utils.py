@@ -291,7 +291,17 @@ class TreeUtils:
     
     @staticmethod
     def postorder_traversal_rec(root: NAryNode) -> List[int]:
-        pass
+        result = []
+
+        def postorder_traverse(node: NAryNode) -> None:
+            if (node):
+                for child in node.children:
+                    postorder_traverse(child)
+                result.append(node.val)
+
+        postorder_traverse(root)
+
+        return result
 
 
 tn1 = TreeNode(1)
