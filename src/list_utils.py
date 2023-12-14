@@ -579,7 +579,8 @@ class ListUtils:
 
         return lhm
     
-    def maxCount(self, m: int, n: int, ops: List[List[int]]) -> int:
+    @staticmethod
+    def area_of_max_int_post_op_incs(m: int, n: int, ops: List[List[int]]) -> int:
         pass
 
 
