@@ -560,7 +560,8 @@ class ListUtils:
 
         return result
     
-    def findLHS(self, nums: List[int]) -> int:
+    @staticmethod
+    def longest_harmonious_subsequence(nums: List[int]) -> int:
         pass
 
 
