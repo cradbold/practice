@@ -51,7 +51,7 @@ def big_countries(world: pd.DataFrame) -> pd.DataFrame:
 # | student     | varchar |
 # | class       | varchar |
 # +-------------+---------+
-def find_classes(courses: pd.DataFrame) -> pd.DataFrame:
+def popular_classes(courses: pd.DataFrame, min_count: int) -> pd.DataFrame:
     pass
 
 
@@ -68,6 +68,13 @@ expected = { 'name': { 0: 'Brad', 1: 'John', 2: 'Dan' }, 'bonus': { 0: None, 1: 
 result = low_bonus_employees(pd.DataFrame(employees), pd.DataFrame(bonuses), 1000).to_dict()
 print(f'employees: {employees}\nbonuses: {bonuses}\nexpected: {expected}\nresult: {result}')
 assert (result == expected)
+print()
+
+input_table = { 'name': ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola'], 'continent':['Asia', 'Europe', 'Africa', 'Europe', 'Africa'], 'area': [652_230, 28_748, 2_381_741, 468, 1_246_700], 'population': [25_500_100, 2_831_741, 37_100_000, 78_115, 20_609_294] }
+expected_table = { 'name': { 0: 'Afghanistan', 2: 'Algeria' }, 'population': { 0: 25500100, 2: 37100000 }, 'area': { 0: 652230, 2: 2381741 } }
+result_table = big_countries(pd.DataFrame(input_table)).to_dict()
+print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
+assert (result_table == expected_table)
 print()
 
 input_table = { 'name': ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola'], 'continent':['Asia', 'Europe', 'Africa', 'Europe', 'Africa'], 'area': [652_230, 28_748, 2_381_741, 468, 1_246_700], 'population': [25_500_100, 2_831_741, 37_100_000, 78_115, 20_609_294] }
