@@ -33,6 +33,15 @@ def low_bonus_employees(employees: pd.DataFrame, bonuses: pd.DataFrame, exc_limi
     employee_bonuses['bonus'] = employee_bonuses['bonus'].astype(int)
     return employee_bonuses[employee_bonuses.bonus < exc_limit].replace(0, None)
 
+# +-------------+---------+
+# | Column Name | Type    |
+# +-------------+---------+
+# | name        | varchar |
+# | continent   | varchar |
+# | area        | int     |
+# | population  | int     |
+# | gdp         | bigint  |
+# +-------------+---------+
 def big_countries(world: pd.DataFrame) -> pd.DataFrame:
     pass
 
