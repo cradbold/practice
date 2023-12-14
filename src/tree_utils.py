@@ -289,7 +289,8 @@ class TreeUtils:
 
         return result
     
-    def postorder(self, root: NAryNode) -> List[int]:
+    @staticmethod
+    def postorder_traversal_rec(root: NAryNode) -> List[int]:
         pass
 
 
