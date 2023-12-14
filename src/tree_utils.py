@@ -278,12 +278,14 @@ class TreeUtils:
     @staticmethod
     def preorder_traversal_rec(root: NAryNode) -> List[int]:
         result = []
-        stack = [root]
-        
-        while (stack):
-            node = stack.pop()
-            result.append(node.val)
-            stack.extend(reversed(node.children))
+
+        def preorder_traverse(root: NAryNode) -> None:
+            if (root):
+                result.append(root.val)
+                for child in root.children:
+                    preorder_traverse(child)
+
+        preorder_traverse(root)
 
         return result
 
