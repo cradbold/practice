@@ -290,6 +290,11 @@ class TreeUtils:
         return result
     
     @staticmethod
+    def postorder_traversal_iter(root: NAryNode) -> List[int]:
+        result = []
+        return result
+
+    @staticmethod
     def postorder_traversal_rec(root: NAryNode) -> List[int]:
         result = []
 
