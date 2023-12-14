@@ -562,7 +562,23 @@ class ListUtils:
     
     @staticmethod
     def longest_harmonious_subsequence(nums: List[int]) -> int:
-        pass
+        if (len(nums) < 2):
+            return 0
+        
+        num_counts = Counter(nums)
+        diff_nums = list(num_counts.keys())
+        diff_nums.sort()
+
+        lhm = 0
+
+        for i in range(len(diff_nums) - 1):
+            i_num = diff_nums[i]
+            j_num = diff_nums[i + 1]
+            if (j_num == i_num + 1):
+                lhm = max(lhm, num_counts[i_num] + num_counts[j_num])
+
+        return lhm
+
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
