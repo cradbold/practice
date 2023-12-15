@@ -604,6 +604,9 @@ def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     
     return True
 
+def findRestaurant(self, list1: List[str], list2: List[str]) -> List[str]:
+    pass
+
 
 test_node1 = ListNode(1)
 test_node2 = ListNode(2)
