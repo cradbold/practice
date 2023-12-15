@@ -590,6 +590,10 @@ class ListUtils:
 
         return mins[0] * mins[1]
 
+    @staticmethod
+    def nearest_common_restaurant_by_rank(list1: List[str], list2: List[str]) -> List[str]:
+        pass
+
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
@@ -603,11 +607,6 @@ def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
         return False
     
     return True
-
-@staticmethod
-def nearest_common_restaurant_by_rank(list1: List[str], list2: List[str]) -> List[str]:
-    pass
-
 
 test_node1 = ListNode(1)
 test_node2 = ListNode(2)
@@ -847,3 +846,10 @@ result = ListUtils.area_of_max_int_post_op_incs(3, 3, [[2, 2],[3, 3],[3, 3],[3, 
 assert (result == 4)
 result = ListUtils.area_of_max_int_post_op_incs(3, 3, [])
 assert (result == 9)
+
+result = ListUtils.nearest_common_restaurant_by_rank(["Shogun", "Tapioca Express", "Burger King", "KFC"], ["Piatti", "The Grill at Torrey Pines", "Hungry Hunter Steakhouse", "Shogun"])
+assert (result == ["Shogun"])
+result = ListUtils.nearest_common_restaurant_by_rank(["Shogun", "Tapioca Express", "Burger King", "KFC"], ["KFC", "Shogun", "Burger King"])
+assert (result == ["Shogun"])
+result = ListUtils.nearest_common_restaurant_by_rank(["McDs", "KFC", "good"], ["KFC", "McDs", "good"])
+assert (result == ["KFC","McDs"])
