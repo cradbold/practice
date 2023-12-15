@@ -609,7 +609,8 @@ class ListUtils:
 
         return rank_restaurants[min_rank]
 
-    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+    @staticmethod
+    def can_place_n_flowers(flowerbed: List[int], n: int) -> bool:
         pass
 
 
