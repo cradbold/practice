@@ -604,7 +604,8 @@ def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     
     return True
 
-def findRestaurant(self, list1: List[str], list2: List[str]) -> List[str]:
+@staticmethod
+def nearest_common_restaurant_by_rank(list1: List[str], list2: List[str]) -> List[str]:
     pass
 
 
