@@ -592,7 +592,22 @@ class ListUtils:
 
     @staticmethod
     def nearest_common_restaurant_by_rank(list1: List[str], list2: List[str]) -> List[str]:
-        pass
+        list1_restaurant_indices = {}
+        for i, r in enumerate(list1):
+            list1_restaurant_indices[r] = i
+
+        min_rank = len(list1) + len(list2) - 2
+        rank_restaurants = {}
+        for i, r in enumerate(list2):
+            if (r in list1_restaurant_indices):
+                rank_sum = list1_restaurant_indices[r] + i
+                if (rank_sum in rank_restaurants):
+                    rank_restaurants[rank_sum].append(r)
+                else:
+                    rank_restaurants[rank_sum] = [r]
+                min_rank = min(min_rank, rank_sum)
+
+        return rank_restaurants[min_rank]
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
