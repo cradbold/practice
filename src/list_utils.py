@@ -609,6 +609,9 @@ class ListUtils:
 
         return rank_restaurants[min_rank]
 
+    def canPlaceFlowers(self, flowerbed: List[int], n: int) -> bool:
+        pass
+
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
