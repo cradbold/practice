@@ -613,30 +613,18 @@ class ListUtils:
     def can_place_n_flowers(flowerbed: List[int], n: int) -> bool:
         if (n == 0):
             return True
-    
-        if (len(flowerbed) == 1):
-            return flowerbed[0] == 0
-        
-        valid_plots = 0
-        i = 0
-        while (i < len(flowerbed)):
-            if (flowerbed[i] == 0):
-                li, ri = i - 1, i + 1
-                if (li < 0):
-                    if (ri < len(flowerbed) and flowerbed[ri] == 0):
-                        valid_plots += 1
-                        i += 1
-                elif (ri >= len(flowerbed)): # li >= 0
-                    if (flowerbed[li] == 0):
-                        valid_plots += 1
-                        i += 1
-                else:
-                    if (flowerbed[li] == 0 and flowerbed[ri] == 0):
-                        valid_plots += 1
-                        i += 1
-            i += 1
 
-        return valid_plots >= n
+        valid_plots = 0
+
+        for i in range(len(flowerbed)):
+            li, ri = i - 1, i + 1
+            if (flowerbed[i] == 0 and (li < 0 or flowerbed[li] == 0) and (ri >= len(flowerbed) or flowerbed[ri] == 0)):
+                flowerbed[i] = 1
+                valid_plots += 1
+            if (valid_plots >= n):
+                return True
+
+        return False
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
