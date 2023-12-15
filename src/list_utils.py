@@ -611,7 +611,32 @@ class ListUtils:
 
     @staticmethod
     def can_place_n_flowers(flowerbed: List[int], n: int) -> bool:
-        pass
+        if (n == 0):
+            return True
+    
+        if (len(flowerbed) == 1):
+            return flowerbed[0] == 0
+        
+        valid_plots = 0
+        i = 0
+        while (i < len(flowerbed)):
+            if (flowerbed[i] == 0):
+                li, ri = i - 1, i + 1
+                if (li < 0):
+                    if (ri < len(flowerbed) and flowerbed[ri] == 0):
+                        valid_plots += 1
+                        i += 1
+                elif (ri >= len(flowerbed)): # li >= 0
+                    if (flowerbed[li] == 0):
+                        valid_plots += 1
+                        i += 1
+                else:
+                    if (flowerbed[li] == 0 and flowerbed[ri] == 0):
+                        valid_plots += 1
+                        i += 1
+            i += 1
+
+        return valid_plots >= n
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
