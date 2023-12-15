@@ -872,3 +872,8 @@ result = ListUtils.nearest_common_restaurant_by_rank(["Shogun", "Tapioca Express
 assert (result == ["Shogun"])
 result = ListUtils.nearest_common_restaurant_by_rank(["McDs", "KFC", "good"], ["KFC", "McDs", "good"])
 assert (result == ["KFC","McDs"])
+
+result = ListUtils.can_place_n_flowers([1, 0, 0, 0, 1], 1)
+assert (result == True)
+result = ListUtils.can_place_n_flowers([1, 0, 0, 0, 1], 2)
+assert (result == False)
