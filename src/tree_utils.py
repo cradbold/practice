@@ -317,7 +317,7 @@ class TreeUtils:
         return result
 
     @staticmethod
-    def tree2str(self, root: Optional[TreeNode]) -> str:
+    def to_str(root: Optional[TreeNode]) -> str:
         pass
 
 
