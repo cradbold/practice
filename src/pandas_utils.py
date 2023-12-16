@@ -54,7 +54,7 @@ def big_countries(world: pd.DataFrame) -> pd.DataFrame:
 def popular_classes(courses: pd.DataFrame, min_count: int) -> pd.DataFrame:
     return courses.groupby('class').count()[lambda x: x['student'] >= min_count].reset_index()[['class']]
 
-def sales_person(sales_person: pd.DataFrame, company: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:
+def sales_person(sales_person: pd.DataFrame, company: pd.DataFrame, orders: pd.DataFrame, avoid_company: str) -> pd.DataFrame:
     pass
 
 
