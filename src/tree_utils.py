@@ -375,6 +375,10 @@ class TreeUtils:
             node1.val += node2.val
 
         return root1
+    
+    @staticmethod
+    def merge_trees_rec(root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
+        pass
 
 
 tn1 = TreeNode(1)
