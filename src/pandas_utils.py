@@ -54,8 +54,38 @@ def big_countries(world: pd.DataFrame) -> pd.DataFrame:
 def popular_classes(courses: pd.DataFrame, min_count: int) -> pd.DataFrame:
     return courses.groupby('class').count()[lambda x: x['student'] >= min_count].reset_index()[['class']]
 
-def sales_person(sales_person: pd.DataFrame, company: pd.DataFrame, orders: pd.DataFrame, avoid_company: str) -> pd.DataFrame:
-    pass
+# sales_team
+# +-----------------+---------+
+# | Column Name     | Type    |
+# +-----------------+---------+
+# | sales_id        | int     |
+# | name            | varchar |
+# | salary          | int     |
+# | commission_rate | int     |
+# | hire_date       | date    |
+# +-----------------+---------+
+# companies
+# +-------------+---------+
+# | Column Name | Type    |
+# +-------------+---------+
+# | com_id      | int     |
+# | name        | varchar |
+# | city        | varchar |
+# +-------------+---------+
+# orders
+# +-------------+------+
+# | Column Name | Type |
+# +-------------+------+
+# | order_id    | int  |
+# | order_date  | date |
+# | com_id      | int  |
+# | sales_id    | int  |
+# | amount      | int  |
+# +-------------+------+
+def sales_person(sales_team: pd.DataFrame, companies: pd.DataFrame, orders: pd.DataFrame, avoid_company: str) -> pd.DataFrame:
+    order_details = pd.merge(sales_team, pd.merge(orders, companies, by='com_id')[['sales_id', 'name']].rename(columns={'name': 'company'}), how='left', by='sales_id')[['name', 'company']]
+    print(order_details)
+    return order_details
 
 
 input_table = { 'player_id': [1, 1, 2, 3, 3], 'device_id':[2, 2, 3, 1, 4], 'event_date': ['2016-03-01', '2016-05-02', '2017-06-25', '2016-03-02', '2018-07-03'], 'games_played': [5, 6, 1, 0, 5] }
