@@ -82,8 +82,8 @@ def popular_classes(courses: pd.DataFrame, min_count: int) -> pd.DataFrame:
 # | sales_id    | int  |
 # | amount      | int  |
 # +-------------+------+
-def sales_person(sales_team: pd.DataFrame, companies: pd.DataFrame, orders: pd.DataFrame, avoid_company: str) -> pd.DataFrame:
-    order_details = pd.merge(sales_team, pd.merge(orders, companies, by='com_id')[['sales_id', 'name']].rename(columns={'name': 'company'}), how='left', by='sales_id')[['name', 'company']]
+def sales_people_avoiding_company(sales_team: pd.DataFrame, companies: pd.DataFrame, orders: pd.DataFrame, avoid_company: str) -> pd.DataFrame:
+    order_details = pd.merge(sales_team, pd.merge(orders, companies, on='com_id')[['sales_id', 'name']].rename(columns={'name': 'company'}), how='left', on='sales_id')[['name', 'company']]
     print(order_details)
     return order_details
 
@@ -110,9 +110,18 @@ print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}
 assert (result_table == expected_table)
 print()
 
-input_table = { 'student': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'], 'class':['Math', 'English', 'Math', 'Biology', 'Math', 'Computer', 'Math', 'Math','Math'] }
+input_table = { 'student': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'], 'class':['Math', 'English', 'Math', 'Biology', 'Math', 'Computer', 'Math', 'Math', 'Math'] }
 expected_table = { 'class': { 0: 'Math' } }
 result_table = popular_classes(pd.DataFrame(input_table), min_count=5).to_dict()
+print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
+assert (result_table == expected_table)
+print()
+
+sales_team = { 'sales_id': [1, 2, 3, 4, 5], 'name': ['John', 'Amy', 'Mark', 'Pam', 'Alex'], 'bogus': [1, 2, 3, 4, 5] }
+companies = { 'com_id': [1, 2, 3, 4], 'name':['RED', 'ORANGE', 'YELLOW', 'GREEN'], 'bogus': [1, 2, 3, 4] }
+orders = { 'order_id': [1, 2, 3, 4], 'com_id':[3, 4, 1, 1], 'sales_id': [4, 5, 1, 4], 'bogus': [1, 2, 3, 4] }
+expected_table = { 'name': { 0: 'Amy', 1: 'Mark', 2: 'Alex' } }
+result_table = sales_people_avoiding_company(pd.DataFrame(sales_team), pd.DataFrame(companies), pd.DataFrame(orders), avoid_company='RED').to_dict()
 print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
 assert (result_table == expected_table)
 print()
