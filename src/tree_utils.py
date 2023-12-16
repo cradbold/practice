@@ -316,6 +316,10 @@ class TreeUtils:
 
         return result
 
+    @staticmethod
+    def tree2str(self, root: Optional[TreeNode]) -> str:
+        pass
+
 
 tn1 = TreeNode(1)
 tn2 = TreeNode(2)
