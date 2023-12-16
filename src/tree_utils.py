@@ -336,7 +336,25 @@ class TreeUtils:
 
     @staticmethod
     def to_str_iter(root: Optional[TreeNode]) -> str:
-        pass
+        result = ''
+        stack = [root]
+
+        while (stack):
+            node = stack.pop()
+            if (node):
+                result += f'({node.val}'
+                if (not node.left and node.right):
+                    result += '()'
+                if (node.right):
+                    stack.extend([None, node.right])
+                if (node.left):
+                    stack.extend([None, node.left])
+            else:
+                result += ')'
+
+        print(result[1:])
+
+        return result[1:]
 
 
 tn1 = TreeNode(1)
