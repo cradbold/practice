@@ -88,6 +88,10 @@ def sales_people_avoiding_company(sales_team: pd.DataFrame, companies: pd.DataFr
     return order_details[~order_details.name.isin(red_sales_team)].reset_index()[['name']]
 
 def is_triangle(lines: pd.DataFrame) -> pd.DataFrame:
+    x = lines['x'] < lines['y'] + lines['z']
+    y = lines['y'] < lines['x'] + lines['z']
+    z = lines['z'] < lines['x'] + lines['y']
+    lines['triangle'] = (x & y & z).map({ True: 'Yes', False: 'No' })
     return lines
 
 
