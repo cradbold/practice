@@ -84,8 +84,8 @@ def popular_classes(courses: pd.DataFrame, min_count: int) -> pd.DataFrame:
 # +-------------+------+
 def sales_people_avoiding_company(sales_team: pd.DataFrame, companies: pd.DataFrame, orders: pd.DataFrame, avoid_company: str) -> pd.DataFrame:
     order_details = pd.merge(sales_team, pd.merge(orders, companies, on='com_id')[['sales_id', 'name']].rename(columns={'name': 'company'}), how='left', on='sales_id')[['name', 'company']]
-    print(order_details)
-    return order_details
+    red_sales_team = order_details[order_details.company == avoid_company]['name']
+    return order_details[~order_details.name.isin(red_sales_team)].reset_index()[['name']]
 
 
 input_table = { 'player_id': [1, 1, 2, 3, 3], 'device_id':[2, 2, 3, 1, 4], 'event_date': ['2016-03-01', '2016-05-02', '2017-06-25', '2016-03-02', '2018-07-03'], 'games_played': [5, 6, 1, 0, 5] }
