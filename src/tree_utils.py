@@ -551,3 +551,11 @@ result = TreeUtils.postorder_traversal_iter(nan_root)
 assert (result == [2, 6, 14, 11, 7, 3, 12, 8, 4, 13, 9, 10, 5, 1])
 result = TreeUtils.postorder_traversal_rec(nan_root)
 assert (result == [2, 6, 14, 11, 7, 3, 12, 8, 4, 13, 9, 10, 5, 1])
+
+root = TreeNode(1, TreeNode(2, TreeNode(4), None), TreeNode(3))
+result = TreeUtils.to_str(root)
+assert (result == '1(2(4))(3)')
+root = TreeNode(1, TreeNode(2, None, TreeNode(4)), TreeNode(3))
+result = TreeUtils.to_str(root)
+assert (result == '1(2()(4))(3)')
+
