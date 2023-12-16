@@ -87,7 +87,7 @@ def sales_people_avoiding_company(sales_team: pd.DataFrame, companies: pd.DataFr
     red_sales_team = order_details[order_details.company == avoid_company]['name']
     return order_details[~order_details.name.isin(red_sales_team)].reset_index()[['name']]
 
-def triangle_judgement(lines: pd.DataFrame) -> pd.DataFrame:
+def is_triangle(lines: pd.DataFrame) -> pd.DataFrame:
     return lines
 
 
@@ -106,14 +106,14 @@ print(f'employees: {employees}\nbonuses: {bonuses}\nexpected: {expected}\nresult
 assert (result == expected)
 print()
 
-input_table = { 'name': ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola'], 'continent':['Asia', 'Europe', 'Africa', 'Europe', 'Africa'], 'area': [652_230, 28_748, 2_381_741, 468, 1_246_700], 'population': [25_500_100, 2_831_741, 37_100_000, 78_115, 20_609_294] }
+input_table = { 'name': ['Afghanistan', 'Albania', 'Algeria', 'Andorra', 'Angola'], 'continent': ['Asia', 'Europe', 'Africa', 'Europe', 'Africa'], 'area': [652_230, 28_748, 2_381_741, 468, 1_246_700], 'population': [25_500_100, 2_831_741, 37_100_000, 78_115, 20_609_294] }
 expected_table = { 'name': { 0: 'Afghanistan', 2: 'Algeria' }, 'population': { 0: 25500100, 2: 37100000 }, 'area': { 0: 652230, 2: 2381741 } }
 result_table = big_countries(pd.DataFrame(input_table)).to_dict()
 print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
 assert (result_table == expected_table)
 print()
 
-input_table = { 'student': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'], 'class':['Math', 'English', 'Math', 'Biology', 'Math', 'Computer', 'Math', 'Math', 'Math'] }
+input_table = { 'student': ['A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I'], 'class': ['Math', 'English', 'Math', 'Biology', 'Math', 'Computer', 'Math', 'Math', 'Math'] }
 expected_table = { 'class': { 0: 'Math' } }
 result_table = popular_classes(pd.DataFrame(input_table), min_count=5).to_dict()
 print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
@@ -125,6 +125,13 @@ companies = { 'com_id': [1, 2, 3, 4], 'name':['RED', 'ORANGE', 'YELLOW', 'GREEN'
 orders = { 'order_id': [1, 2, 3, 4], 'com_id':[3, 4, 1, 1], 'sales_id': [4, 5, 1, 4], 'bogus': [1, 2, 3, 4] }
 expected_table = { 'name': { 0: 'Amy', 1: 'Mark', 2: 'Alex' } }
 result_table = sales_people_avoiding_company(pd.DataFrame(sales_team), pd.DataFrame(companies), pd.DataFrame(orders), avoid_company='RED').to_dict()
+print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
+assert (result_table == expected_table)
+print()
+
+input_table = { 'x': [13, 10], 'y': [15, 20], 'z': [30, 15] }
+expected_table = { 'x': { 0: 13, 1: 10 }, 'y': { 0: 15, 1: 20 }, 'z': { 0: 30, 1: 15 }, 'triangle': { 0: 'No', 1: 'Yes' } }
+result_table = is_triangle(pd.DataFrame(input_table)).to_dict()
 print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
 assert (result_table == expected_table)
 print()
