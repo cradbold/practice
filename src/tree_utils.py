@@ -354,6 +354,9 @@ class TreeUtils:
 
         return result[1:]
 
+    def mergeTrees(self, root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
+        pass
+
 
 tn1 = TreeNode(1)
 tn2 = TreeNode(2)
