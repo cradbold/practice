@@ -356,7 +356,24 @@ class TreeUtils:
 
     @staticmethod
     def merge_trees(root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
-        pass
+        if (not root1 and not root2): return None
+        if (not root1): return root2
+        if (not root2): return root1
+        
+        stack = [(root1, root2)]
+        while (stack):
+            (node1, node2) = stack.pop()
+            if (node1.left and node2.left):
+                stack.append((node1.left, node2.left))
+            elif (not node1.left):
+                node1.left = node2.left
+            if (node1.right and node2.right):
+                stack.append((node1.right, node2.right))
+            elif (not node1.right):
+                node1.right = node2.right
+            node1.val += node2.val
+
+        return root1
 
 
 tn1 = TreeNode(1)
