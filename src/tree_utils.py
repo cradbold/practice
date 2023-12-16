@@ -352,8 +352,6 @@ class TreeUtils:
             else:
                 result += ')'
 
-        print(result[1:])
-
         return result[1:]
 
 
