@@ -334,6 +334,10 @@ class TreeUtils:
 
         return result[1:-1]
 
+    @staticmethod
+    def to_str_iter(root: Optional[TreeNode]) -> str:
+        pass
+
 
 tn1 = TreeNode(1)
 tn2 = TreeNode(2)
