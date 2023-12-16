@@ -87,8 +87,8 @@ def sales_people_avoiding_company(sales_team: pd.DataFrame, companies: pd.DataFr
     red_sales_team = order_details[order_details.company == avoid_company]['name']
     return order_details[~order_details.name.isin(red_sales_team)].reset_index()[['name']]
 
-def triangle_judgement(triangle: pd.DataFrame) -> pd.DataFrame:
-    pass
+def triangle_judgement(lines: pd.DataFrame) -> pd.DataFrame:
+    return lines
 
 
 input_table = { 'player_id': [1, 1, 2, 3, 3], 'device_id':[2, 2, 3, 1, 4], 'event_date': ['2016-03-01', '2016-05-02', '2017-06-25', '2016-03-02', '2018-07-03'], 'games_played': [5, 6, 1, 0, 5] }
