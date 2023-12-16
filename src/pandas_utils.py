@@ -54,6 +54,9 @@ def big_countries(world: pd.DataFrame) -> pd.DataFrame:
 def popular_classes(courses: pd.DataFrame, min_count: int) -> pd.DataFrame:
     return courses.groupby('class').count()[lambda x: x['student'] >= min_count].reset_index()[['class']]
 
+def sales_person(sales_person: pd.DataFrame, company: pd.DataFrame, orders: pd.DataFrame) -> pd.DataFrame:
+    pass
+
 
 input_table = { 'player_id': [1, 1, 2, 3, 3], 'device_id':[2, 2, 3, 1, 4], 'event_date': ['2016-03-01', '2016-05-02', '2017-06-25', '2016-03-02', '2018-07-03'], 'games_played': [5, 6, 1, 0, 5] }
 expected_table = { 'player_id': { 0: 1, 1: 2, 2: 3 }, 'first_login': { 0: '2016-03-01', 1: '2017-06-25', 2: '2016-03-02' } }
