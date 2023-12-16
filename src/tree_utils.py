@@ -355,7 +355,7 @@ class TreeUtils:
         return result[1:]
 
     @staticmethod
-    def merge_trees(root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
+    def merge_trees_iter(root1: Optional[TreeNode], root2: Optional[TreeNode]) -> Optional[TreeNode]:
         if (not root1 and not root2): return None
         if (not root1): return root2
         if (not root2): return root1
@@ -363,6 +363,7 @@ class TreeUtils:
         stack = [(root1, root2)]
         while (stack):
             (node1, node2) = stack.pop()
+            # print(f'stack pop: ({node1.val}, {node2.val})')
             if (node1.left and node2.left):
                 stack.append((node1.left, node2.left))
             elif (not node1.left):
@@ -620,9 +621,9 @@ assert (result == '1(2()(4))(3)')
 
 root1 = TreeNode(1, TreeNode(3, TreeNode(5), None), TreeNode(2))
 root2 = TreeNode(2, TreeNode(1, None, TreeNode(4)), TreeNode(3, None, TreeNode(7)))
-result = TreeUtils.merge_trees(root1, root2)
+result = TreeUtils.merge_trees_iter(root1, root2)
 assert (TreeUtils.to_str_iter(result) == '3(4(5)(4))(5()(7))')
 root1 = TreeNode(1)
 root2 = TreeNode(1, TreeNode(2), None)
-result = TreeUtils.merge_trees(root1, root2)
+result = TreeUtils.merge_trees_iter(root1, root2)
 assert (TreeUtils.to_str_iter(result) == '2(2)')
