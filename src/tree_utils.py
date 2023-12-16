@@ -317,24 +317,22 @@ class TreeUtils:
         return result
 
     @staticmethod
-    def to_str(root: Optional[TreeNode]) -> str:
+    def to_str_rec(root: Optional[TreeNode]) -> str:
         result = ''
-        stack = [root]
 
-        while (stack):
-            node = stack.pop()
-            if (not node):
-                result += ')'
-            else:
+        def traverse(node: Optional[TreeNode]) -> None:
+            nonlocal result
+            if (node):
                 result += f'({node.val}'
                 if (not node.left and node.right):
                     result += '()'
-                if (node.right):
-                    stack.extend([None, node.right])
-                if (node.left):
-                    stack.extend([None, node.left])
+                traverse(node.left)
+                traverse(node.right)
+                result += ')'
 
-        return result[1:]
+        traverse(root)
+
+        return result[1:-1]
 
 
 tn1 = TreeNode(1)
@@ -569,9 +567,9 @@ result = TreeUtils.postorder_traversal_rec(nan_root)
 assert (result == [2, 6, 14, 11, 7, 3, 12, 8, 4, 13, 9, 10, 5, 1])
 
 root = TreeNode(1, TreeNode(2, TreeNode(4), None), TreeNode(3))
-result = TreeUtils.to_str(root)
+result = TreeUtils.to_str_rec(root)
 assert (result == '1(2(4))(3)')
 root = TreeNode(1, TreeNode(2, None, TreeNode(4)), TreeNode(3))
-result = TreeUtils.to_str(root)
+result = TreeUtils.to_str_rec(root)
 assert (result == '1(2()(4))(3)')
 
