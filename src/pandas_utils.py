@@ -163,3 +163,9 @@ result_table = largest_single_number(pd.DataFrame(input_table)).to_dict()
 print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
 assert (result_table == expected_table)
 print()
+input_table = { 'num': [8, 8, 7, 7, 3, 3, 3] }
+expected_table = { 'num': { 0: None } }
+result_table = largest_single_number(pd.DataFrame(input_table)).to_dict()
+print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
+assert (result_table == expected_table)
+print()
