@@ -102,7 +102,13 @@ def is_triangle(lines: pd.DataFrame) -> pd.DataFrame:
     lines['triangle'] = (x & y & z).map({ True: 'Yes', False: 'No' })
     return lines
 
-def biggest_single_number(my_numbers: pd.DataFrame) -> pd.DataFrame:
+# numbers
+# +-------------+------+
+# | Column Name | Type |
+# +-------------+------+
+# | num         | int  |
+# +-------------+------+
+def largest_single_number(numbers: pd.DataFrame) -> pd.DataFrame:
     pass
 
 
