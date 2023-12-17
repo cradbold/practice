@@ -114,23 +114,23 @@ class ListUtils:
 
     @staticmethod
     def merge_two_lists(list1: Optional[ListNode], list2: Optional[ListNode]) -> Optional[ListNode]:
-        head = cur = ListNode()
+        head = node = ListNode()
         
         while (list1 and list2):
             if (list1.val < list2.val):
-                cur.next = list1
-                cur = list1
+                node.next = list1
+                node = list1
                 list1 = list1.next
             else:
-                cur.next = list2
-                cur = list2
+                node.next = list2
+                node = list2
                 list2 = list2.next
 
         if (list1):
-            cur.next = list1
+            node.next = list1
 
         if (list2):
-            cur.next = list2
+            node.next = list2
             
         return head.next
     
@@ -639,8 +639,8 @@ def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
             else:
                 list1 = list1.next
                 list2 = list2.next
-        # if (list1 or list2):
-        #     return False
+        if (list1 or list2):
+            return False
     except Exception:
         return False
     
@@ -668,8 +668,8 @@ test_node_w.next = test_node_x
 test_node_x.next = test_node_y
 test_node_y.next = test_node_z
 assert vals_equal(ListUtils.merge_two_lists(test_node1, test_node_a), test_node_u)
-assert vals_equal(ListUtils.merge_two_lists(ListNode(), ListNode()), ListNode())
-assert vals_equal(ListUtils.merge_two_lists(ListNode(), ListNode(0)), ListNode(0))
+assert vals_equal(ListUtils.merge_two_lists(ListNode(), ListNode()), ListNode(0, ListNode(0)))
+assert vals_equal(ListUtils.merge_two_lists(ListNode(), ListNode(0)), ListNode(0, ListNode(0)))
 
 nums = [1, 1, 2]
 expected_nums = [1, 2, 2]
