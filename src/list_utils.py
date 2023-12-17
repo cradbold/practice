@@ -628,7 +628,38 @@ class ListUtils:
     
     @staticmethod
     def add_nums(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
-        pass
+        head = lagging = l1
+        carry = 0
+
+        while (l1 or l2 or carry):
+            if (l1 and l2):
+                sum = l1.val + l2.val + carry
+                l1.val = sum % 10
+                carry = sum // 10
+                lagging = l1
+                l1 = l1.next
+                l2 = l2.next
+            elif (l1 and not l2):
+                sum = l1.val + carry
+                l1.val = sum % 10
+                carry = sum // 10
+                lagging = l1
+                l1 = l1.next
+            elif (not l1 and l2):
+                l1 = l2
+                l2 = None
+                lagging.next = l1
+                sum = l1.val + carry
+                l1.val = sum % 10
+                carry = sum // 10
+                lagging = l1
+                l1 = l1.next
+            else:
+                lagging.next = ListNode(carry)
+                carry = 0
+                break
+
+        return head
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
