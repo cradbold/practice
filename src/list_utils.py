@@ -626,7 +626,8 @@ class ListUtils:
 
         return False
     
-    def addTwoNumbers(self, l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
+    @staticmethod
+    def add_nums(l1: Optional[ListNode], l2: Optional[ListNode]) -> Optional[ListNode]:
         pass
 
 
