@@ -639,6 +639,8 @@ def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
             else:
                 list1 = list1.next
                 list2 = list2.next
+        # if (list1 or list2):
+        #     return False
     except Exception:
         return False
     
@@ -894,3 +896,10 @@ result = ListUtils.can_place_n_flowers([1, 0, 0, 0, 1], 1)
 assert (result == True)
 result = ListUtils.can_place_n_flowers([1, 0, 0, 0, 1], 2)
 assert (result == False)
+
+result = ListUtils.add_nums(ListNode(2, ListNode(4, ListNode(3))), ListNode(5, ListNode(6, ListNode(4))))
+assert vals_equal(result, ListNode(7, ListNode(0, ListNode(8))))
+result = ListUtils.add_nums(ListNode(0), ListNode(0))
+assert vals_equal(result, ListNode(0))
+result = ListUtils.add_nums(ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9))))))), ListNode(9, ListNode(9, ListNode(9, ListNode(9)))))
+assert vals_equal(result, ListNode(8, ListNode(9, ListNode(9, ListNode(9, ListNode(0, ListNode(0, ListNode(0, ListNode(1)))))))))
