@@ -109,7 +109,13 @@ def is_triangle(lines: pd.DataFrame) -> pd.DataFrame:
 # | num         | int  |
 # +-------------+------+
 def largest_single_number(numbers: pd.DataFrame) -> pd.DataFrame:
-    return numbers
+    num_counts = numbers.value_counts().reset_index()
+    single_nums = num_counts[num_counts['count'] == 1]
+    if (not single_nums.empty):
+        max_single = single_nums.loc[[single_nums['num'].idxmax()]].reset_index()[['num']]
+        return max_single
+    else:
+        return pd.DataFrame({ 'num': [None] })
 
 
 input_table = { 'player_id': [1, 1, 2, 3, 3], 'device_id':[2, 2, 3, 1, 4], 'event_date': ['2016-03-01', '2016-05-02', '2017-06-25', '2016-03-02', '2018-07-03'], 'games_played': [5, 6, 1, 0, 5] }
