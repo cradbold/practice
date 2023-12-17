@@ -109,7 +109,7 @@ def is_triangle(lines: pd.DataFrame) -> pd.DataFrame:
 # | num         | int  |
 # +-------------+------+
 def largest_single_number(numbers: pd.DataFrame) -> pd.DataFrame:
-    pass
+    return numbers
 
 
 input_table = { 'player_id': [1, 1, 2, 3, 3], 'device_id':[2, 2, 3, 1, 4], 'event_date': ['2016-03-01', '2016-05-02', '2017-06-25', '2016-03-02', '2018-07-03'], 'games_played': [5, 6, 1, 0, 5] }
@@ -153,6 +153,13 @@ print()
 input_table = { 'x': [13, 10], 'y': [15, 20], 'z': [30, 15] }
 expected_table = { 'x': { 0: 13, 1: 10 }, 'y': { 0: 15, 1: 20 }, 'z': { 0: 30, 1: 15 }, 'triangle': { 0: 'No', 1: 'Yes' } }
 result_table = is_triangle(pd.DataFrame(input_table)).to_dict()
+print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
+assert (result_table == expected_table)
+print()
+
+input_table = { 'num': [8, 8, 3, 3, 1, 4, 5, 6] }
+expected_table = { 'num': { 0: 6 } }
+result_table = largest_single_number(pd.DataFrame(input_table)).to_dict()
 print(f'input: {input_table}\nexpected: {expected_table}\nresult: {result_table}')
 assert (result_table == expected_table)
 print()
