@@ -102,6 +102,9 @@ def is_triangle(lines: pd.DataFrame) -> pd.DataFrame:
     lines['triangle'] = (x & y & z).map({ True: 'Yes', False: 'No' })
     return lines
 
+def biggest_single_number(my_numbers: pd.DataFrame) -> pd.DataFrame:
+    pass
+
 
 input_table = { 'player_id': [1, 1, 2, 3, 3], 'device_id':[2, 2, 3, 1, 4], 'event_date': ['2016-03-01', '2016-05-02', '2017-06-25', '2016-03-02', '2018-07-03'], 'games_played': [5, 6, 1, 0, 5] }
 expected_table = { 'player_id': { 0: 1, 1: 2, 2: 3 }, 'first_login': { 0: '2016-03-01', 1: '2017-06-25', 2: '2016-03-02' } }
