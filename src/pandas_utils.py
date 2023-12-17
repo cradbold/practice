@@ -87,6 +87,14 @@ def sales_people_avoiding_company(sales_team: pd.DataFrame, companies: pd.DataFr
     red_sales_team = order_details[order_details.company == avoid_company]['name']
     return order_details[~order_details.name.isin(red_sales_team)].reset_index()[['name']]
 
+# lines
+# +-------------+------+
+# | Column Name | Type |
+# +-------------+------+
+# | x           | int  |
+# | y           | int  |
+# | z           | int  |
+# +-------------+------+
 def is_triangle(lines: pd.DataFrame) -> pd.DataFrame:
     x = lines['x'] < lines['y'] + lines['z']
     y = lines['y'] < lines['x'] + lines['z']
