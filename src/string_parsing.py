@@ -403,7 +403,8 @@ class StringParsing:
 
         return "".join(result)
     
-    def lengthOfLongestSubstring(s: str) -> int:
+    @staticmethod
+    def longest_unique_char_substr(s: str) -> int:
         pass
 
 
