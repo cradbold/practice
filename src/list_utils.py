@@ -929,3 +929,8 @@ result = ListUtils.add_nums(ListNode(0), ListNode(0))
 assert vals_equal(result, ListNode(0))
 result = ListUtils.add_nums(ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9, ListNode(9))))))), ListNode(9, ListNode(9, ListNode(9, ListNode(9)))))
 assert vals_equal(result, ListNode(8, ListNode(9, ListNode(9, ListNode(9, ListNode(0, ListNode(0, ListNode(0, ListNode(1)))))))))
+
+result = ListUtils.presorted_median([1, 3], [2])
+assert (result == 2.0)
+result = ListUtils.presorted_median([1, 2], [3, 4])
+assert (result == 2.5)
