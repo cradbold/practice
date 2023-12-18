@@ -1,4 +1,5 @@
 from typing import Callable, List, Any
+from collections import Counter
 
 class StringParsing:
 
@@ -402,6 +403,9 @@ class StringParsing:
 
         return "".join(result)
     
+    def lengthOfLongestSubstring(s: str) -> int:
+        pass
+
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
@@ -491,3 +495,5 @@ assert_string_parsing(StringParsing.correct_capitalization, ["FlaG"], False)
 
 assert_string_parsing(StringParsing.reverse_str_every_k, ["abcdefg", 2], "bacdfeg")
 assert_string_parsing(StringParsing.reverse_str_every_k, ["abcd", 2], "bacd")
+
+# assert_string_parsing(StringParsing.lengthOfLongestSubstring, ["au"], 2)
