@@ -651,6 +651,9 @@ class ListUtils:
             l1 = l1.next
 
         return head
+    
+    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
