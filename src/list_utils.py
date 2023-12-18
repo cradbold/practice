@@ -1,4 +1,4 @@
-from typing import Optional, Callable, List, Any
+from typing import Optional, Callable, List, Any, Tuple
 from collections import deque, Counter
 from collections.abc import Iterable
 import math
@@ -654,7 +654,42 @@ class ListUtils:
     
     @staticmethod
     def presorted_median(nums1: List[int], nums2: List[int]) -> float:
-        pass
+        total_len = len(nums1) + len(nums2)
+        if (total_len == 1): return nums1[0] if nums1 else nums2[0]
+        elif (total_len == 0): return None
+
+        def next_lowest_num(numsA: List[int], iA: int, numsB: List[int], iB: int) -> Tuple[int, int, int]:
+            numsA_more_left = iA < len(numsA)
+            numsB_more_left = iB < len(numsB)
+            if (numsA_more_left and numsB_more_left):
+                numA, numB = numsA[iA], numsB[iB]
+                if (numA < numB): return (numA, iA + 1, iB)
+                else: return (numB, iA, iB + 1)
+            elif (numsA_more_left):
+                numA = numsA[iA]
+                return (numA, iA + 1, iB)
+            elif (numsB_more_left):
+                numB = numsB[iB]
+                return (numB, iA, iB + 1)
+            else:
+                return (None, None, None)
+
+        median_i = (total_len - 1) // 2
+        is_even = (total_len // 2) * 2 == total_len
+
+        i = 0
+        i1 = i2 = 0
+        while (True and i + 1 <= median_i):
+            (_, i1, i2) = next_lowest_num(nums1, i1, nums2, i2)
+            i += 1
+
+        if (is_even):
+            (n1, i1, i2) = next_lowest_num(nums1, i1, nums2, i2)
+            (n2, _, _) = next_lowest_num(nums1, i1, nums2, i2)
+            return (n1 + n2) / 2
+        else:
+            (num, _, _) = next_lowest_num(nums1, i1, nums2, i2)
+            return num
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
