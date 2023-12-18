@@ -405,7 +405,17 @@ class StringParsing:
     
     @staticmethod
     def longest_unique_char_substr(s: str) -> int:
-        pass
+        max_length = 0
+
+        last_indexes = {}
+        start = 0
+        for end, l in enumerate(s):
+            if (l in last_indexes and last_indexes[l] >= start):
+                start = last_indexes[l] + 1
+            last_indexes[l] = end
+            max_length = max(max_length, end - start + 1)
+        
+        return max_length
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
