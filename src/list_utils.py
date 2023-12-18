@@ -652,7 +652,8 @@ class ListUtils:
 
         return head
     
-    def findMedianSortedArrays(self, nums1: List[int], nums2: List[int]) -> float:
+    @staticmethod
+    def presorted_median(nums1: List[int], nums2: List[int]) -> float:
         pass
 
 
