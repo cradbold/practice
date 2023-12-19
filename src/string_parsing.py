@@ -417,7 +417,8 @@ class StringParsing:
         
         return max_length
     
-    def longestPalindrome(self, s: str) -> str:
+    @staticmethod
+    def longest_palindrome(s: str) -> str:
         pass
 
 
