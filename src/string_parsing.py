@@ -552,3 +552,7 @@ assert_string_parsing(StringParsing.longest_unique_char_substr, ["abcbda"], 4)
 
 assert_string_parsing(StringParsing.longest_palindrome, ["babad"], "bab")
 assert_string_parsing(StringParsing.longest_palindrome, ["cbbd"], "bb")
+
+assert_string_parsing(StringParsing.rows_of_zigzag_matrix, ["PAYPALISHIRING", 3], "PAHNAPLSIIGYIR")
+assert_string_parsing(StringParsing.rows_of_zigzag_matrix, ("PAYPALISHIRING", 4), "PINALSIGYAHRPI")
+assert_string_parsing(StringParsing.rows_of_zigzag_matrix, ("A", 1), "A")
