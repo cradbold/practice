@@ -419,7 +419,33 @@ class StringParsing:
     
     @staticmethod
     def longest_palindrome(s: str) -> str:
-        pass
+        if (len(s) <= 1):
+            return s
+        
+        longest_palindrome = s[0]
+        longest_palindrome_len = len(longest_palindrome)
+
+        def longest_palindrome_from_i(i: int, even_start: bool = False) -> str:
+            l = i - 1
+            r = i + (2 if even_start else 1)
+
+            while (l >= 0 and r < len(s) and s[l] == s[r]):
+                l -= 1
+                r += 1
+
+            return s[l + 1: r]
+
+        for i in range(1, len(s) - 1):
+            palindrome_candidate = longest_palindrome_from_i(i)
+            if (s[i] == s[i + 1]):
+                temp = longest_palindrome_from_i(i, True)
+                palindrome_candidate = palindrome_candidate if len(palindrome_candidate) >= len(temp) else temp
+            
+            if (len(palindrome_candidate) > longest_palindrome_len):
+                longest_palindrome_len = len(palindrome_candidate)
+                longest_palindrome = palindrome_candidate
+
+        return longest_palindrome
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
