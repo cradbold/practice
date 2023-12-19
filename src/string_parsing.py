@@ -450,7 +450,8 @@ class StringParsing:
 
         return longest_palindrome
     
-    def convert(self, s: str, numRows: int) -> str:
+    @staticmethod
+    def rows_of_zigzag_matrix(s: str, numRows: int) -> str:
         pass
 
 
