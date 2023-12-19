@@ -449,6 +449,9 @@ class StringParsing:
                 break
 
         return longest_palindrome
+    
+    def convert(self, s: str, numRows: int) -> str:
+        pass
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
