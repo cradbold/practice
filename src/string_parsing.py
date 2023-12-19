@@ -452,8 +452,14 @@ class StringParsing:
     
     @staticmethod
     def rows_of_zigzag_matrix(s: str, numRows: int) -> str:
-        pass
+        if (numRows == 1 or numRows >= len(s)):
+            return s
 
+# PAYPALISHIRING
+# PAHNAPLSIIGYIR
+# 
+# PAYPALISHIRING
+# PINALSIGYAHRPI
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
@@ -554,5 +560,5 @@ assert_string_parsing(StringParsing.longest_palindrome, ["babad"], "bab")
 assert_string_parsing(StringParsing.longest_palindrome, ["cbbd"], "bb")
 
 assert_string_parsing(StringParsing.rows_of_zigzag_matrix, ["PAYPALISHIRING", 3], "PAHNAPLSIIGYIR")
-assert_string_parsing(StringParsing.rows_of_zigzag_matrix, ("PAYPALISHIRING", 4), "PINALSIGYAHRPI")
-assert_string_parsing(StringParsing.rows_of_zigzag_matrix, ("A", 1), "A")
+assert_string_parsing(StringParsing.rows_of_zigzag_matrix, ["PAYPALISHIRING", 4], "PINALSIGYAHRPI")
+assert_string_parsing(StringParsing.rows_of_zigzag_matrix, ["A", 1], "A")
