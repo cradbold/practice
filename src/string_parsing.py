@@ -445,6 +445,9 @@ class StringParsing:
                 longest_palindrome_len = len(palindrome_candidate)
                 longest_palindrome = palindrome_candidate
 
+            if (longest_palindrome_len // 2 >= len(s) - i):
+                break
+
         return longest_palindrome
 
 
