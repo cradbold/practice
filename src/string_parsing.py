@@ -416,6 +416,9 @@ class StringParsing:
             max_length = max(max_length, end - start + 1)
         
         return max_length
+    
+    def longestPalindrome(self, s: str) -> str:
+        pass
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
