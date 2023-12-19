@@ -517,5 +517,5 @@ assert_string_parsing(StringParsing.longest_unique_char_substr, ["pwwkew"], 3)
 assert_string_parsing(StringParsing.longest_unique_char_substr, ["au"], 2)
 assert_string_parsing(StringParsing.longest_unique_char_substr, ["abcbda"], 4)
 
-# assert_string_parsing(StringParsing.longest_palindrome, ["babad"], "bab")
-# assert_string_parsing(StringParsing.longest_palindrome, ["cbbd"], "bb")
+assert_string_parsing(StringParsing.longest_palindrome, ["babad"], "bab")
+assert_string_parsing(StringParsing.longest_palindrome, ["cbbd"], "bb")
