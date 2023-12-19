@@ -454,12 +454,30 @@ class StringParsing:
     def rows_of_zigzag_matrix(s: str, numRows: int) -> str:
         if (numRows == 1 or numRows >= len(s)):
             return s
+        
+        result = []
+
+        rows = [[] for _ in range(numRows)]
+        i, inc = 0, 1
+        for c in s:
+            rows[i].append(c)
+            i += inc
+            if (i == numRows - 1):
+                inc = -1
+            elif (i == 0):
+                inc = 1
+                
+        for row in rows:
+            result.extend(row)
+
+        return "".join(result)
 
 # PAYPALISHIRING
 # PAHNAPLSIIGYIR
 # 
 # PAYPALISHIRING
 # PINALSIGYAHRPI
+
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
     print(f'Calling {func.__name__} with args: {args} and asserting return value: {val}')
