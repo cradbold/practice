@@ -693,12 +693,19 @@ class ListUtils:
         
     @staticmethod
     def max_area_of_heights(heights: List[int]) -> int:
-        max_area = -1
-        for i in range(0, len(heights) - 1):
-            for j in range(1, len(heights)):
-                h = min(heights[i], heights[j])
-                w = j - i
-                max_area = max(max_area, w * h)
+        max_area = 0
+
+        l = 0
+        r = len(heights) - 1
+        while (l < r):
+            w = r - l
+            h = min(heights[l], heights[r])
+            max_area = max(max_area, w * h)
+            if (heights[l] < heights[r]):
+                l += 1
+            else:
+                r -= 1
+
         return max_area
 
 
