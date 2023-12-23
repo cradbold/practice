@@ -691,7 +691,8 @@ class ListUtils:
             (num, _, _) = next_lowest_num(nums1, i1, nums2, i2)
             return num
         
-    def maxArea(self, height: List[int]) -> int:
+    @staticmethod
+    def max_area_of_heights(heights: List[int]) -> int:
         pass
 
 
