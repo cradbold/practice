@@ -234,7 +234,8 @@ class NumUtils:
                 increment = temp
             return fib_sum
         
-    def intToRoman(self, num: int) -> str:
+    @staticmethod
+    def to_roman_numeral(num: int) -> str:
         pass
 
 
