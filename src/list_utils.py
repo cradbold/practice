@@ -679,7 +679,7 @@ class ListUtils:
 
         i = 0
         i1 = i2 = 0
-        while (True and i + 1 <= median_i):
+        while (i + 1 <= median_i):
             (_, i1, i2) = next_lowest_num(nums1, i1, nums2, i2)
             i += 1
 
