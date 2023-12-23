@@ -690,6 +690,9 @@ class ListUtils:
         else:
             (num, _, _) = next_lowest_num(nums1, i1, nums2, i2)
             return num
+        
+    def maxArea(self, height: List[int]) -> int:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
