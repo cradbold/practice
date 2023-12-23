@@ -693,7 +693,13 @@ class ListUtils:
         
     @staticmethod
     def max_area_of_heights(heights: List[int]) -> int:
-        pass
+        max_area = -1
+        for i in range(0, len(heights) - 1):
+            for j in range(1, len(heights)):
+                h = min(heights[i], heights[j])
+                w = j - i
+                max_area = max(max_area, w * h)
+        return max_area
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
