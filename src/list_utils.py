@@ -973,3 +973,6 @@ result = ListUtils.presorted_median([1, 3], [2])
 assert (result == 2.0)
 result = ListUtils.presorted_median([1, 2], [3, 4])
 assert (result == 2.5)
+
+result = ListUtils.max_area_of_heights([1, 8, 6, 2, 5, 4, 8, 3, 7])
+assert (result == 49)
