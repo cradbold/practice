@@ -233,6 +233,9 @@ class NumUtils:
                 fib_sum += increment
                 increment = temp
             return fib_sum
+        
+    def intToRoman(self, num: int) -> str:
+        pass
 
 
 x = 0
