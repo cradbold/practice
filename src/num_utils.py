@@ -495,3 +495,16 @@ assert (result == 13)
 result = NumUtils.fib_iter(num)
 print(f'fib_iter({num}) = {result}')
 assert (result == 13)
+
+num = 3
+result = NumUtils.to_roman_numeral(num)
+print(f'to_roman_numeral({num}) = {result}')
+assert (result == 'III')
+num = 58
+result = NumUtils.to_roman_numeral(num)
+print(f'to_roman_numeral({num}) = {result}')
+assert (result == 'LVIII')
+num = 1994
+result = NumUtils.to_roman_numeral(num)
+print(f'to_roman_numeral({num}) = {result}')
+assert (result == 'MCMXCIV')
