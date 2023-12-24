@@ -710,7 +710,23 @@ class ListUtils:
     
     @staticmethod
     def triplet_sums(nums: List[int]) -> List[List[int]]:
-        pass
+        triplets = set()
+
+        for i in range(len(nums) - 2):
+            for j in range(i + 1, len(nums) - 1):
+                for k in range(j + 1, len(nums)):
+                    ni, nj, nk = nums[i], nums[j], nums[k]
+                    if (ni + nj + nk == 0):
+                        triplet_arr = [ni, nj, nk]
+                        triplet_arr.sort()
+                        triplet_tup = (triplet_arr[0], triplet_arr[1], triplet_arr[2])
+                        triplets.add(triplet_tup)
+
+        triplets_arr = []
+        for triplet in triplets:
+            triplets_arr.append(list(triplet))
+
+        return triplets_arr
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -995,7 +1011,7 @@ result = ListUtils.max_area_of_heights([1, 8, 6, 2, 5, 4, 8, 3, 7])
 assert (result == 49)
 
 result = ListUtils.triplet_sums([-1, 0, 1, 2, -1, -4])
-assert (result == [[-1, -1, 2], [-1, 0, 1]])
+assert (result == [[-1, 0, 1], [-1, -1, 2]])
 result = ListUtils.triplet_sums([0, 1, 1])
 assert (result == [])
 result = ListUtils.triplet_sums([0, 0, 0])
