@@ -710,20 +710,38 @@ class ListUtils:
     
     @staticmethod
     def triplet_sums(nums: List[int]) -> List[List[int]]:
-        triplets = set()
+        result = set()
 
-        for i in range(len(nums) - 2):
-            for j in range(i + 1, len(nums) - 1):
-                for k in range(j + 1, len(nums)):
-                    ni, nj, nk = nums[i], nums[j], nums[k]
-                    if (ni + nj + nk == 0):
-                        triplet_arr = [ni, nj, nk]
-                        triplet_arr.sort()
-                        triplet_tup = (triplet_arr[0], triplet_arr[1], triplet_arr[2])
-                        triplets.add(triplet_tup)
+        negs, poss, zeros = [], [], []
+        for num in nums:
+            if num > 0: poss.append(num)
+            elif num < 0: negs.append(num)
+            else: zeros.append(num)
+
+        N, P = set(negs), set(poss)
+
+        if (zeros):
+            for num in P:
+                if (num * -1 in N):
+                    result.add((num * -1, 0, num))
+
+        if (len(zeros) >= 3):
+            result.add((0, 0, 0))
+
+        for i in range(len(negs)):
+            for j in range(i + 1, len(negs)):
+                target = (negs[i] + negs[j]) * -1
+                if (target in P):
+                    result.add(tuple(sorted([negs[i], negs[j], target])))
+
+        for i in range(len(poss)):
+            for j in range(i + 1, len(poss)):
+                target = (poss[i] + poss[j]) * -1
+                if (target in N):
+                    result.add(tuple(sorted([poss[i], poss[j], target])))
 
         triplets_arr = []
-        for triplet in triplets:
+        for triplet in result:
             triplets_arr.append(list(triplet))
 
         return triplets_arr
@@ -1011,6 +1029,7 @@ result = ListUtils.max_area_of_heights([1, 8, 6, 2, 5, 4, 8, 3, 7])
 assert (result == 49)
 
 result = ListUtils.triplet_sums([-1, 0, 1, 2, -1, -4])
+print(result)
 assert (result == [[-1, 0, 1], [-1, -1, 2]])
 result = ListUtils.triplet_sums([0, 1, 1])
 assert (result == [])
