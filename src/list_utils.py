@@ -707,6 +707,9 @@ class ListUtils:
                 r -= 1
 
         return max_area
+    
+    def threeSum(self, nums: List[int]) -> List[List[int]]:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
