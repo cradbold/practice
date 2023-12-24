@@ -708,7 +708,8 @@ class ListUtils:
 
         return max_area
     
-    def threeSum(self, nums: List[int]) -> List[List[int]]:
+    @staticmethod
+    def triplet_sums(nums: List[int]) -> List[List[int]]:
         pass
 
 
