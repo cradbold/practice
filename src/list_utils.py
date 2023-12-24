@@ -1,6 +1,7 @@
 from typing import Optional, Callable, List, Any, Tuple
 from collections import deque, Counter
 from collections.abc import Iterable
+from itertools import combinations
 import math
 
 class ListNode:
@@ -728,17 +729,15 @@ class ListUtils:
         if (len(zeros) >= 3):
             result.add((0, 0, 0))
 
-        for i in range(len(negs)):
-            for j in range(i + 1, len(negs)):
-                target = (negs[i] + negs[j]) * -1
-                if (target in P):
-                    result.add(tuple(sorted([negs[i], negs[j], target])))
+        for x, y in combinations(negs, 2):
+            target = (x + y) * -1
+            if (target in P):
+                result.add(tuple(sorted([x, y, target])))
 
-        for i in range(len(poss)):
-            for j in range(i + 1, len(poss)):
-                target = (poss[i] + poss[j]) * -1
-                if (target in N):
-                    result.add(tuple(sorted([poss[i], poss[j], target])))
+        for x, y in combinations(poss, 2):
+            target = (x + y) * -1
+            if (target in N):
+                result.add(tuple(sorted([x, y, target])))
 
         triplets_arr = []
         for triplet in result:
