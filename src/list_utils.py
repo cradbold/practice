@@ -993,3 +993,6 @@ assert (result == 2.5)
 
 result = ListUtils.max_area_of_heights([1, 8, 6, 2, 5, 4, 8, 3, 7])
 assert (result == 49)
+
+result = ListUtils.triplet_sums([-1, 0, 1, 2, -1, -4])
+assert (result == 49)
