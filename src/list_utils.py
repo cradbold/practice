@@ -711,39 +711,45 @@ class ListUtils:
     
     @staticmethod
     def triplet_sums(nums: List[int]) -> List[List[int]]:
-        result = set()
-
-        negs, poss, zeros = [], [], []
+        negs, zero_count, poss = [], 0, []
+        n_set, p_set = set(), set()
         for num in nums:
-            if num > 0: poss.append(num)
-            elif num < 0: negs.append(num)
-            else: zeros.append(num)
+            if (num < 0):
+                negs.append(num)
+                n_set.add(num)
+            elif (num > 0):
+                poss.append(num)
+                p_set.add(num)
+            else:
+                zero_count += 1
 
-        N, P = set(negs), set(poss)
+        triplets = set()
 
-        if (zeros):
-            for num in P:
-                if (num * -1 in N):
-                    result.add((num * -1, 0, num))
+        if (zero_count >= 3):
+            triplets.add((0, 0, 0))
 
-        if (len(zeros) >= 3):
-            result.add((0, 0, 0))
+        if (zero_count > 0):
+            for neg in negs:
+                target = neg * -1
+                if target in p_set:
+                    triplets.add((neg, 0, target))
 
         for x, y in combinations(negs, 2):
-            target = (x + y) * -1
-            if (target in P):
-                result.add(tuple(sorted([x, y, target])))
+            sum = x + y
+            target = sum * -1
+            if (target in p_set):
+                triplets.add(tuple(sorted([x, y, target])))
 
         for x, y in combinations(poss, 2):
-            target = (x + y) * -1
-            if (target in N):
-                result.add(tuple(sorted([x, y, target])))
+            sum = x + y
+            target = sum * -1
+            if (target in n_set):
+                triplets.add(tuple(sorted([x, y, target])))
 
-        triplets_arr = []
-        for triplet in result:
-            triplets_arr.append(list(triplet))
-
-        return triplets_arr
+        result = []
+        for triplet in triplets:
+            result.append(list(triplet))
+        return result
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -1028,7 +1034,6 @@ result = ListUtils.max_area_of_heights([1, 8, 6, 2, 5, 4, 8, 3, 7])
 assert (result == 49)
 
 result = ListUtils.triplet_sums([-1, 0, 1, 2, -1, -4])
-print(result)
 assert (result == [[-1, 0, 1], [-1, -1, 2]])
 result = ListUtils.triplet_sums([0, 1, 1])
 assert (result == [])
