@@ -751,7 +751,8 @@ class ListUtils:
             result.append(list(triplet))
         return result
     
-    def threeSumClosest(self, nums: List[int], target: int) -> int:
+    @staticmethod
+    def closest_triplet_sum(nums: List[int], target: int) -> int:
         pass
 
 
@@ -1042,3 +1043,5 @@ result = ListUtils.triplet_sums([0, 1, 1])
 assert (result == [])
 result = ListUtils.triplet_sums([0, 0, 0])
 assert (result == [[0, 0, 0]])
+
+
