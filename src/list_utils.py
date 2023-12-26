@@ -794,7 +794,8 @@ class ListUtils:
             result.append(list(r))
         return result
     
-    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    @staticmethod
+    def remove_nth_from_tail(head: Optional[ListNode], n: int) -> Optional[ListNode]:
         pass
 
 
