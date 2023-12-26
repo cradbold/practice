@@ -793,6 +793,9 @@ class ListUtils:
         for r in result_set:
             result.append(list(r))
         return result
+    
+    def removeNthFromEnd(self, head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
