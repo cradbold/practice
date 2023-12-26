@@ -813,7 +813,20 @@ class ListUtils:
 
     @staticmethod
     def remove_nth_from_tail_iter(head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        return head
+        hat = ListNode(None, head)
+        stack = [hat]
+
+        i = 1
+        while (head or stack):
+            while (head):
+                stack.append(head)
+                head = head.next
+            node = stack.pop()
+            if (i == n):
+                stack[-1].next = node.next
+            i += 1
+
+        return hat.next
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
