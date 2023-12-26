@@ -753,7 +753,23 @@ class ListUtils:
     
     @staticmethod
     def closest_triplet_sum(nums: List[int], target: int) -> int:
-        pass
+        n = len(nums)
+        nums.sort()
+        min_diff = 20001
+        result_sum = 0
+        for i in range(n):
+            a, b = i + 1, n - 1
+            while(a < b):
+                temp_sum = nums[i] + nums[a] + nums[b]
+                diff = abs(temp_sum - target)
+                if (diff < min_diff):
+                    min_diff = diff
+                    result_sum = temp_sum
+                if (temp_sum == target): return target
+                elif (temp_sum < target): a += 1
+                else: b -= 1
+
+        return result_sum
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
