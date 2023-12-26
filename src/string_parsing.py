@@ -472,7 +472,8 @@ class StringParsing:
 
         return "".join(result)
 
-    def letterCombinations(self, digits: str) -> List[str]:
+    @staticmethod
+    def to_letter_phone_numbers(digits: str) -> List[str]:
         pass
 
 
