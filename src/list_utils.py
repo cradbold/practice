@@ -750,6 +750,9 @@ class ListUtils:
         for triplet in triplets:
             result.append(list(triplet))
         return result
+    
+    def threeSumClosest(self, nums: List[int], target: int) -> int:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
