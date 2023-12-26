@@ -578,3 +578,7 @@ assert_string_parsing(StringParsing.longest_palindrome, ["cbbd"], "bb")
 assert_string_parsing(StringParsing.rows_of_zigzag_matrix, ["PAYPALISHIRING", 3], "PAHNAPLSIIGYIR")
 assert_string_parsing(StringParsing.rows_of_zigzag_matrix, ["PAYPALISHIRING", 4], "PINALSIGYAHRPI")
 assert_string_parsing(StringParsing.rows_of_zigzag_matrix, ["A", 1], "A")
+
+assert_string_parsing(StringParsing.to_letter_phone_numbers, ["23"], ["ad", "ae", "af", "bd", "be", "bf", "cd", "ce", "cf"])
+assert_string_parsing(StringParsing.to_letter_phone_numbers, [""], [])
+assert_string_parsing(StringParsing.to_letter_phone_numbers, ["2"], ["a", "b", "c"])
