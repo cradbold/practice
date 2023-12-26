@@ -770,6 +770,9 @@ class ListUtils:
                 else: b -= 1
 
         return result_sum
+    
+    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
