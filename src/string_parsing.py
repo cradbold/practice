@@ -472,11 +472,8 @@ class StringParsing:
 
         return "".join(result)
 
-# PAYPALISHIRING
-# PAHNAPLSIIGYIR
-# 
-# PAYPALISHIRING
-# PINALSIGYAHRPI
+    def letterCombinations(self, digits: str) -> List[str]:
+        pass
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
