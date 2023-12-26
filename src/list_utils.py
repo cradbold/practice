@@ -830,6 +830,20 @@ class ListUtils:
     
     @staticmethod
     def remove_nth_from_tail_2p(head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        slow_pointer = fast_pointer = head
+
+        for _ in range(n):
+            fast_pointer = fast_pointer.next
+
+        if (not fast_pointer):
+            return head.next
+        
+        while (fast_pointer.next):
+            fast_pointer = fast_pointer.next
+            slow_pointer = slow_pointer.next
+        
+        slow_pointer.next = slow_pointer.next.next
+
         return head
 
 
