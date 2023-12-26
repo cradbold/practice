@@ -796,7 +796,20 @@ class ListUtils:
     
     @staticmethod
     def remove_nth_from_tail_rec(head: Optional[ListNode], n: int) -> Optional[ListNode]:
-        pass
+        hat = ListNode(None, head)
+
+        def traverse(prevNode, node):
+            if (node.next == None):
+                position = 1
+            else:
+                position = 1 + traverse(node, node.next)
+            if (position == n):
+                prevNode.next = node.next
+            return position
+
+        _ = traverse(hat, head)
+
+        return hat.next
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
