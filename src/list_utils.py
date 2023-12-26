@@ -795,7 +795,7 @@ class ListUtils:
         return result
     
     @staticmethod
-    def remove_nth_from_tail(head: Optional[ListNode], n: int) -> Optional[ListNode]:
+    def remove_nth_from_tail_rec(head: Optional[ListNode], n: int) -> Optional[ListNode]:
         pass
 
 
