@@ -773,7 +773,26 @@ class ListUtils:
     
     @staticmethod
     def quad_sums_equal_target(nums: List[int], target: int) -> List[List[int]]:
-        pass
+        if (len(nums) < 4): return []
+        nums.sort()
+        result_set = set()
+
+        for i in range(len(nums) - 3):
+            for j in range(i + 1, len(nums) - 2):
+                k, l = j + 1, len(nums) - 1
+                while (k < l):
+                    ni, nj, nk, nl = nums[i], nums[j], nums[k], nums[l]
+                    sum = ni + nj + nk + nl
+                    if (sum > target): l -= 1
+                    elif (sum < target): k += 1
+                    else:
+                        result_set.add((ni, nj, nk, nl))
+                        k, l = k + 1, l - 1
+
+        result = []
+        for r in result_set:
+            result.append(list(r))
+        return result
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -1070,6 +1089,6 @@ result = ListUtils.closest_triplet_sum([0, 0, 0], 1)
 assert (result == 0)
 
 result = ListUtils.quad_sums_equal_target([1, 0, -1, 0, -2, 2], 0)
-assert (result == [[-2, -1, 1, 2],[-2, 0, 0, 2],[-1, 0, 0, 1]])
+assert (result == [[-2, -1, 1, 2], [-1, 0, 0, 1], [-2, 0, 0, 2]])
 result = ListUtils.quad_sums_equal_target([2, 2, 2, 2, 2], 8)
 assert (result == [[2, 2, 2, 2]])
