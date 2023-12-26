@@ -771,7 +771,8 @@ class ListUtils:
 
         return result_sum
     
-    def fourSum(self, nums: List[int], target: int) -> List[List[int]]:
+    @staticmethod
+    def quad_sums_equal_target(nums: List[int], target: int) -> List[List[int]]:
         pass
 
 
