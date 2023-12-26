@@ -1068,3 +1068,8 @@ result = ListUtils.closest_triplet_sum([-1, 2, 1, -4], 1)
 assert (result == 2)
 result = ListUtils.closest_triplet_sum([0, 0, 0], 1)
 assert (result == 0)
+
+result = ListUtils.quad_sums_equal_target([1, 0, -1, 0, -2, 2], 0)
+assert (result == [[-2, -1, 1, 2],[-2, 0, 0, 2],[-1, 0, 0, 1]])
+result = ListUtils.quad_sums_equal_target([2, 2, 2, 2, 2], 8)
+assert (result == [[2, 2, 2, 2]])
