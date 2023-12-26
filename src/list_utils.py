@@ -1044,4 +1044,7 @@ assert (result == [])
 result = ListUtils.triplet_sums([0, 0, 0])
 assert (result == [[0, 0, 0]])
 
-
+result = ListUtils.closest_triplet_sum([-1, 2, 1, -4], 1)
+assert (result == 2)
+result = ListUtils.closest_triplet_sum([0, 0, 0], 1)
+assert (result == 0)
