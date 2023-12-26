@@ -474,7 +474,22 @@ class StringParsing:
 
     @staticmethod
     def to_letter_phone_numbers(digits: str) -> List[str]:
-        pass
+        if (len(digits) == 0): return []
+
+        result = ['']
+        num_letters = ['', '', 'abc', 'def', 'ghi', 'jkl', 'mno', 'pqrs', 'tuv', 'xyz']
+
+        for digit in digits:
+            letters = num_letters[int(digit)]
+            temp = []
+            for combo in result:
+                addition = [combo] * len(letters)
+                for i, a in enumerate(addition):
+                    addition[i] = a + letters[i % len(letters)]
+                temp.extend(addition)
+            result = temp
+
+        return result
 
 
 def assert_string_parsing(func: Callable, args: List, val: Any) -> None:
