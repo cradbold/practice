@@ -811,6 +811,10 @@ class ListUtils:
 
         return hat.next
 
+    @staticmethod
+    def remove_nth_from_tail_iter(head: Optional[ListNode], n: int) -> Optional[ListNode]:
+        return head
+
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
