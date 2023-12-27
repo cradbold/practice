@@ -1,4 +1,5 @@
 from math import log, sqrt
+from typing import List
 
 class NumUtils:
 
@@ -245,6 +246,10 @@ class NumUtils:
             num %= divisor
 
         return result
+    
+    @staticmethod
+    def generate_valid_n_parentheses(n: int) -> List[str]:
+        return []
 
 
 x = 0

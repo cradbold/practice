@@ -846,10 +846,6 @@ class ListUtils:
 
         return head
     
-    @staticmethod
-    def generate_valid_n_parentheses(n: int) -> List[str]:
-        return []
-
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
