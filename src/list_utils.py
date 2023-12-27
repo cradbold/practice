@@ -845,6 +845,9 @@ class ListUtils:
         slow_pointer.next = slow_pointer.next.next
 
         return head
+    
+    def generateParenthesis(self, n: int) -> List[str]:
+        return []
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
