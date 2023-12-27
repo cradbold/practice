@@ -846,7 +846,8 @@ class ListUtils:
 
         return head
     
-    def generateParenthesis(self, n: int) -> List[str]:
+    @staticmethod
+    def generate_valid_n_parentheses(n: int) -> List[str]:
         return []
 
 
