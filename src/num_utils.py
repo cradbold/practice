@@ -249,7 +249,17 @@ class NumUtils:
     
     @staticmethod
     def generate_valid_n_parentheses(n: int) -> List[str]:
-        return []
+        results = []
+        stack = [('', 0, 0)]
+        while (stack):
+            (result, leftCount, rightCount) = stack.pop()
+            if (len(result) == n * 2):
+                results.append(result)
+            if (leftCount < n):
+                stack.append((result + '(', leftCount + 1, rightCount))
+            if (rightCount < leftCount):
+                stack.append((result + ')', leftCount, rightCount + 1))
+        return results
 
 
 x = 0
