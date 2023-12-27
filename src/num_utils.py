@@ -535,7 +535,7 @@ assert (result == 'MCMXCIV')
 num = 3
 result = NumUtils.generate_valid_n_parentheses(num)
 print(f'generate_valid_n_parentheses({num}) = {result}')
-assert (result == ["((()))", "(()())", "(())()", "()(())", "()()()"])
+assert (result == ["()()()", "()(())", "(())()", "(()())", "((()))"])
 num = 1
 result = NumUtils.generate_valid_n_parentheses(num)
 print(f'generate_valid_n_parentheses({num}) = {result}')
