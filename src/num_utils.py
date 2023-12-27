@@ -521,3 +521,12 @@ num = 1994
 result = NumUtils.to_roman_numeral(num)
 print(f'to_roman_numeral({num}) = {result}')
 assert (result == 'MCMXCIV')
+
+num = 3
+result = NumUtils.generate_valid_n_parentheses(num)
+print(f'generate_valid_n_parentheses({num}) = {result}')
+assert (result == ["((()))", "(()())", "(())()", "()(())", "()()()"])
+num = 1
+result = NumUtils.generate_valid_n_parentheses(num)
+print(f'generate_valid_n_parentheses({num}) = {result}')
+assert (result == ["()"])
