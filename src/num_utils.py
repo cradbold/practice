@@ -536,7 +536,13 @@ num = 3
 result = NumUtils.generate_valid_n_parentheses_iter(num)
 print(f'generate_valid_n_parentheses({num}) = {result}')
 assert (result == ["()()()", "()(())", "(())()", "(()())", "((()))"])
+result = NumUtils.generate_valid_n_parentheses_rec(num)
+print(f'generate_valid_n_parentheses({num}) = {result}')
+assert (result == ["()()()", "()(())", "(())()", "(()())", "((()))"])
 num = 1
 result = NumUtils.generate_valid_n_parentheses_iter(num)
+print(f'generate_valid_n_parentheses({num}) = {result}')
+assert (result == ["()"])
+result = NumUtils.generate_valid_n_parentheses_rec(num)
 print(f'generate_valid_n_parentheses({num}) = {result}')
 assert (result == ["()"])
