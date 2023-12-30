@@ -248,7 +248,7 @@ class NumUtils:
         return result
     
     @staticmethod
-    def generate_valid_n_parentheses(n: int) -> List[str]:
+    def generate_valid_n_parentheses_iter(n: int) -> List[str]:
         results = []
         stack = [('', 0, 0)]
         while (stack):
@@ -533,10 +533,10 @@ print(f'to_roman_numeral({num}) = {result}')
 assert (result == 'MCMXCIV')
 
 num = 3
-result = NumUtils.generate_valid_n_parentheses(num)
+result = NumUtils.generate_valid_n_parentheses_iter(num)
 print(f'generate_valid_n_parentheses({num}) = {result}')
 assert (result == ["()()()", "()(())", "(())()", "(()())", "((()))"])
 num = 1
-result = NumUtils.generate_valid_n_parentheses(num)
+result = NumUtils.generate_valid_n_parentheses_iter(num)
 print(f'generate_valid_n_parentheses({num}) = {result}')
 assert (result == ["()"])
