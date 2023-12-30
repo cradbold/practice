@@ -260,6 +260,10 @@ class NumUtils:
             if (rightCount < leftCount):
                 stack.append((result + ')', leftCount, rightCount + 1))
         return results
+    
+    @staticmethod
+    def generate_valid_n_parentheses_rec(n: int) -> List[str]:
+        pass
 
 
 x = 0
