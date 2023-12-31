@@ -263,7 +263,19 @@ class NumUtils:
     
     @staticmethod
     def generate_valid_n_parentheses_rec(n: int) -> List[str]:
-        pass
+        combos = []
+
+        def generate_parentheses(combo, lc, rc):
+            if (len(combo) == n * 2):
+                combos.append(combo)
+            if (lc < n):
+                generate_parentheses(combo + '(', lc + 1, rc)
+            if (rc < lc):
+                generate_parentheses(combo + ')', lc, rc + 1)
+
+        generate_parentheses('(', 1, 0)
+
+        return combos[::-1]
 
 
 x = 0
@@ -538,15 +550,15 @@ assert (result == 'MCMXCIV')
 
 num = 3
 result = NumUtils.generate_valid_n_parentheses_iter(num)
-print(f'generate_valid_n_parentheses({num}) = {result}')
+print(f'generate_valid_n_parentheses_iter({num}) = {result}')
 assert (result == ["()()()", "()(())", "(())()", "(()())", "((()))"])
 result = NumUtils.generate_valid_n_parentheses_rec(num)
-print(f'generate_valid_n_parentheses({num}) = {result}')
+print(f'generate_valid_n_parentheses_rec({num}) = {result}')
 assert (result == ["()()()", "()(())", "(())()", "(()())", "((()))"])
 num = 1
 result = NumUtils.generate_valid_n_parentheses_iter(num)
-print(f'generate_valid_n_parentheses({num}) = {result}')
+print(f'generate_valid_n_parentheses_iter({num}) = {result}')
 assert (result == ["()"])
 result = NumUtils.generate_valid_n_parentheses_rec(num)
-print(f'generate_valid_n_parentheses({num}) = {result}')
+print(f'generate_valid_n_parentheses_rec({num}) = {result}')
 assert (result == ["()"])
