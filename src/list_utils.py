@@ -868,9 +868,24 @@ class ListUtils:
             if (not is_valid_nums(col_nums)):
                 return False
         
-        box_nums = ''
-        if (not is_valid_nums(box_nums)):
-            return False
+        r, c = 0, 0
+        for n in range(9):
+            box_nums = ''
+            i, j = 0, 0
+            while (i < 3):
+                while (j < 3):
+                    num = board[r + i][c + j]
+                    if (num != "."): 
+                        box_nums += num
+                    j += 1
+                j = 0
+                i += 1
+            if (not is_valid_nums(box_nums)):
+                return False
+            r += 3
+            if ((n + 1) % 3 == 0):
+                r = 0
+                c += 3
 
         return True
     
