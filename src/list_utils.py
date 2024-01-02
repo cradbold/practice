@@ -1169,3 +1169,18 @@ result = ListUtils.remove_nth_from_tail_2p(ListNode(1), 1)
 assert (result == None)
 result = ListUtils.remove_nth_from_tail_2p(ListNode(1, ListNode(2)), 1)
 assert vals_equal(result, ListNode(1))
+
+board = [["5","3",".",".","7",".",".",".","."],
+         ["6",".",".","1","9","5",".",".","."],
+         [".","9","8",".",".",".",".","6","."],
+         ["8",".",".",".","6",".",".",".","3"],
+         ["4",".",".","8",".","3",".",".","1"],
+         ["7",".",".",".","2",".",".",".","6"],
+         [".","6",".",".",".",".","2","8","."],
+         [".",".",".","4","1","9",".",".","5"],
+         [".",".",".",".","8",".",".","7","9"]]
+result = ListUtils.is_valid_sudoku(board)
+assert (result == True)
+board[0][0] = '8'
+result = ListUtils.is_valid_sudoku()
+assert (result == False)
