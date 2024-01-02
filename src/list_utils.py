@@ -891,7 +891,21 @@ class ListUtils:
 
     @staticmethod
     def solve_sudoku(board: List[List[str]]) -> None:
-        pass
+        
+        def is_valid(row, col, num):
+            for i in range(9):
+                if (board[row + i][col] == num):
+                    return False
+                if (board[row][col + i] == num):
+                    return False
+                if (board[row][col] == num): # 3x3 check
+                    return False
+            return True
+
+        def solve(row, col):
+            pass
+
+        solve(0, 0)
     
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
