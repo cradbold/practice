@@ -889,7 +889,8 @@ class ListUtils:
 
         return True
 
-    def solveSudoku(self, board: List[List[str]]) -> None:
+    @staticmethod
+    def solve_sudoku(board: List[List[str]]) -> None:
         pass
     
 
