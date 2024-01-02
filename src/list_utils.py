@@ -888,6 +888,9 @@ class ListUtils:
                 c += 3
 
         return True
+
+    def solveSudoku(self, board: List[List[str]]) -> None:
+        pass
     
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
