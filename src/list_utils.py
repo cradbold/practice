@@ -848,7 +848,31 @@ class ListUtils:
     
     @staticmethod
     def is_valid_sudoku(board: List[List[str]]) -> bool:
-        pass
+        
+        def is_valid_nums(num_str):
+            num_counts = Counter(num_str)
+            for num_count in num_counts.values():
+                if (num_count > 1):
+                    return False
+            return True
+
+        for i in range(9):
+            row_nums, col_nums = [], []
+            for j in range(9):
+                row_num = board[i][j]
+                col_num = board[j][i]
+                if (row_num != '.'): row_nums.append(row_num)
+                if (col_num != '.'): col_nums.append(col_num)
+            if (not is_valid_nums(row_nums)):
+                return False
+            if (not is_valid_nums(col_nums)):
+                return False
+        
+        box_nums = ''
+        if (not is_valid_nums(box_nums)):
+            return False
+
+        return True
     
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -1181,6 +1205,6 @@ board = [["5","3",".",".","7",".",".",".","."],
          [".",".",".",".","8",".",".","7","9"]]
 result = ListUtils.is_valid_sudoku(board)
 assert (result == True)
-board[0][0] = '8'
-result = ListUtils.is_valid_sudoku()
+board[0][0] = '9'
+result = ListUtils.is_valid_sudoku(board)
 assert (result == False)
