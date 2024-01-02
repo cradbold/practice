@@ -914,11 +914,12 @@ class ListUtils:
                         board[row][col] = str(n)
                         if (fill(row, col + 1)):
                             return True
-                    board[row][col] = '.'
+                        board[row][col] = '.'
                 return False
             return fill(row, col + 1)
 
         fill(0, 0)
+        return board
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
@@ -1273,4 +1274,6 @@ solun = [["5","3","4","6","7","8","9","1","2"],
          ["2","8","7","4","1","9","6","3","5"],
          ["3","4","5","2","8","6","1","7","9"]]
 result = ListUtils.solve_sudoku(board)
-assert (result == solun)
+for row in range(9):
+    for col in range(9):
+        assert (result[row][col] == solun[row][col])
