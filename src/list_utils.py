@@ -846,7 +846,8 @@ class ListUtils:
 
         return head
     
-    def isValidSudoku(self, board: List[List[str]]) -> bool:
+    @staticmethod
+    def is_valid_sudoku(board: List[List[str]]) -> bool:
         pass
     
 
