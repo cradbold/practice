@@ -894,18 +894,30 @@ class ListUtils:
         
         def is_valid(row, col, num):
             for i in range(9):
-                if (board[row + i][col] == num):
+                # print(f'({row},{col}): ({i},{col}), ({row},{i}), ({row // 3 * 3 + (i // 3)},{col // 3 * 3 + (i % 3)})')
+                if (board[i][col] == num):
                     return False
-                if (board[row][col + i] == num):
+                if (board[row][i] == num):
                     return False
-                if (board[row][col] == num): # 3x3 check
+                if (board[row // 3 * 3 + (i // 3)][col // 3 * 3 + (i % 3)] == num):
                     return False
             return True
 
         def solve(row, col):
             pass
 
-        solve(0, 0)
+        # solve(0, 0)
+
+        is_valid(0, 0, -1)
+        print()
+        is_valid(1, 1, -1)
+        print()
+        is_valid(4, 4, -1)
+        print()
+        is_valid(7, 7, -1)
+        print()
+        is_valid(8, 8, -1)
+        print()
     
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
