@@ -903,22 +903,22 @@ class ListUtils:
                     return False
             return True
 
-        def solve(row, col):
-            pass
+        def fill(row, col):
+            if (row == 9):
+                return True
+            if (col == 9):
+                return fill(row + 1, 0)
+            if (board[row][col] == '.'):
+                for n in range(1, 10):
+                    if (is_valid(row, col, str(n))):
+                        board[row][col] = str(n)
+                        if (fill(row, col + 1)):
+                            return True
+                    board[row][col] = '.'
+                return False
+            return fill(row, col + 1)
 
-        # solve(0, 0)
-
-        is_valid(0, 0, -1)
-        print()
-        is_valid(1, 1, -1)
-        print()
-        is_valid(4, 4, -1)
-        print()
-        is_valid(7, 7, -1)
-        print()
-        is_valid(8, 8, -1)
-        print()
-    
+        fill(0, 0)
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
