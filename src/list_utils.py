@@ -846,6 +846,9 @@ class ListUtils:
 
         return head
     
+    def isValidSudoku(self, board: List[List[str]]) -> bool:
+        pass
+    
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
