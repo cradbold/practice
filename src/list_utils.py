@@ -921,7 +921,8 @@ class ListUtils:
         fill(0, 0)
         return board
     
-    def combinationSum(self, candidates: List[int], target: int) -> List[List[int]]:
+    @staticmethod
+    def combo_sums(candidates: List[int], target: int) -> List[List[int]]:
         pass
 
 
