@@ -1282,3 +1282,10 @@ result = ListUtils.solve_sudoku(board)
 for row in range(9):
     for col in range(9):
         assert (result[row][col] == solun[row][col])
+
+result = ListUtils.combo_sums([2, 3, 6, 7], 7)
+assert (result == [[2, 2, 3], [7]])
+result = ListUtils.combo_sums([2, 3, 5], 8)
+assert (result == [[2, 2, 2, 2], [2, 3, 3], [3, 5]])
+result = ListUtils.combo_sums([2], 1)
+assert (result == [])
