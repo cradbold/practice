@@ -923,12 +923,14 @@ class ListUtils:
     
     @staticmethod
     def combo_sums_iter(candidates: List[int], target: int) -> List[List[int]]:
-        dp = [[] for _ in range(target+1)]
+        dp = [[] for _ in range(target + 1)]
 
         for c in candidates:
-            for i in range(c, target+1):
-                if i == c: dp[i].append([c])
-                for comb in dp[i-c]: dp[i].append(comb + [c])
+            for i in range(c, target + 1):
+                if (i == c):
+                    dp[i].append([c])
+                for combo in dp[i - c]:
+                    dp[i].append(combo + [c])
 
         return dp[-1]
 
@@ -938,9 +940,13 @@ class ListUtils:
         n = len(candidates)
 
         def dfs(cur, cur_sum, idx):
-            if cur_sum > target: return
-            if cur_sum == target: combos.append(cur); return
-            for i in range(idx, n): dfs(cur + [candidates[i]], cur_sum + candidates[i], i)
+            if (cur_sum > target):
+                return
+            if (cur_sum == target):
+                combos.append(cur)
+                return
+            for i in range(idx, n):
+                dfs(cur + [candidates[i]], cur_sum + candidates[i], i)
 
         dfs([], 0, 0)
         return combos
