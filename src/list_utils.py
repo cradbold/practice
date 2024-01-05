@@ -924,15 +924,26 @@ class ListUtils:
     @staticmethod
     def combo_sums_iter(candidates: List[int], target: int) -> List[List[int]]:
         dp = [[] for _ in range(target+1)]
+
         for c in candidates:
             for i in range(c, target+1):
                 if i == c: dp[i].append([c])
                 for comb in dp[i-c]: dp[i].append(comb + [c])
+
         return dp[-1]
 
     @staticmethod
     def combo_sums_rec(candidates: List[int], target: int) -> List[List[int]]:
-        pass
+        combos = []
+        n = len(candidates)
+
+        def dfs(cur, cur_sum, idx):
+            if cur_sum > target: return
+            if cur_sum == target: combos.append(cur); return
+            for i in range(idx, n): dfs(cur + [candidates[i]], cur_sum + candidates[i], i)
+
+        dfs([], 0, 0)
+        return combos
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
