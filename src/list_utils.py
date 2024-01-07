@@ -923,14 +923,15 @@ class ListUtils:
     
     @staticmethod
     def combo_sums_iter(candidates: List[int], target: int) -> List[List[int]]:
-        dp = [[] for _ in range(target + 1)]
+        dp = [[] for _ in range(target + 1)] # init a cache list with d[n] = [[n]]
 
-        for c in candidates:
-            for i in range(c, target + 1):
-                if (i == c):
-                    dp[i].append([c])
-                for combo in dp[i - c]:
-                    dp[i].append(combo + [c])
+        for addend_candidate in candidates:
+            for subsequent_num in range(addend_candidate, target + 1):
+                if (subsequent_num == addend_candidate): # first num in sub-loop, init'ing d[n] = [[n]]
+                    dp[subsequent_num].append([addend_candidate])
+                num_addend_diff = subsequent_num - addend_candidate # for every num after addend candidate, append pieces + addend & store with that after num
+                for combo in dp[num_addend_diff]: # for every subsequent num
+                    dp[subsequent_num].append(combo + [addend_candidate])
 
         return dp[-1]
 
@@ -950,6 +951,9 @@ class ListUtils:
 
         dfs([], 0, 0)
         return combos
+    
+    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
