@@ -955,21 +955,20 @@ class ListUtils:
     @staticmethod
     def unique_combo_sums_iter(candidates: List[int], target: int) -> List[List[int]]:
         candidates.sort()
-        candidate_num_counts = Counter(candidates)
-        dp = [[] for _ in range(target + 1)]
+        dp = [None] + [set() for _ in range(target)]
 
         for candidate in candidates:
-            for num_after in range(candidate, target + 1):
-                if (num_after == candidate):
-                    dp[num_after].append([candidate])
-                for combo in dp[num_after - candidate]:
-                    combo_num_counts = Counter(combo)
-                    if (combo_num_counts[candidate] < candidate_num_counts[candidate]):
-                        new_combo = combo + [candidate]
-                        if (new_combo not in dp[num_after]):
-                            dp[num_after].append(new_combo)
+            if candidate > target:
+                break
+            for i in range(target - candidate, 0, -1):
+                dp[candidate + i] |= {combo + (candidate,) for combo in dp[i]}
+            dp[candidate].add((candidate,))
 
-        return dp[target]
+        final_combos = []
+        for combo in dp[target]:
+            final_combos.append(list(combo))
+            
+        return final_combos
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
@@ -1343,7 +1342,7 @@ result = ListUtils.combo_sums_rec([2], 1)
 assert (result == [])
 
 result = ListUtils.unique_combo_sums_iter([10, 1, 2, 7, 6, 1, 5], 8)
-assert (result == [[1, 2, 5], [1, 1, 6], [2, 6], [1, 7]])
+assert (result == [[2, 6], [1, 7], [1, 1, 6], [1, 2, 5]])
 result = ListUtils.unique_combo_sums_iter([2, 5, 2, 1, 2], 5)
 assert (result == [[1, 2, 2], [5]])
 result = ListUtils.unique_combo_sums_iter([1, 1], 1)
