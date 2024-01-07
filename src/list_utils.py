@@ -969,6 +969,9 @@ class ListUtils:
             final_combos.append(list(combo))
             
         return final_combos
+    
+    def firstMissingPositive(self, nums: List[int]) -> int:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
