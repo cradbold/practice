@@ -952,7 +952,8 @@ class ListUtils:
         dfs([], 0, 0)
         return combos
     
-    def combinationSum2(self, candidates: List[int], target: int) -> List[List[int]]:
+    @staticmethod
+    def unique_combo_sums_iter(candidates: List[int], target: int) -> List[List[int]]:
         pass
 
 
