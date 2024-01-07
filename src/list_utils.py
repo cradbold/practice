@@ -970,7 +970,8 @@ class ListUtils:
             
         return final_combos
     
-    def firstMissingPositive(self, nums: List[int]) -> int:
+    @staticmethod
+    def first_missing_positive_num(nums: List[int]) -> int:
         pass
 
 
