@@ -1326,3 +1326,8 @@ result = ListUtils.combo_sums_iter([2], 1)
 assert (result == [])
 result = ListUtils.combo_sums_rec([2], 1)
 assert (result == [])
+
+result = ListUtils.unique_combo_sums_iter([10, 1, 2, 7, 6, 1, 5], 8)
+assert (result == [[1, 1, 6], [1, 2, 5], [1, 7], [2, 6]])
+result = ListUtils.unique_combo_sums_iter([2, 5, 2, 1, 2], 5)
+assert (result == [[1, 2, 2], [5]])
