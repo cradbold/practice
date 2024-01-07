@@ -972,7 +972,12 @@ class ListUtils:
     
     @staticmethod
     def first_missing_positive_num(nums: List[int]) -> int:
-        pass
+        num_log = {n for n in range(1, len(nums) + 2)}
+
+        for num in nums:
+            num_log.discard(num)
+
+        return num_log.pop()
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
