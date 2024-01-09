@@ -978,6 +978,9 @@ class ListUtils:
             num_log.discard(num)
 
         return num_log.pop()
+    
+    def trap(self, height: List[int]) -> int:
+        pass
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
