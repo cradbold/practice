@@ -979,7 +979,8 @@ class ListUtils:
 
         return num_log.pop()
     
-    def trap(self, height: List[int]) -> int:
+    @staticmethod
+    def water_vol_in_trap(height: List[int]) -> int:
         pass
 
 
