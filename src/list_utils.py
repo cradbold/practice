@@ -1369,3 +1369,8 @@ result = ListUtils.first_missing_positive_num([7, 8, 9, 11, 12])
 assert (result == 1)
 result = ListUtils.first_missing_positive_num([1])
 assert (result == 2)
+
+result = ListUtils.water_vol_in_trap([0, 1, 0, 2, 1, 0, 1, 3, 2, 1, 2, 1])
+assert (result == 6)
+result = ListUtils.water_vol_in_trap([4, 2, 0, 3, 2, 5])
+assert (result == 9)
