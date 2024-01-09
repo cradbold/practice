@@ -980,8 +980,16 @@ class ListUtils:
         return num_log.pop()
     
     @staticmethod
-    def water_vol_in_trap(height: List[int]) -> int:
-        pass
+    def water_vol_in_trap(heights: List[int]) -> int:
+        lmax, rmax = 0, 0
+        water_vol = 0
+
+        l, r = 0, len(heights) - 1
+        while (l < r):
+            l += 1
+            r -= 1
+
+        return water_vol
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
