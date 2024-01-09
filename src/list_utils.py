@@ -960,7 +960,7 @@ class ListUtils:
         for candidate in candidates:
             if candidate > target:
                 break
-            for i in range(target - candidate, 0, -1):
+            for i in range(target - candidate, -1, -1):
                 dp[candidate + i] |= {combo + (candidate,) for combo in dp[i]}
             dp[candidate].add((candidate,))
 
