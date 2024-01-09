@@ -955,7 +955,7 @@ class ListUtils:
     @staticmethod
     def unique_combo_sums_iter(candidates: List[int], target: int) -> List[List[int]]:
         candidates.sort()
-        dp = [None] + [set() for _ in range(target)]
+        dp = [set() for _ in range(target + 1)]
 
         for candidate in candidates:
             if candidate > target:
