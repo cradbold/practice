@@ -986,8 +986,15 @@ class ListUtils:
 
         l, r = 0, len(heights) - 1
         while (l < r):
-            l += 1
-            r -= 1
+            lmax = max(lmax, heights[l])
+            rmax = max(rmax, heights[r])
+
+            if (heights[l] < heights[r]):
+                water_vol += lmax - heights[l]
+                l += 1
+            else:
+                water_vol += rmax - heights[r]
+                r -= 1
 
         return water_vol
 
