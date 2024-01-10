@@ -998,7 +998,8 @@ class ListUtils:
 
         return water_vol
 
-    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+    @staticmethod
+    def swap_node_pairs(head: Optional[ListNode]) -> Optional[ListNode]:
         pass
 
 
