@@ -998,6 +998,9 @@ class ListUtils:
 
         return water_vol
 
+    def swapPairs(self, head: Optional[ListNode]) -> Optional[ListNode]:
+        pass
+
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
     try:
