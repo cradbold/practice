@@ -1000,7 +1000,17 @@ class ListUtils:
 
     @staticmethod
     def swap_node_pairs(head: Optional[ListNode]) -> Optional[ListNode]:
-        pass
+        hat = ListNode(next=head)
+        lag, current = hat, head
+
+        while (current and current.next):
+            lag.next = current.next
+            current.next = current.next.next
+            lag.next.next = current
+            lag = current
+            current = lag.next
+
+        return hat.next
 
 
 def vals_equal(list1: ListNode = None, list2: ListNode = None) -> bool:
